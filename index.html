@@ -1,136 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Open NeuroTech LLC</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #2b2d42;
-      color: #fff;
-      padding: 2rem 0;
-      text-align: center;
-    }
-
-    nav {
-      background: #8d99ae;
-      padding: 1rem 0;
-    }
-
-    nav ul {
-      display: flex;
-      justify-content: center;
-      list-style: none;
-    }
-
-    nav ul li {
-      margin: 0 15px;
-    }
-
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav ul li a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 960px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    section {
-      margin: 2rem 0;
-      padding: 2rem;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-
-    footer {
-      background: #2b2d42;
-      color: #fff;
-      text-align: center;
-      padding: 1rem 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open NeuroTech - Academic Neurotechnology Solutions</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Open NeuroTech LLC</h1>
-      <p>Open tools for closed-loop neurotech innovation</p>
-    </div>
-  </header>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon"></div>
+                Open NeuroTech
+            </a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home', this)" class="active">Home</a></li>
+                <li><a href="#" onclick="showPage('about', this)">About</a></li>
+                <li><a href="#" onclick="showPage('services', this)">Services</a></li>
+                <li><a href="#" onclick="showPage('projects', this)">Projects</a></li>
+                <li><a href="#" onclick="showPage('contact', this)">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <nav>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#shop">Shop</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <!-- Parallax background elements -->
+    <div class="parallax-element parallax-circle" style="top: 20%; left: 10%;"></div>
+    <div class="parallax-element parallax-triangle" style="top: 60%; right: 15%;"></div>
+    <div class="parallax-element parallax-circle" style="bottom: 20%; left: 80%; width: 60px; height: 60px;"></div>
 
-  <section class="about" id="about">
-    <div class="container">
-      <h2>About Us</h2>
-      <p>
-        Open NeuroTech LLC is a research services organization focused on improving access to neurotechnology. We build open source hardware, software, and provide consulting services that accelerate innovation in neuromodulation.
-      </p>
-    </div>
-  </section>
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Advancing neurotech through open source hardware solutions and expert consulting services</h1>
+                <a href="#" onclick="showPage('services', document.querySelector('.nav-links a[onclick*=services]'))" class="cta-button">Explore Our Services</a>
+            </div>
+            <div class="scroll-indicator"></div>
+        </section>
 
-  <section class="projects" id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>COSMIIC System</strong> – A modular open-source implantable device platform</li>
-        <li><strong>SDK Bench Kit</strong> – Desktop tool for rapid prototyping and testing</li>
-        <li><strong>Open Nerve Tools</strong> – Tools for nerve interfacing, recording, and stimulation</li>
-      </ul>
+        <section class="section">
+            <div class="container">
+                <h2>Empowering Neuroscience Research</h2>
+                <p>We bridge the gap between cutting-edge neurotechnology and academic research, providing accessible hardware solutions and expert guidance to accelerate scientific discovery.</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Hardware Solutions</h3>
+                        <p>High-quality, research-grade neurotechnology equipment designed for academic environments. From EEG systems to brain stimulation devices.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Expert Consulting</h3>
+                        <p>Specialized consulting services for experimental design, data analysis, and implementation of neurotechnology in research settings.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Open Source Commitment</h3>
+                        <p>Supporting the open science movement with transparent, reproducible solutions that advance the entire neuroscience community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
 
-  <section class="shop" id="shop">
-    <div class="container">
-      <h2>Shop</h2>
-      <p>
-        Coming soon: browse open hardware kits, parts, and documentation to get started with neurotech development.
-      </p>
+    <!-- About Page -->
+    <div id="about" class="page">
+        <section class="section">
+            <div class="container">
+                <h2>About Open NeuroTech</h2>
+                <p>Founded on the principles of open science and academic collaboration, Open NeuroTech emerged from the recognition that high-quality neurotechnology should be accessible to researchers worldwide.</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Our Mission</h3>
+                        <p>To democratize access to neurotechnology through affordable, high-quality hardware solutions and expert guidance, enabling breakthrough research in academic institutions globally.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Vision</h3>
+                        <p>A future where every neuroscience researcher has access to the tools and knowledge needed to push the boundaries of human understanding.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Our Values</h3>
+                        <p>Transparency, collaboration, scientific rigor, and accessibility drive everything we do. We believe in open science and reproducible research.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Academic Focus</h3>
+                        <p>Specifically tailored for the unique needs of academic research, with solutions designed for publication-quality data and reproducible methodologies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:info@openneurotech.org">info@openneurotech.org</a></p>
-      <p>GitHub: <a href="https://github.com/openneurotech" target="_blank">@openneurotech</a></p>
+    <!-- Services Page -->
+    <div id="services" class="page">
+        <section class="section">
+            <div class="container">
+                <h2>Our Services</h2>
+                <p>Comprehensive neurotechnology solutions designed specifically for academic research environments.</p>
+                
+                <div class="card-grid">
+                    <div class="card">
+                        <h3>Hardware Sales</h3>
+                        <p>Research-grade EEG systems, brain stimulation devices, and custom neurotechnology solutions. All equipment comes with comprehensive documentation and academic pricing.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Consulting Services</h3>
+                        <p>Expert guidance on experimental design, protocol development, data analysis pipelines, and best practices for neurotechnology implementation in research.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Training & Support</h3>
+                        <p>Comprehensive training programs for researchers and lab personnel, including hands-on workshops and ongoing technical support.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Custom Development</h3>
+                        <p>Bespoke hardware and software solutions tailored to specific research requirements, developed in collaboration with research teams.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Data Analysis</h3>
+                        <p>Advanced signal processing and machine learning solutions for neuroscience data, including preprocessing pipelines and statistical analysis frameworks.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Open Source Tools</h3>
+                        <p>Development and maintenance of open-source software tools for the neuroscience community, promoting reproducible research practices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Open NeuroTech LLC. All rights reserved.</p>
+    <!-- Projects Page -->
+    <div id="projects" class="page">
+        <section class="section">
+            <div class="container">
+                <h2>Featured Projects</h2>
+                <p>Showcasing our collaborative work with leading academic institutions and research laboratories.</p>
+                
+                <div class="project-showcase">
+                    <div class="project">
+                        <div class="project-content">
+                            <h3>Multi-Site EEG Study Platform</h3>
+                            <p>Developed a standardized EEG acquisition and analysis platform for a multi-institutional study involving 12 universities. The platform ensures data consistency and reproducibility across sites while maintaining individual lab flexibility.</p>
+                        </div>
+                        <div class="project-image">
+                            EEG Platform Visualization
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-content">
+                            <h3>Open-Source Brain Stimulation Suite</h3>
+                            <p>Created an comprehensive tDCS/tACS stimulation system with open-source hardware designs and software control. Now used by over 50 research labs worldwide for cognitive neuroscience studies.</p>
+                        </div>
+                        <div class="project-image">
+                            Stimulation Device Interface
+                        </div>
+                    </div>
+                    
+                    <div class="project">
+                        <div class="project-content">
+                            <h3>Real-Time Neurofeedback Framework</h3>
+                            <p>Developed a low-latency, real-time processing framework for EEG-based neurofeedback experiments. The system supports multiple paradigms and has been validated in clinical research settings.</p>
+                        </div>
+                        <div class="project-image">
+                            Neurofeedback System Demo
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-  </footer>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <section class="section">
+            <div class="container">
+                <h2>Get in Touch</h2>
+                <p>Ready to advance your neuroscience research? Contact us to discuss your project needs and discover how we can support your work.</p>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="institution">Institution</label>
+                            <input type="text" id="institution" name="institution">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project or research needs..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="cta-button" style="width: 100%; text-align: center;">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="card-grid" style="margin-top: 3rem;">
+                    <div class="card">
+                        <h3>Email</h3>
+                        <p>info@openneuro.tech<br>For general inquiries and project discussions</p>
+                    </div>
+                    <div class="card">
+                        <h3>Collaboration</h3>
+                        <p>We welcome collaborations with academic institutions and research organizations worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
