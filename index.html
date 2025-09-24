@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open NeuroTech - Pioneering Neurotechnology Solutions</title>
-    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <title>Open NeuroTech - Home</title>
+    <link rel="icon" type="image/x-icon" href="/img/ONT-Brain-Favicon-150x150.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -17,10 +17,10 @@
             background: linear-gradient(135deg, #6e8efb 0%, #4a6cf7 100%);
         }
         .btn-gradient {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(90deg, #3b82f6 0%, #111827 100%);
         }
         .btn-gradient:hover {
-            background: linear-gradient(90deg, #764ba2 0%, #667eea 100%);
+            background: linear-gradient(90deg, #111827 0%, #3b82f6 100%);
         }
         .feature-card:hover {
             transform: translateY(-10px);
@@ -32,17 +32,19 @@
     </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
-    <!-- Hero Section with Vanta.js Background -->
+
     <div id="vanta-bg" class="min-h-screen flex flex-col justify-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <nav class="relative z-10 py-6 px-4 sm:px-6 lg:px-8">
+        <div class="absolute inset-0 bg-black opacity-25"></div>
+
+        <!-- Navigation bar: absolutely positioned at the top -->
+        <nav class="absolute top-0 left-0 w-full z-20 py-6 px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
                 <div class="flex items-center">
+                    <img src="img/ONT-Icon-Brain.png" alt="ONT Logo" class="h-8 w-8 mr-3"> <!-- Add this line -->
                     <span class="text-white text-2xl font-bold">Open NeuroTech</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#solutions" class="text-white hover:text-blue-200 transition-smooth">Solutions</a>
-                    <a href="#technology" class="text-white hover:text-blue-200 transition-smooth">Technology</a>
+                    <a href="#products" class="text-white hover:text-blue-200 transition-smooth">Products</a>
                     <a href="#about" class="text-white hover:text-blue-200 transition-smooth">About</a>
                     <a href="#contact" class="text-white hover:text-blue-200 transition-smooth">Contact</a>
                 </div>
@@ -52,99 +54,56 @@
             </div>
         </nav>
 
-        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20">
+        <!-- Main intro text, add more top padding to clear nav -->
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 pt-32">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
-                Pioneering the Future of <span class="text-blue-300">Neurotechnology</span>
+                Pioneering Access in <span class="text-blue-300">Neurotechnology</span>
             </h1>
             <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
-                Open-source solutions for brain-computer interfaces, neural data analysis, and cognitive enhancement.
+                Serving open source hardware solutions for wearable and implantable devices for research and development
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="#contact" class="px-8 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-50 transition-smooth">
-                    Get Started
-                </a>
-                <a href="#technology" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-smooth">
+                <a href="#products" class="px-8 py-3 hover:border-2 hover:border-white font-semibold rounded-full bg-white text-blue-600 hover:bg-[#111827] hover:text-white transition-smooth">
                     Learn More
+                </a>
+                <a href="#contact" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-smooth">
+                    Contact Us
                 </a>
             </div>
         </div>
     </div>
 
-    <!-- Solutions Section -->
-    <section id="solutions" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Neurotechnology Solutions</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Cutting-edge tools and platforms for researchers, developers, and healthcare professionals
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-gray-50 p-8 rounded-xl feature-card transition-smooth" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="cpu" class="text-blue-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">BCI Platforms</h3>
-                    <p class="text-gray-600">
-                        Open-source brain-computer interface frameworks for real-time neural signal processing and control applications.
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-8 rounded-xl feature-card transition-smooth" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="activity" class="text-purple-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Neural Analytics</h3>
-                    <p class="text-gray-600">
-                        Advanced machine learning tools for decoding and interpreting neural data from EEG, fNIRS, and other modalities.
-                    </p>
-                </div>
-
-                <div class="bg-gray-50 p-8 rounded-xl feature-card transition-smooth" data-aos="fade-up" data-aos-delay="300">
-                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
-                        <i data-feather="code" class="text-green-600 w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">Developer Tools</h3>
-                    <p class="text-gray-600">
-                        Comprehensive SDKs and APIs for building neurotechnology applications across multiple platforms.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technology Showcase -->
-    <section id="technology" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+    <!-- Product Showcase -->
+    <section id="products" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Open-Source Neurotechnology Stack</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Open Source Neurotechnology Hardware and Services</h2>
                     <p class="text-xl text-gray-600 mb-8">
-                        Our modular architecture enables researchers and developers to build customized solutions for their specific needs.
+                        The modular technologies we build enable researchers and developers to integrate customized solutions for their specific needs
                     </p>
                     <ul class="space-y-4">
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">Real-time signal processing pipelines</span>
+                            <span class="text-gray-700">COSMIIC Implantable Modules</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">Cross-platform compatibility</span>
+                            <span class="text-gray-700">COSMIIC Benchtop Development Kit</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">Extensive documentation and tutorials</span>
+                            <span class="text-gray-700">Wireless Surface Stimulator</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">Active developer community</span>
+                            <span class="text-gray-700">Consulting Services</span>
                         </li>
                     </ul>
                 </div>
                 <div class="md:w-1/2" data-aos="fade-left">
-                    <div class="bg-white p-6 rounded-xl shadow-xl">
-                        <img src="http://static.photos/technology/1024x576/42" alt="Neurotechnology Interface" class="rounded-lg w-full">
+                    <div class="bg-white rounded-xl shadow-xl">
+                        <img src="img/branded-stim-module.jpg" alt="Neurotechnology Interface" class="rounded-lg w-full">
                     </div>
                 </div>
             </div>
@@ -155,51 +114,27 @@
     <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Open NeuroTech</h2>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Open NeuroTech LLC</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    We're a team of neuroscientists, engineers, and developers committed to democratizing neurotechnology.
+                    We are a team of engineers committed to democratizing neurotechnology and strengthening the research community
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <img src="http://static.photos/science/1024x576/23" alt="Team working on neurotechnology" class="rounded-xl shadow-lg w-full">
+                    <img src="img/ONT-Logo-Brain-Icon.png" alt="Team working on neurotechnology" class="rounded-xl shadow-lg w-full">
                 </div>
                 <div data-aos="fade-left">
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
                     <p class="text-gray-600 mb-6">
-                        Open NeuroTech was founded with the vision of making advanced neurotechnology accessible to everyone. We believe that open collaboration accelerates innovation in brain-computer interfaces and cognitive enhancement.
+                        Open NeuroTech was founded with the vision of making advanced neurotechnology treatments accessible to everyone. We believe that getting accessible technology in the hands of researchers and startups will accelerate innovation in bioelectronic medicine.
                     </p>
                     <p class="text-gray-600 mb-8">
-                        Our team combines decades of experience in neuroscience research with cutting-edge software engineering to create tools that push the boundaries of what's possible.
+                        Our concept pushes the boundaries of what is possible across the open source, medical, and technical domains.
                     </p>
                     <a href="#contact" class="px-6 py-3 btn-gradient text-white font-semibold rounded-full inline-block transition-smooth">
-                        Join Our Community
+                        Get Connected with Us
                     </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="py-16 bg-blue-600 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 text-center">
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl font-bold mb-2">50+</div>
-                    <div class="text-blue-100">Research Institutions</div>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl font-bold mb-2">10K+</div>
-                    <div class="text-blue-100">Active Developers</div>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl font-bold mb-2">100+</div>
-                    <div class="text-blue-100">Published Papers</div>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="400">
-                    <div class="text-4xl font-bold mb-2">5M+</div>
-                    <div class="text-blue-100">Downloads</div>
                 </div>
             </div>
         </div>
@@ -207,34 +142,14 @@
 
     <!-- Contact Section -->
     <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
+        <div class="max-w-xl mx-auto">
             <div class="text-center mb-16" data-aos="fade-up">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
                 <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Whether you're a researcher, developer, or just curious about neurotechnology, we'd love to hear from you.
+                    Whether you're a researcher, developer, or just curious about neurotechnology, we'd love to hear from you
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div data-aos="fade-right">
-                    <form class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                            <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                            <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
-                        </div>
-                        <button type="submit" class="w-full px-6 py-3 btn-gradient text-white font-semibold rounded-lg transition-smooth">
-                            Send Message
-                        </button>
-                    </form>
-                </div>
                 <div data-aos="fade-left">
                     <div class="bg-white p-8 rounded-xl shadow-lg h-full">
                         <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
@@ -243,39 +158,29 @@
                                 <i data-feather="mail" class="text-blue-500 mr-4 mt-1"></i>
                                 <div>
                                     <h4 class="font-medium text-gray-900">Email</h4>
-                                    <p class="text-gray-600">contact@openeurotech.org</p>
+                                    <p class="text-gray-600"><a href="mailto:contact@openneuro.tech">contact@openneuro.tech</a></p>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <i data-feather="github" class="text-gray-800 mr-4 mt-1"></i>
                                 <div>
                                     <h4 class="font-medium text-gray-900">GitHub</h4>
-                                    <p class="text-gray-600">github.com/openeurotech</p>
+                                    <p class="text-gray-600"><a href="https://github.com/Open-NeuroTech">github.com/Open-NeuroTech</a></p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i data-feather="linkedin" class="text-blue-600 mr-4 mt-1"></i>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">LinkedIn</h4>
+                                    <p class="text-gray-600"><a href="https://www.linkedin.com/company/open-neurotech">linkedin.com/company/open-neurotech</a></p>
                                 </div>
                             </div>
                             <div class="flex items-start">
                                 <i data-feather="map-pin" class="text-red-500 mr-4 mt-1"></i>
                                 <div>
                                     <h4 class="font-medium text-gray-900">Location</h4>
-                                    <p class="text-gray-600">San Francisco, CA</p>
+                                    <p class="text-gray-600">Cleveland, OH, USA</a></p>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="mt-8">
-                            <h3 class="text-xl font-bold text-gray-900 mb-4">Join Our Community</h3>
-                            <div class="flex space-x-4">
-                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-smooth">
-                                    <i data-feather="twitter" class="text-blue-400"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-smooth">
-                                    <i data-feather="linkedin" class="text-blue-600"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-smooth">
-                                    <i data-feather="slack" class="text-purple-500"></i>
-                                </a>
-                                <a href="#" class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200 transition-smooth">
-                                    <i data-feather="youtube" class="text-red-500"></i>
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -295,38 +200,35 @@
                     </p>
                 </div>
                 <div>
-                    <h4 class="font-semibold text-lg mb-4">Solutions</h4>
+                    <h4 class="font-semibold text-lg mb-4">Products</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">BCI Platforms</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Neural Analytics</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Developer Tools</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Research Support</a></li>
+                        <li><a href="https://cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">COSMIIC Implantable Devices</a></li>
+                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Wireless Surface Stimulator</a></li>
+                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Consulting Services</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Resources</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Documentation</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Tutorials</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">API Reference</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Community Forum</a></li>
+                        <li><a href="https://docs.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Documentation</a></li>
+                        <li><a href="https://docs.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Tutorials</a></li>
+                        <li><a href="https://community.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Community Forum</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Company</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">About Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Team</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Careers</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition-smooth">Contact</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-smooth">About Us</a></li>
+                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Team</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-smooth">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Open NeuroTech. All rights reserved.</p>
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Open NeuroTech LLC. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="#" class="text-gray-400 hover:text-white transition-smooth">Privacy Policy</a>
-                    <a href="#" class="text-gray-400 hover:text-white transition-smooth">Terms of Service</a>
+                    <a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Privacy Policy</a>
+                    <a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Terms of Service</a>
                 </div>
             </div>
         </div>
