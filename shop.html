@@ -10,64 +10,95 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-    <style>
-        .btn-gradient {
-            background: linear-gradient(90deg, #3b82f6 0%, #111827 100%);
-        }
-        .btn-gradient:hover {
-            background: linear-gradient(90deg, #111827 0%, #3b82f6 100%);
-        }
-        .product-card {
-            transition: all 0.3s ease;
-        }
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .transition-smooth {
-            transition: all 0.3s ease;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 50;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-        .modal.active {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal-content {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 1rem;
-            max-width: 600px;
-            max-height: 90vh;
-            overflow-y: auto;
-            margin: 1rem;
-        }
-    </style>
+<style>
+    .btn-gradient {
+        background: linear-gradient(90deg, #3b82f6 0%, #111827 100%);
+    }
+    .btn-gradient:hover {
+        background: linear-gradient(90deg, #111827 0%, #3b82f6 100%);
+    }
+
+    /* make each product card a column flex container so content can stretch */
+    .product-card {
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    /* make the card body expand and arrange its children vertically */
+    .product-card > .p-6 {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+
+    /* anchor the actions (price + button) at the bottom */
+    .product-card .p-6 > .actions {
+        margin-top: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    /* keep individual buttons/links normal (no auto margin) */
+    .product-card .p-6 > .actions > button,
+    .product-card .p-6 > .actions > a {
+        margin-top: 0;
+    }
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+    .transition-smooth {
+        transition: all 0.3s ease;
+    }
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 50;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal-content {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 1rem;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        margin: 1rem;
+    }
+</style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
-    <!-- Navigation bar -->
-    <nav class="bg-[#111827] py-6 px-4 sm:px-6 lg:px-8 sticky top-0 z-20">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <!-- Navigation bar: absolutely positioned at the top -->
+    <nav class="absolute top-0 left-0 w-full z-20 py-6 px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center">
             <div class="flex items-center">
                 <img src="img/ONT-Icon-Brain.png" alt="ONT Logo" class="h-8 w-8 mr-3">
                 <a href="index.html" class="text-white text-2xl font-bold">Open NeuroTech</a>
             </div>
             <div class="hidden md:flex space-x-8">
-                <a href="shop.html" class="text-blue-300 hover:text-blue-200 transition-smooth">Shop</a>
+                <a href="shop.html" class="text-white hover:text-blue-200 transition-smooth">Shop</a>
                 <a href="index.html#services" class="text-white hover:text-blue-200 transition-smooth">Services</a>
                 <a href="index.html#about" class="text-white hover:text-blue-200 transition-smooth">About</a>
                 <a href="index.html#contact" class="text-white hover:text-blue-200 transition-smooth">Contact</a>
             </div>
+            <!-- Hide the mobile menu button  -->
+            <!-- <button class="md:hidden text-white">
+                <i data-feather="menu"></i>
+            </button> -->
         </div>
     </nav>
 
@@ -85,126 +116,165 @@
 
     <!-- Products Grid -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <!-- Product 1: COSMIIC Power Module -->
-                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
-                    <div class="h-64 bg-gray-200 flex items-center justify-center">
-                        <i data-feather="battery-charging" class="w-32 h-32 text-blue-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">COSMIIC Power Module</h3>
-                        <p class="text-gray-600 mb-4">
-                            Central power and communication hub with rechargeable Li-ion batteries, MedRadio wireless link, and network distribution for the entire implanted system.
-                        </p>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-blue-600 font-semibold text-lg">Starting at $2,500</span>
-                        </div>
-                        <button onclick="openModal('modal1')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
+        <div class="max-w-7xl mx-auto space-y-12">
 
-                <!-- Product 2: COSMIIC Remote Modules -->
-                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-64 bg-gray-200 flex items-center justify-center">
-                        <i data-feather="activity" class="w-32 h-32 text-blue-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">COSMIIC Remote Modules</h3>
-                        <p class="text-gray-600 mb-4">
-                            Networked modules for stimulation or recording, placed near target sites. Available in 8-channel configurations for modular, scalable neural interface systems.
-                        </p>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-blue-600 font-semibold text-lg">Starting at $3,200</span>
+            <!-- Category: COSMIIC Circuit Boards -->
+            <div id="circuit-boards" class="space-y-6">
+                <h2 class="text-2xl font-bold text-gray-900">COSMIIC Circuit Boards</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- COSMIIC Power Module -->
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+                        <div class="h-64 bg-gray-200 flex items-center justify-center">
+                            <i data-feather="battery-charging" class="w-32 h-32 text-blue-500"></i>
                         </div>
-                        <button onclick="openModal('modal2')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">COSMIIC Power Module - Circuit Board</h3>
+                            <p class="text-gray-600 mb-4">
+                                Central power and communication hub with rechargeable batteries, MedRadio wireless communication, and network coordination for the entire implantable system.
+                            </p>
 
-                <!-- Product 3: COSMIIC Benchtop Kit -->
-                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-64 bg-gray-200 flex items-center justify-center">
-                        <i data-feather="cpu" class="w-32 h-32 text-blue-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">COSMIIC Benchtop Development Kit</h3>
-                        <p class="text-gray-600 mb-4">
-                            Complete development platform for prototyping and testing neural interfaces before deployment in animal studies.
-                        </p>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-blue-600 font-semibold text-lg">Starting at $1,800</span>
+                            <div class="actions">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-blue-600 font-semibold text-lg">Starting at $1,600</span>
+                                </div>
+                                <button onclick="openModal('modal1')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
+                                    Learn More
+                                </button>
+                            </div>
                         </div>
-                        <button onclick="openModal('modal3')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
-                            Learn More
-                        </button>
                     </div>
-                </div>
 
-                <!-- Product 4: Wireless Surface Stimulator -->
-                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
-                    <div class="h-64 bg-gray-200 flex items-center justify-center">
-                        <i data-feather="zap" class="w-32 h-32 text-blue-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Wireless Surface Stimulator</h3>
-                        <p class="text-gray-600 mb-4">
-                            Non-invasive wearable stimulation device for transcutaneous nerve stimulation with programmable parameters and wireless control.
-                        </p>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-blue-600 font-semibold text-lg">Starting at $1,200</span>
+                    <!-- COSMIIC Remote Modules -->
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-64 bg-gray-200 flex items-center justify-center">
+                            <i data-feather="activity" class="w-32 h-32 text-blue-500"></i>
                         </div>
-                        <button onclick="openModal('modal4')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">COSMIIC Remote Module - Circuit Boards</h3>
+                            <p class="text-gray-600 mb-4">
+                                Networked modules for stimulation or recording, placed near target sites. Available in 8-channel configurations for modular, scalable neural interface systems.
+                            </p>
 
-                <!-- Product 5: Custom Hardware Development -->
-                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <div class="h-64 bg-gray-200 flex items-center justify-center">
-                        <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Custom Hardware Development</h3>
-                        <p class="text-gray-600 mb-4">
-                            Tailored neurotechnology solutions designed and built to meet your specific research requirements and experimental protocols.
-                        </p>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-blue-600 font-semibold text-lg">Custom Pricing</span>
+                            <div class="actions">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-blue-600 font-semibold text-lg">Starting at $1,300</span>
+                                </div>
+                                <button onclick="openModal('modal2')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
+                                    Learn More
+                                </button>
+                            </div>
                         </div>
-                        <button onclick="openModal('modal5')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
-                            Learn More
-                        </button>
                     </div>
-                </div>
-
-                <!-- Product 6: Consulting Services -->
-                <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="h-64 bg-gray-200 flex items-center justify-center">
-                        <i data-feather="users" class="w-32 h-32 text-blue-500"></i>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Consulting Services</h3>
-                        <p class="text-gray-600 mb-4">
-                            Expert guidance on neurotechnology hardware design, regulatory pathways, clinical trial design, and implementation strategies.
-                        </p>
-                        <div class="flex items-center justify-between mb-4">
-                            <span class="text-blue-600 font-semibold text-lg">Hourly or Project-Based</span>
+                    
+                    <!-- COSMIIC Benchtop Kit -->
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden opacity-95" data-aos="fade-up" data-aos-delay="150">
+                        <div class="relative h-64 bg-gray-200 flex items-center justify-center">
+                            <i data-feather="cpu" class="w-32 h-32 text-blue-500"></i>
                         </div>
-                        <button onclick="openModal('modal6')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">COSMIIC Benchtop Development Kit</h3>
+                            <p class="text-gray-600 mb-4">
+                                Full-featured COSMIIC System development platform for prototyping and testing neural interfaces.
+                            </p>
 
+                            <div class="actions">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-blue-600 font-semibold text-lg">Starting at $5,000</span>
+                                </div>
+                                <button onclick="openModal('modal3')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder slot to keep layout balanced on large screens 
+                    <div class="hidden lg:block"></div>
+                    </div> 
+                    -->
+                </div>
             </div>
+
+            <!-- Category: Coming Soon -->
+            <div id="coming-soon" class="space-y-6">
+                <h2 class="text-2xl font-bold text-gray-900">Coming Soon</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- COSMIIC Implantable Modules (Coming Soon) -->
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="250">
+                        <div class="relative h-64 bg-gray-200 flex items-center justify-center">
+                            <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
+                            <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">COSMIIC Implantable Modules</h3>
+                            <p class="text-gray-600 mb-4">
+                                Assembled and enclosed COSMIIC System implantable modules for research use.
+                            </p>
+
+                            <div class="actions">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500 font-semibold text-lg">TBD</span>
+                                </div>
+                                <button onclick="openModal('modal6')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Wireless Surface Stimulator (Coming Soon) -->
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-64 bg-gray-200 flex items-center justify-center">
+                            <i data-feather="zap" class="w-32 h-32 text-blue-500"></i>
+                            <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Wireless Surface Stimulator</h3>
+                            <p class="text-gray-600 mb-4">
+                                Non-invasive wearable stimulation device — details coming soon.
+                            </p>
+
+                            <div class="actions">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-500 font-semibold text-lg">TBD</span>
+                                </div>
+                                <button onclick="openModal('modal4')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consulting Services (Coming Soon) -->
+                    <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                        <div class="relative h-64 bg-gray-200 flex items-center justify-center">
+                            <i data-feather="users" class="w-32 h-32 text-blue-500"></i>
+                            <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-gray-900 mb-3">Consulting Services</h3>
+                            <p class="text-gray-600 mb-4">
+                                Expert guidance on neurotechnology hardware design, regulatory pathways, clinical trial design, and implementation strategies.
+                            </p>
+
+                            <div class="actions">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-blue-600 font-semibold text-lg">Hourly or Project-Based</span>
+                                </div>
+                                <button onclick="openModal('modal6')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
+
 
     <!-- CTA Section -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
