@@ -5,100 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shop - Open NeuroTech</title>
     <link rel="icon" type="image/x-icon" href="/img/ONT-Brain-Favicon-150x150.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
     <script src="https://unpkg.com/feather-icons"></script>
-<style>
-    .btn-gradient {
-        background: linear-gradient(90deg, #3b82f6 0%, #111827 100%);
-    }
-    .btn-gradient:hover {
-        background: linear-gradient(90deg, #111827 0%, #3b82f6 100%);
-    }
-
-    /* make each product card a column flex container so content can stretch */
-    .product-card {
-        transition: all 0.3s ease;
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    /* make the card body expand and arrange its children vertically */
-    .product-card > .p-6 {
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-    }
-
-    /* anchor the actions (price + button) at the bottom */
-    .product-card .p-6 > .actions {
-        margin-top: auto;
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    /* keep individual buttons/links normal (no auto margin) */
-    .product-card .p-6 > .actions > button,
-    .product-card .p-6 > .actions > a {
-        margin-top: 0;
-    }
-
-    .product-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    }
-    .transition-smooth {
-        transition: all 0.3s ease;
-    }
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 50;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.5);
-    }
-    .modal.active {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .modal-content {
-        background-color: white;
-        padding: 2rem;
-        border-radius: 1rem;
-        max-width: 600px;
-        max-height: 90vh;
-        overflow-y: auto;
-        margin: 1rem;
-    }
-</style>
 </head>
 <body class="font-sans antialiased text-gray-800">
 
-    <!-- Navigation bar: absolutely positioned at the top -->
-    <nav class="absolute top-0 left-0 w-full z-20 py-6 px-4 sm:px-6 lg:px-8">
+    <!-- Navigation bar -->
+    <nav class="site-nav">
         <div class="flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="img/ONT-Icon-Brain.png" alt="ONT Logo" class="h-8 w-8 mr-3">
-                <a href="index.html" class="text-white text-2xl font-bold">Open NeuroTech</a>
+            <div class="nav-logo">
+                <img src="img/ONT-Icon-Brain.png" alt="ONT Logo">
+                <a href="index.html">Open NeuroTech</a>
             </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="shop.html" class="text-white hover:text-blue-200 transition-smooth">Shop</a>
-                <a href="index.html#services" class="text-white hover:text-blue-200 transition-smooth">Services</a>
-                <a href="index.html#about" class="text-white hover:text-blue-200 transition-smooth">About</a>
-                <a href="index.html#contact" class="text-white hover:text-blue-200 transition-smooth">Contact</a>
+            <div class="nav-links">
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="index.html#services" class="nav-link">Services</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
             </div>
-            <!-- Hide the mobile menu button  -->
-            <!-- <button class="md:hidden text-white">
-                <i data-feather="menu"></i>
-            </button> -->
         </div>
     </nav>
 
@@ -232,7 +161,7 @@
                         <div class="p-6">
                             <h3 class="text-2xl font-bold text-gray-900 mb-3">Wireless Surface Stimulator</h3>
                             <p class="text-gray-600 mb-4">
-                                Non-invasive wearable stimulation device — details coming soon.
+                                Non-invasive wearable stimulation device – details coming soon.
                             </p>
 
                             <div class="actions">
@@ -295,7 +224,7 @@
     <div id="modal1" class="modal">
         <div class="modal-content">
             <div class="flex justify-between items-start mb-6">
-                <h2 class="text-3xl font-bold text-gray-900">COSMIIC Power Module</h2>
+                <h2 class="text-3xl font-bold text-gray-900">COSMIIC Power Module Circuit Board</h2>
                 <button onclick="closeModal('modal1')" class="text-gray-500 hover:text-gray-700">
                     <i data-feather="x" class="w-6 h-6"></i>
                 </button>
@@ -582,8 +511,8 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
+    <footer class="site-footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Open NeuroTech</h3>
@@ -594,79 +523,39 @@
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Products</h4>
                     <ul class="space-y-2">
-                        <li><a href="https://cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">COSMIIC Implantable Devices</a></li>
-                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Wireless Surface Stimulator</a></li>
-                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Consulting Services</a></li>
+                        <li><a href="https://cosmiic.org" class="footer-link">COSMIIC Implantable Devices</a></li>
+                        <li><a href="coming-soon.html" class="footer-link">Wireless Surface Stimulator</a></li>
+                        <li><a href="coming-soon.html" class="footer-link">Consulting Services</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Resources</h4>
                     <ul class="space-y-2">
-                        <li><a href="https://docs.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Documentation</a></li>
-                        <li><a href="https://docs.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Tutorials</a></li>
-                        <li><a href="https://community.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Community Forum</a></li>
+                        <li><a href="https://docs.cosmiic.org" class="footer-link">Documentation</a></li>
+                        <li><a href="https://docs.cosmiic.org" class="footer-link">Tutorials</a></li>
+                        <li><a href="https://community.cosmiic.org" class="footer-link">Community Forum</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-semibold text-lg mb-4">Company</h4>
                     <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-smooth">About Us</a></li>
-                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Team</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-smooth">Contact</a></li>
+                        <li><a href="#about" class="footer-link">About Us</a></li>
+                        <li><a href="coming-soon.html" class="footer-link">Team</a></li>
+                        <li><a href="#contact" class="footer-link">Contact</a></li>
                     </ul>
                 </div>
             </div>
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-gray-400 mb-4 md:mb-0">© 2025 Open NeuroTech LLC. All rights reserved.</p>
                 <div class="flex space-x-6">
-                    <a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Privacy Policy</a>
-                    <a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Terms of Service</a>
+                    <a href="coming-soon.html" class="footer-link">Privacy Policy</a>
+                    <a href="coming-soon.html" class="footer-link">Terms of Service</a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Initialize AOS and Feather Icons
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-            feather.replace();
-        });
+    <script src="scripts.js"></script>
 
-        // Modal functions
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-            document.body.style.overflow = 'hidden';
-            // Re-initialize feather icons in modal
-            setTimeout(() => feather.replace(), 100);
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        window.addEventListener('click', function(e) {
-            if (e.target.classList.contains('modal')) {
-                e.target.classList.remove('active');
-                document.body.style.overflow = 'auto';
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                document.querySelectorAll('.modal.active').forEach(modal => {
-                    modal.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            }
-        });
-    </script>
 </body>
 </html>
