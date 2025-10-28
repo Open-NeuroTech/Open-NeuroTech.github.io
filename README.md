@@ -86,14 +86,6 @@ All reusable components are defined in `styles.css`:
 5. **Modals** - 6 detailed product/service modals
 6. **Footer** - Site navigation
 
-**Products**:
-- COSMIIC Power Module ($1,600+)
-- COSMIIC Remote Modules ($1,300+)
-- COSMIIC Benchtop Development Kit ($5,000+)
-- COSMIIC Implantable Modules (Coming Soon)
-- Wireless Surface Stimulator (Coming Soon)
-- Consulting Services (Coming Soon)
-
 **Special Features**:
 - Product cards with hover effects
 - Modal popups with detailed information
@@ -227,30 +219,12 @@ Update in all three HTML files:
 2. Go to Settings → Pages
 3. Select branch and root folder
 4. Add `CNAME` file with custom domain
-
-### Custom Domain
-The included `CNAME` file contains:
 ```
 openneuro.tech
 ```
 
-Update DNS records:
-- **A Record**: Point to GitHub Pages IP
-- **CNAME Record**: `www` → `openneuro.tech`
-
 ### Local Development
 Simply open `index.html` in a web browser. All resources load from CDNs, so no build process is required.
-
-**Recommended**: Use a local server to avoid CORS issues:
-```bash
-# Python 3
-python -m http.server 8000
-
-# Node.js (with http-server)
-npx http-server
-```
-
-Then visit `http://localhost:8000`
 
 ## 📱 Responsive Breakpoints
 
@@ -263,21 +237,6 @@ Key responsive elements:
 - Navigation: Hidden on mobile, visible on md+
 - Grid layouts: 1 column → 2 columns (md) → 3 columns (lg)
 - Text sizes: Responsive with `text-xl md:text-2xl` pattern
-
-## ♿ Accessibility Considerations
-
-### Current Implementation
-- Semantic HTML5 elements
-- Alt text on images
-- Keyboard navigation support (modals close with ESC)
-- Color contrast meets WCAG standards
-
-### Recommended Improvements
-- [ ] Add ARIA labels to navigation
-- [ ] Implement focus indicators
-- [ ] Add skip-to-content link
-- [ ] Test with screen readers
-- [ ] Add mobile menu with proper ARIA states
 
 ## 🐛 Known Issues & Future Enhancements
 
@@ -294,12 +253,6 @@ Key responsive elements:
 - [ ] Blog section
 - [ ] Newsletter signup
 
-## 📞 Support & Contribution
-
-**Contact**: contact@openneuro.tech  
-**GitHub**: [github.com/Open-NeuroTech](https://github.com/Open-NeuroTech)  
-**LinkedIn**: [linkedin.com/company/open-neurotech](https://www.linkedin.com/company/open-neurotech)
-
 ## 📝 License
 
 © 2025 Open NeuroTech LLC. All rights reserved.
@@ -307,5 +260,5 @@ Key responsive elements:
 ---
 
 **Last Updated**: October 2025  
-**Version**: 1.0.0  
-**Maintained By**: Open NeuroTech Team
+**Version**: Beta
+**Maintained By**: Open NeuroTech LLC
