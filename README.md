@@ -13,12 +13,7 @@ openneuro.tech/
 ├── scripts.js           # Common JavaScript functionality
 ├── CNAME               # Custom domain configuration
 ├── img/                # Image assets
-│   ├── ONT-Icon-Brain.png
-│   ├── ONT-Brain-Favicon-150x150.png
-│   ├── ONT-Logo-Brain-Icon.png
-│   └── branded-stim-module.jpg
-└── static/             # Static assets
-    └── favicon.ico
+
 ```
 
 ## 🎨 Design System
