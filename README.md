@@ -133,7 +133,7 @@ openneuro.tech
 
 ### Local Development
 To view the local version of the website, you need to use the command 
-`python -m http.server 8000` and type in `http://localhost/8000` to your browser.
+`python -m http.server 8000` and type in `http://localhost:8000` to your browser.
 
 ## 📱 Responsive Breakpoints
 
