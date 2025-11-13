@@ -2,20 +2,6 @@
 
 A modern, responsive website for Open NeuroTech LLC showcasing neurotechnology hardware products and services.
 
-## 📁 File Structure
-
-```
-openneuro.tech/
-├── index.html           # Homepage with hero, services, about, and contact sections
-├── shop.html            # Products catalog with detailed modals
-├── coming-soon.html     # Placeholder page for upcoming features
-├── styles.css           # Common styles shared across all pages
-├── scripts.js           # Common JavaScript functionality
-├── CNAME               # Custom domain configuration
-├── img/                # Image assets
-
-```
-
 ## 🎨 Design System
 
 ### Colors
@@ -95,34 +81,6 @@ All reusable components are defined in `styles.css`:
 - "Back to Home" button
 - Minimal styling for fast loading
 
-## 🎯 Common Functionality (scripts.js)
-
-### Initialization
-```javascript
-// Runs on page load
-- AOS.init() - Configures scroll animations
-- feather.replace() - Renders icon SVGs
-```
-
-### Smooth Scrolling
-```javascript
-// Applies to all anchor links (href="#section")
-- Smooth scroll to page sections
-```
-
-### Modal System
-```javascript
-openModal(modalId)   // Opens modal, prevents body scroll
-closeModal(modalId)  // Closes modal, restores scroll
-// Auto-closes on: click outside, ESC key
-```
-
-### Vanta Background
-```javascript
-initVantaBackground()  // Conditionally loads on index.html
-// Only runs if #vanta-bg element exists
-```
-
 ## 🔧 Customization Guide
 
 ### Adding a New Product to shop.html
@@ -162,51 +120,6 @@ initVantaBackground()  // Conditionally loads on index.html
 
 3. **Update Feather Icon** - Call `feather.replace()` to render new icons
 
-### Updating Company Information
-
-**Contact Details** (index.html, contact section):
-- Email: Line ~143
-- GitHub: Line ~149
-- LinkedIn: Line ~155
-- Location: Line ~161
-
-**Footer Links** (all pages):
-- Products: Lines in footer section
-- Resources: Links to documentation
-- Company: Internal navigation
-
-**Social Links**:
-Update footer columns in all HTML files
-
-### Changing Colors
-
-**CSS Variables Approach** (Recommended):
-Add to top of `styles.css`:
-```css
-:root {
-    --primary-blue: #3b82f6;
-    --dark-bg: #111827;
-}
-```
-
-Then replace hardcoded colors with `var(--primary-blue)`
-
-**Direct Approach**:
-Search and replace color codes:
-- `#3b82f6` → Your primary color
-- `#111827` → Your dark color
-
-### Modifying Navigation Links
-
-Update in all three HTML files:
-```html
-<div class="nav-links">
-    <a href="shop.html" class="nav-link">Shop</a>
-    <a href="#services" class="nav-link">Services</a>
-    <!-- Add new links here -->
-</div>
-```
-
 ## 🚀 Deployment
 
 ### GitHub Pages
@@ -219,7 +132,8 @@ openneuro.tech
 ```
 
 ### Local Development
-Simply open `index.html` in a web browser. All resources load from CDNs, so no build process is required.
+To view the local version of the website, you need to use the command 
+`python -m http.server 8000` and type in `http://localhost/8000` to your browser.
 
 ## 📱 Responsive Breakpoints
 
@@ -232,21 +146,6 @@ Key responsive elements:
 - Navigation: Hidden on mobile, visible on md+
 - Grid layouts: 1 column → 2 columns (md) → 3 columns (lg)
 - Text sizes: Responsive with `text-xl md:text-2xl` pattern
-
-## 🐛 Known Issues & Future Enhancements
-
-### Known Issues
-- Mobile menu button is commented out (not functional)
-- No loading states for modal images
-- Vanta.js can be resource-intensive on older devices
-
-### Planned Features
-- [ ] Working mobile hamburger menu
-- [ ] Contact form with backend integration
-- [ ] Product filtering and search
-- [ ] Shopping cart functionality
-- [ ] Blog section
-- [ ] Newsletter signup
 
 ## 📝 License
 
