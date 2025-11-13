@@ -353,10 +353,17 @@ h1 { line-height: 1.02; letter-spacing: -0.02em; }
 .coming-soon-container {
     background-color: #111827;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;     /* Stack vertically */
     min-height: 100vh;
 }
+
+.coming-soon-container > .text-center {
+    flex: 1;                    /* Push footer to bottom */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 /* ============================================
    TYPOGRAPHY
