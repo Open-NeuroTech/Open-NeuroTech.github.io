@@ -364,6 +364,39 @@ h1 { line-height: 1.02; letter-spacing: -0.02em; }
     justify-content: center;
 }
 
+/* ============================================
+   PURCHASING / TERMS OF SERVICE PAGE
+   ============================================ */
+
+        /* Small page-specific helpers */
+        .timeline {
+            position: relative;
+            padding-left: 1.25rem;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0.625rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: rgba(74,85,104,0.12);
+        }
+        .timeline-item {
+            position: relative;
+            padding: 1rem 0 1.25rem 1.5rem;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -0.25rem;
+            top: 1rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 9999px;
+            background: linear-gradient(90deg,#3b82f6,#60a5fa);
+            box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
+        }
 
 /* ============================================
    TYPOGRAPHY

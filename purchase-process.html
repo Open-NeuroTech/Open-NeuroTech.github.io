@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Purchasing Process - Open NeuroTech</title>
+    <link rel="icon" type="image/x-icon" href="/img/ONT_icon_only_blue.svg">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+</head>
+<body class="font-sans antialiased text-gray-800 bg-gradient-to-b from-[#111827] to-[#60a5fa] min-h-screen bg-no-repeat bg-[length:100%_100%]">
+
+    <!-- Navigation bar -->
+    <div id="navbar-placeholder"></div>
+    <script src="/components/navbar.js"></script>
+
+    <!-- Hero -->
+    <header class="max-w-6xl mx-auto px-4 mt-8" data-aos="fade-up">
+        <div class="rounded-2xl p-8 md:p-12 bg-white/5 backdrop-blur-sm border border-white/8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:flex-1">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white leading-tight">Purchasing — simple, transparent, research‑first</h1>
+                    <p class="mt-4 text-blue-100 max-w-2xl">
+                        View product listings on our shop, request a quote, and we'll help you assemble items, prepare invoices, and complete fulfillment — tailored for research institutions and individual labs.
+                    </p>
+
+                    <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                        <a href="index.html#contact" class="inline-block px-6 py-3 btn-gradient text-white font-semibold rounded-full">Request a Quote</a>
+                        <a href="shop.html" class="inline-block px-6 py-3 border border-white/20 text-white/90 rounded-full hover:bg-white/5">Browse Products</a>
+                    </div>
+                </div>
+
+                <div class="mt-6 md:mt-0 md:ml-8">
+                    <div class="w-56 h-40 bg-white/6 rounded-lg flex items-center justify-center">
+                        <!-- decorative / illustrative area -->
+                        <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                            <rect x="2" y="6" width="136" height="76" rx="10" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="rgba(255,255,255,0.02)"/>
+                            <circle cx="40" cy="46" r="14" fill="#60a5fa" />
+                            <rect x="68" y="30" width="58" height="32" rx="4" fill="#3b82f6"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-8">
+
+        <!-- Quick overview cards -->
+        <section class="grid md:grid-cols-3 gap-6 mb-10" data-aos="fade-up" data-aos-delay="50">
+            <div class="bg-white/95 rounded-xl p-6 shadow">
+                <div class="flex items-start gap-4">
+                    <div class="p-3 rounded-lg bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] text-white">
+                        <i data-feather="mail" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold">Start: Request a quote</h3>
+                        <p class="text-gray-600 mt-1">Use "Learn More" on any product or email us — include billing contact and PO info if available.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/95 rounded-xl p-6 shadow">
+                <div class="flex items-start gap-4">
+                    <div class="p-3 rounded-lg bg-gradient-to-br from-[#06b6d4] to-[#3b82f6] text-white">
+                        <i data-feather="sliders" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold">We configure & quote</h3>
+                        <p class="text-gray-600 mt-1">We check compatibility, include accessories and optional services (sterilization, contracts).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/95 rounded-xl p-6 shadow">
+                <div class="flex items-start gap-4">
+                    <div class="p-3 rounded-lg bg-gradient-to-br from-[#10b981] to-[#06b6d4] text-white">
+                        <i data-feather="credit-card" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-display font-semibold">Invoice & payment</h3>
+                        <p class="text-gray-600 mt-1">Invoices include PO#, Attn:, A/P email and attachments. We follow up until payment clears.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="bg-white/95 rounded-xl p-8 shadow mb-10" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="text-xl font-display mb-4">Purchasing timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <strong>Request</strong>
+                    <p class="text-gray-600 mt-2">Customer requests quote via product modal or email.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Quote & review</strong>
+                    <p class="text-gray-600 mt-2">We prepare a quote and confirm any institutional requirements.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Approval</strong>
+                    <p class="text-gray-600 mt-2">Quote accepted or PO issued by purchaser; supplier setup if needed.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Invoice & payment</strong>
+                    <p class="text-gray-600 mt-2">Invoice sent with all A/P fields; automated follow-ups run until payment is received.</p>
+                </div>
+
+                <div class="timeline-item">
+                    <strong>Fulfillment</strong>
+                    <p class="text-gray-600 mt-2">We pack and ship via our fulfillment provider (Square). Tracking details provided.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flowchart / process visual (placeholder) -->
+        <section class="mb-10">
+            <div class="bg-white/95 rounded-xl p-6 shadow">
+                <h2 class="text-xl font-display mb-4">Decision flow (quick)</h2>
+                <div class="grid md:grid-cols-3 gap-4 items-center">
+                    <div class="text-center p-4 border rounded-lg">
+                        <div class="text-sm font-semibold text-gray-700">Is purchase institutional?</div>
+                        <div class="mt-3 text-xs text-gray-500">If yes → supplier setup & quote</div>
+                    </div>
+                    <div class="text-center p-4 border rounded-lg">
+                        <div class="text-sm font-semibold text-gray-700">Need sterilization?</div>
+                        <div class="mt-3 text-xs text-gray-500">If yes → add lead time and confirm process</div>
+                    </div>
+                    <div class="text-center p-4 border rounded-lg">
+                        <div class="text-sm font-semibold text-gray-700">Grant budgeting?</div>
+                        <div class="mt-3 text-xs text-gray-500">We provide quote PDF formatted for budgets</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ + disclaimer -->
+        <section class="bg-white/95 rounded-xl p-8 shadow mb-10">
+            <h2 class="text-xl font-display mb-4">FAQ</h2>
+
+            <div class="space-y-4">
+                <details class="bg-white rounded-md p-4 border">
+                    <summary class="font-semibold">How do I get a quote?</summary>
+                    <div class="mt-2 text-gray-600">Click "Learn More" on a product card and select "Request Quote", or email us with the product SKU and billing details.</div>
+                </details>
+
+                <details class="bg-white rounded-md p-4 border">
+                    <summary class="font-semibold">Can you bill my university?</summary>
+                    <div class="mt-2 text-gray-600">Yes. Provide A/P contact and PO information; we'll assist with supplier onboarding if required.</div>
+                </details>
+
+                <details class="bg-white rounded-md p-4 border">
+                    <summary class="font-semibold">What payment methods do you accept?</summary>
+                    <div class="mt-2 text-gray-600">Institutional invoicing (A/P) and credit card payments are supported. Custom payment arrangements may be possible for large orders.</div>
+                </details>
+            </div>
+
+            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-300 rounded">
+                <strong class="block text-sm">Research use disclaimer</strong>
+                <p class="mt-2 text-sm text-gray-700">
+                    Products are intended for research use only. They are not cleared or approved as medical devices. Purchasers are responsible for ensuring appropriate approvals and consent for any human use.
+                </p>
+                <p class="mt-2 text-sm text-red-600 font-semibold">Use in humans without required approvals is at the purchaser's risk.</p>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (window.AOS && typeof AOS.init === 'function') AOS.init({ duration: 700, once: true });
+            if (window.feather && typeof feather.replace === 'function') feather.replace();
+        });
+    </script>
+
+    <script src="/components/footer.js"></script>
+    <script src="/components/scripts.js"></script>
+</body>
+</html>

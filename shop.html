@@ -16,20 +16,8 @@
 <body class="font-sans antialiased text-gray-800">
 
     <!-- Navigation bar -->
-    <nav class="site-nav">
-        <div class="flex justify-between items-center">
-            <div class="nav-logo">
-                <img src="img/ONT_icon_only_white.svg" alt="ONT Logo">
-                <a href="index.html">Open NeuroTech</a>
-            </div>
-            <div class="nav-links">
-                <a href="shop.html" class="nav-link">Shop</a>
-                <a href="index.html#services" class="nav-link">Services</a>
-                <a href="index.html#about" class="nav-link">About</a>
-                <a href="index.html#contact" class="nav-link">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
+    <script src="/components/navbar.js"></script>
 
     <!-- Products Grid -->
     <section class="section-padding bg-gradient-to-b from-[#111827] to-[#60a5fa]">
@@ -119,11 +107,11 @@
 
             <!-- Category: COSMIIC Implantables -->
             <div id="implantables" class="space-y-6">
-                <h2 class="section-title text-white" data-aos="fade-up" data-aos-delay="100">COSMIIC Implantables</h2>
+                <h2 class="section-title text-white">COSMIIC Implantables</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Power Module (Coming Soon) -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <img src="img/AI-PM.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
                             <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
@@ -146,7 +134,7 @@
                     </div>
                     
                     <!-- PG4 Module (Coming Soon) -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <i data-feather="zap" class="w-32 h-32 text-blue-500"></i>
                             <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
@@ -169,7 +157,7 @@
                     </div>
 
                     <!-- BP2 Module (Coming Soon) -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <i data-feather="users" class="w-32 h-32 text-blue-500"></i>
                             <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
@@ -192,7 +180,7 @@
                     </div>
 
                     <!-- IM Stim Electrodes -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <i data-feather="zap" class="w-32 h-32 text-blue-500"></i>
                         </div>
@@ -214,7 +202,7 @@
                     </div>
 
                     <!-- IM Recording Electrodes -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <i data-feather="users" class="w-32 h-32 text-blue-500"></i>
                         </div>
@@ -236,7 +224,7 @@
                     </div>
 
                     <!-- EPI Recording Electrodes -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <img src="img/AI-EPI.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
                         </div>
@@ -258,7 +246,7 @@
                     </div>
                     
                     <!-- Network Cables -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <img src="img/AI-NC.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
                         </div>
@@ -287,7 +275,7 @@
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                      <!-- IM Electrode Insertion Kit -->
-                     <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                     <div class="product-card">
                         <div class="product-card-image relative">
                             <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
                             <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
@@ -310,7 +298,7 @@
                     </div>
 
                     <!-- Touchproof Snap-Lead Wires -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
                             <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
@@ -333,7 +321,7 @@
                     </div>
                     
                     <!-- Consulting Services (Coming Soon) -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-card">
                         <div class="product-card-image relative">
                             <i data-feather="users" class="w-32 h-32 text-blue-500"></i>
                             <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
@@ -359,19 +347,51 @@
         </div>
     </section>
 
-
-    <!-- CTA Section -->
-    <section class="section-padding bg-white">
-        <div class="container-medium text-center">
-            <h2 class="section-title" data-aos="fade-up">
-                Ready to Get Started?
-            </h2>
-            <p class="text-body-large" data-aos="fade-up" data-aos-delay="100">
-                Contact us today to discuss your research needs and receive a custom quote for our products and services.
+    <section id="purchase-process" class="section-padding bg-white" >
+        <div class="container-wide mx-auto text-center">
+            <h2 class="section-title">Our Purchasing Process</h2>
+            <p class="text-body mb-6">
+                This is the workflow we follow to ensure quality, timely, and communicative service.
             </p>
-            <a href="index.html#contact" class="btn-gradient btn-large text-white" data-aos="fade-up" data-aos-delay="200">
-                Contact Us for a Quote
-            </a>
+
+            <div class="grid md:grid-cols-3 gap-6 text-left max-w-4xl mx-auto">
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="font-display font-semibold mb-2">1. Request a quote</h3>
+                    <p class="text-body">Use the product "Learn More" modal or contact us (index.html#contact) to request a quote by email.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="font-display font-semibold mb-2">2. We confirm requirements</h3>
+                    <p class="text-body">We verify what you need (parts, accessories, sterilization, documentation) so your order is complete.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="font-display font-semibold mb-2">3. Payment method</h3>
+                    <p class="text-body">Tell us how you will pay — institutional AP (PO) or credit card. If university, we assist with supplier setup and invoicing details.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="font-display font-semibold mb-2">4. Quote & approvals</h3>
+                    <p class="text-body">We issue a quote for approval (or a formal invoice when requested). We track the quote internally and support grant/budget needs.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="font-display font-semibold mb-2">5. Invoice & payment</h3>
+                    <p class="text-body">Invoices include PO#, Attn:, A/P email, attachments/contracts as needed. Automated follow-ups continue until payment is received.</p>
+                </div>
+
+                <div class="p-6 bg-gray-50 rounded-lg shadow-sm">
+                    <h3 class="font-display font-semibold mb-2">6. Fulfillment & shipping</h3>
+                    <p class="text-body">We test pack and ship via a fulfillment provider (Square). Shipping labels and tracking are provided to the customer once the order is processed and fulfilled.</p>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <a href="purchase-process.html" class="btn-outline">Full purchasing policies</a>
+                <a href="index.html#contact" class="btn-gradient btn-large text-white">Request a Quote</a>
+            </div>
+
+
         </div>
     </section>
 
