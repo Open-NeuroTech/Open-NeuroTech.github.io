@@ -11,20 +11,20 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gradient-to-b from-[#111827] to-[#60a5fa] min-h-screen bg-no-repeat bg-[length:100%_100%]">
+<body class="font-sans antialiased text-gray-800 bg-gradient-to-b from-[#111827] to-[#60a5fa] min-h-screen bg-no-repeat bg-cover bg-fixed flex flex-col">
 
     <!-- Navigation bar -->
     <div id="navbar-placeholder"></div>
     <script src="/components/navbar.js"></script>
 
     <!-- Hero -->
-    <header class="max-w-6xl mx-auto px-4 mt-8" data-aos="fade-up">
+    <header class="max-w-6xl mx-auto px-4 mt-24" data-aos="fade-up">
         <div class="rounded-2xl p-8 md:p-12 bg-white/5 backdrop-blur-sm border border-white/8">
             <div class="md:flex md:items-center md:justify-between">
                 <div class="md:flex-1">
                     <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white leading-tight">Purchasing — simple, transparent, research‑first</h1>
                     <p class="mt-4 text-blue-100 max-w-2xl">
-                        View product listings on our shop, request a quote, and we'll help you assemble items, prepare invoices, and complete fulfillment — tailored for research institutions and individual labs.
+                        View product listings on our shop, request a quote, and we'll help you assemble items, prepare invoices, and complete fulfillment — tailored for research institutions and early startups.
                     </p>
 
                     <div class="mt-6 flex flex-col sm:flex-row gap-3">
@@ -82,39 +82,8 @@
                     </div>
                     <div>
                         <h3 class="font-display font-semibold">Invoice & payment</h3>
-                        <p class="text-gray-600 mt-1">Invoices include PO#, Attn:, A/P email and attachments. We follow up until payment clears.</p>
+                        <p class="text-gray-600 mt-1">We will issue an invoice document + online payment portal through email to you (and your institutions accounts payable). We will follow up until payment clears.</p>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Timeline -->
-        <section class="bg-white/95 rounded-xl p-8 shadow mb-10" data-aos="fade-up" data-aos-delay="100">
-            <h2 class="text-xl font-display mb-4">Purchasing timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <strong>Request</strong>
-                    <p class="text-gray-600 mt-2">Customer requests quote via product modal or email.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <strong>Quote & review</strong>
-                    <p class="text-gray-600 mt-2">We prepare a quote and confirm any institutional requirements.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <strong>Approval</strong>
-                    <p class="text-gray-600 mt-2">Quote accepted or PO issued by purchaser; supplier setup if needed.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <strong>Invoice & payment</strong>
-                    <p class="text-gray-600 mt-2">Invoice sent with all A/P fields; automated follow-ups run until payment is received.</p>
-                </div>
-
-                <div class="timeline-item">
-                    <strong>Fulfillment</strong>
-                    <p class="text-gray-600 mt-2">We pack and ship via our fulfillment provider (Square). Tracking details provided.</p>
                 </div>
             </div>
         </section>
@@ -160,13 +129,18 @@
                     <div class="mt-2 text-gray-600">Institutional invoicing (A/P) and credit card payments are supported. Custom payment arrangements may be possible for large orders.</div>
                 </details>
             </div>
+        </section>
+
+                <!-- Terms of Service -->
+        <section class="bg-white/95 rounded-xl p-8 shadow mb-10">
+            <h2 class="text-xl font-display mb-4">Terms of Service</h2>
 
             <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-300 rounded">
                 <strong class="block text-sm">Research use disclaimer</strong>
                 <p class="mt-2 text-sm text-gray-700">
-                    Products are intended for research use only. They are not cleared or approved as medical devices. Purchasers are responsible for ensuring appropriate approvals and consent for any human use.
+                    Products are intended for research use only. They are not cleared or approved as medical devices by any regulatory body for your use. Users are responsible for ensuring appropriate approvals and consent are present for any human use under the guidance of their institution, institutional review board, and local, regional, and national regulatory bodies.
                 </p>
-                <p class="mt-2 text-sm text-red-600 font-semibold">Use in humans without required approvals is at the purchaser's risk.</p>
+                <p class="mt-2 text-sm text-red-600 font-semibold">Open NeuroTech LLC is a stricly condemns any use of devices . Use in humans is not the responsibility of Open NeuroTech LLC without required approvals is strictly at the purchaser's risk. Purchasers should only use </p>
             </div>
         </section>
     </main>
