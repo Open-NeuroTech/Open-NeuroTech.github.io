@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Open NeuroTech - Home</title>
-    <link rel="icon" type="image/x-icon" href="/img/ONT-Brain-Favicon-150x150.png">
+    <link rel="icon" type="image/x-icon" href="/img/ONT_icon_only_blue.svg">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -12,62 +13,29 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
-    <style>
-        .hero-gradient {
-            background: linear-gradient(135deg, #6e8efb 0%, #4a6cf7 100%);
-        }
-        .btn-gradient {
-            background: linear-gradient(90deg, #3b82f6 0%, #111827 100%);
-        }
-        .btn-gradient:hover {
-            background: linear-gradient(90deg, #111827 0%, #3b82f6 100%);
-        }
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-        .transition-smooth {
-            transition: all 0.3s ease;
-        }
-    </style>
 </head>
 <body class="font-sans antialiased text-gray-800">
-
+    
+    <!-- Navigation bar -->
+    <div id="navbar-placeholder"></div>
+    <script src="/components/navbar.js"></script>
+    
     <div id="vanta-bg" class="min-h-screen flex flex-col justify-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-25"></div>
+        <div class="hero-overlay"></div>
 
-        <!-- Navigation bar: absolutely positioned at the top -->
-        <nav class="absolute top-0 left-0 w-full z-20 py-6 px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center">
-                    <img src="img/ONT-Icon-Brain.png" alt="ONT Logo" class="h-8 w-8 mr-3"> <!-- Add this line -->
-                    <span class="text-white text-2xl font-bold">Open NeuroTech</span>
-                </div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#products" class="text-white hover:text-blue-200 transition-smooth">Products</a>
-                    <a href="#about" class="text-white hover:text-blue-200 transition-smooth">About</a>
-                    <a href="#contact" class="text-white hover:text-blue-200 transition-smooth">Contact</a>
-                </div>
-                <!-- Hide the mobile menu button  -->
-                <!-- <button class="md:hidden text-white">
-                    <i data-feather="menu"></i>
-                </button> -->
-            </div>
-        </nav>
-
-        <!-- Main intro text, add more top padding to clear nav -->
+        <!-- Main intro text -->
         <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 pt-32">
-            <h1 class="text-4xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
-                Pioneering Access in <span class="text-blue-300">Neurotechnology</span>
+            <h1 class="hero-title" data-aos="fade-up">
+                Pioneering Access in <span class="text-blue-accent">Neurotechnology</span>
             </h1>
-            <p class="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto mb-10" data-aos="fade-up" data-aos-delay="100">
+            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
                 Serving open source hardware solutions for wearable and implantable devices used in research and development
             </p>
             <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="#products" class="px-8 py-3 hover:border-2 hover:border-white font-semibold rounded-full bg-white text-blue-600 hover:bg-[#111827] hover:text-white transition-smooth">
+                <a href="#services" class="btn-white-hover-dark">
                     Learn More
                 </a>
-                <a href="#contact" class="px-8 py-3 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-blue-600 transition-smooth">
+                <a href="#contact" class="btn-secondary">
                     Contact Us
                 </a>
             </div>
@@ -75,30 +43,30 @@
     </div>
 
     <!-- Product Showcase -->
-    <section id="products" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div class="max-w-7xl mx-auto">
+    <section id="services" class="section-padding bg-gray-50">
+        <div class="container-wide">
             <div class="flex flex-col md:flex-row items-center gap-12">
                 <div class="md:w-1/2" data-aos="fade-right">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Open Source Neurotechnology Hardware and Services</h2>
-                    <p class="text-xl text-gray-600 mb-8">
+                    <h2 class="section-title">Open Source Hardware and Services</h2>
+                    <p class="text-body-large">
                         The modular technologies we build enable researchers and developers to integrate customized solutions for their specific needs
                     </p>
-                    <ul class="space-y-4">
+                    <ul class="list-checkmarks">
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">COSMIIC Implantable Modules</span>
+                            <span class="text-secondary">COSMIIC Implantable Modules</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">COSMIIC Benchtop Development Kit</span>
+                            <span class="text-secondary">COSMIIC Benchtop Development Kit</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">Wireless Surface Stimulator</span>
+                            <span class="text-secondary">Consulting Services</span>
                         </li>
                         <li class="flex items-start">
                             <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-gray-700">Consulting Services</span>
+                            <span class="text-secondary">Other Medical-Related Open Hardware</span>
                         </li>
                     </ul>
                 </div>
@@ -112,76 +80,71 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Open NeuroTech LLC</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    <section id="about" class="section-padding bg-white">
+        <div class="container-wide">
+            <div class="text-center section-spacing" data-aos="fade-up">
+                <h2 class="section-title">About Open NeuroTech LLC</h2>
+                <p class="text-intro">
                     We are a team of engineers committed to democratizing neurotechnology and strengthening the research community
                 </p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right">
-                    <img src="img/ONT-Logo-Brain-Icon.png" alt="Team working on neurotechnology" class="rounded-xl shadow-lg w-full">
+                    <img src="img/ONT_full_logo.svg" alt="Team working on neurotechnology" class="rounded-xl shadow-lg w-full">
                 </div>
                 <div data-aos="fade-left">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-                    <p class="text-gray-600 mb-6">
+                    <h3 class="modal-section-title">Our Mission</h3>
+                    <p class="text-body">
                         Open NeuroTech was founded with the vision of making advanced neurotechnology treatments accessible to everyone. We believe that getting accessible technology in the hands of researchers and startups will accelerate innovation in bioelectronic medicine.
                     </p>
-                    <p class="text-gray-600 mb-8">
-                        Our concept pushes the boundaries of what is possible across the open source, medical, and technical domains.
-                    </p>
-                    <a href="#contact" class="px-6 py-3 btn-gradient text-white font-semibold rounded-full inline-block transition-smooth">
-                        Get Connected with Us
-                    </a>
+                    <h3 class="modal-section-title">Personnel</h3>
+                    <p class="text-body">Co-Founders: <a href="mailto:crexroth@openneuro.tech">Chris Rexroth</a> and <a href="mailto:dromano@openneuro.tech">Dan Romano</a></p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-        <div class="max-w-xl mx-auto">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+    <section id="contact" class="section-padding bg-gray-50">
+        <div class="container-narrow">
+            <div class="text-center section-spacing" data-aos="fade-up">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="text-intro">
                     Whether you're a researcher, developer, or just curious about neurotechnology, we'd love to hear from you
                 </p>
             </div>
 
-                <div data-aos="fade-left">
-                    <div class="bg-white p-8 rounded-xl shadow-lg h-full">
-                        <h3 class="text-xl font-bold text-gray-900 mb-6">Contact Information</h3>
-                        <div class="space-y-4">
-                            <div class="flex items-start">
-                                <i data-feather="mail" class="text-blue-500 mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="font-medium text-gray-900">Email</h4>
-                                    <p class="text-gray-600"><a href="mailto:contact@openneuro.tech">contact@openneuro.tech</a></p>
-                                </div>
+            <div data-aos="fade-up">
+                <div class="bg-white p-8 rounded-xl shadow-lg h-full">
+                    <h3 class="modal-section-title mb-6">Contact Information</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i data-feather="mail" class="text-blue-500 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="modal-subsection-title">Email</h4>
+                                <p class="text-secondary"><a href="mailto:contact@openneuro.tech">contact@openneuro.tech</a></p>
                             </div>
-                            <div class="flex items-start">
-                                <i data-feather="github" class="text-gray-800 mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="font-medium text-gray-900">GitHub</h4>
-                                    <p class="text-gray-600"><a href="https://github.com/Open-NeuroTech">github.com/Open-NeuroTech</a></p>
-                                </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="github" class="text-gray-800 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="modal-subsection-title">GitHub</h4>
+                                <p class="text-secondary"><a href="https://github.com/Open-NeuroTech">github.com/Open-NeuroTech</a></p>
                             </div>
-                            <div class="flex items-start">
-                                <i data-feather="linkedin" class="text-blue-600 mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="font-medium text-gray-900">LinkedIn</h4>
-                                    <p class="text-gray-600"><a href="https://www.linkedin.com/company/open-neurotech">linkedin.com/company/open-neurotech</a></p>
-                                </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="linkedin" class="text-blue-600 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="modal-subsection-title">LinkedIn</h4>
+                                <p class="text-secondary"><a href="https://www.linkedin.com/company/open-neurotech">linkedin.com/company/open-neurotech</a></p>
                             </div>
-                            <div class="flex items-start">
-                                <i data-feather="map-pin" class="text-red-500 mr-4 mt-1"></i>
-                                <div>
-                                    <h4 class="font-medium text-gray-900">Location</h4>
-                                    <p class="text-gray-600">Cleveland, OH, USA</a></p>
-                                </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i data-feather="map-pin" class="text-red-500 mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="modal-subsection-title">Location</h4>
+                                <p class="text-secondary">Cleveland, OH, USA</p>
                             </div>
                         </div>
                     </div>
@@ -191,87 +154,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Open NeuroTech</h3>
-                    <p class="text-gray-400">
-                        Advancing neurotechnology through open collaboration and innovation.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Products</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">COSMIIC Implantable Devices</a></li>
-                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Wireless Surface Stimulator</a></li>
-                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Consulting Services</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Resources</h4>
-                    <ul class="space-y-2">
-                        <li><a href="https://docs.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Documentation</a></li>
-                        <li><a href="https://docs.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Tutorials</a></li>
-                        <li><a href="https://community.cosmiic.org" class="text-gray-400 hover:text-white transition-smooth">Community Forum</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-lg mb-4">Company</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-gray-400 hover:text-white transition-smooth">About Us</a></li>
-                        <li><a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Team</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-smooth">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Open NeuroTech LLC. All rights reserved.</p>
-                <div class="flex space-x-6">
-                    <a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Privacy Policy</a>
-                    <a href="coming-soon.html" class="text-gray-400 hover:text-white transition-smooth">Terms of Service</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
+    <script src="/components/footer.js"></script>
+    <script src="/components/scripts.js"></script>
 
-    <script>
-        // Initialize Vanta.js background
-        VANTA.NET({
-            el: "#vanta-bg",
-            mouseControls: true,
-            touchControls: true,
-            gyroControls: false,
-            minHeight: 200.00,
-            minWidth: 200.00,
-            scale: 1.00,
-            scaleMobile: 1.00,
-            color: 0x3b82f6,
-            backgroundColor: 0x111827,
-            points: 12.00,
-            maxDistance: 22.00,
-            spacing: 18.00
-        });
-
-        // Initialize AOS and Feather Icons
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-            feather.replace();
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>
