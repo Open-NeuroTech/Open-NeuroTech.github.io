@@ -15,6 +15,11 @@ document.addEventListener('DOMContentLoaded', function() {
     feather.replace();
 });
 
+// Redirect from /index.html to root
+if (window.location.pathname === '/index.html') {
+  window.history.replaceState(null, '', '/');
+}
+
 // ============================================
 // SMOOTH SCROLLING
 // ============================================
