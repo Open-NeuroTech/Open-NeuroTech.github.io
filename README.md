@@ -86,26 +86,7 @@ All reusable components are defined in `styles.css`:
 ### Adding a New Product to shop.html
 
 1. **Add Product Card**
-```html
-<div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
-    <div class="h-64 bg-gray-200 flex items-center justify-center">
-        <i data-feather="icon-name" class="w-32 h-32 text-blue-500"></i>
-    </div>
-    <div class="p-6">
-        <h3 class="text-2xl font-bold text-gray-900 mb-3">Product Name</h3>
-        <p class="text-gray-600 mb-4">Product description...</p>
-        
-        <div class="actions">
-            <div class="flex items-center justify-between">
-                <span class="text-blue-600 font-semibold text-lg">Price</span>
-            </div>
-            <button onclick="openModal('modalX')" class="w-full px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-700 transition-smooth">
-                Learn More
-            </button>
-        </div>
-    </div>
-</div>
-```
+
 
 2. **Add Corresponding Modal**
 ```html
