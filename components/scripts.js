@@ -38,54 +38,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// MODAL FUNCTIONS
-// ============================================
-
-/**
- * Open a modal by ID
- * @param {string} modalId - The ID of the modal to open
- */
-function openModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        // Re-initialize feather icons in modal after a brief delay
-        setTimeout(() => feather.replace(), 100);
-    }
-}
-
-/**
- * Close a modal by ID
- * @param {string} modalId - The ID of the modal to close
- */
-function closeModal(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-}
-
-// Close modal when clicking outside the modal content
-window.addEventListener('click', function(e) {
-    if (e.target.classList.contains('modal')) {
-        e.target.classList.remove('active');
-        document.body.style.overflow = 'auto';
-    }
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-        document.querySelectorAll('.modal.active').forEach(modal => {
-            modal.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    }
-});
-
-// ============================================
 // VANTA.JS BACKGROUND (Index page only)
 // ============================================
 

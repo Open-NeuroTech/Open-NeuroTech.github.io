@@ -292,31 +292,33 @@ h1 { line-height: 1.02; letter-spacing: -0.02em; }
 /* ============================================
    MODALS
    ============================================ */
+/* Modal overlay */
 .modal {
-    display: none;
     position: fixed;
-    z-index: 50;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-.modal.active {
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 2rem;
+    overflow-y: auto; /* allows modal itself to scroll */
 }
 
+/* Modal box */
 .modal-content {
-    background-color: white;
+    background: white;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh; /* ensures it fits on screen */
+    overflow-y: auto; /* scroll INSIDE modal, not page */
     padding: 2rem;
-    border-radius: 1rem;
-    max-width: 600px;
-    max-height: 90vh;
-    overflow-y: auto;
-    margin: 1rem;
+}
+
+/* When body is locked (modal open) */
+body.modal-open {
+    overflow: hidden; /* prevents page background scroll */
 }
 
 /* ============================================

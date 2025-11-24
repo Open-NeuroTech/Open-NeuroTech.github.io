@@ -23,10 +23,10 @@
     <section class="section-padding bg-gradient-to-b from-[#111827] to-[#60a5fa]">
         
         <div class="container-wide text-center">
-            <h1 class="hero-title" data-aos="fade-up">
+            <h1 class="hero-title">
                 Products & Services
             </h1>
-            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+            <p class="hero-subtitle">
                 Explore our range of open source hardware and consulting services
             </p>
         </div>
@@ -35,10 +35,10 @@
 
             <!-- Category: COSMIIC Circuit Boards -->
             <div id="circuit-boards" class="space-y-6">
-                <h2 class="section-title text-white" data-aos="fade-up">COSMIIC Circuit Boards</h2>
+                <h2 class="section-title text-white">COSMIIC Circuit Boards</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- COSMIIC Power Module -->
-                    <div class="product-card" data-aos="fade-up"  data-aos-delay="50">
+                    <div class="product-card">
                         <div class="product-card-image">
                             <i data-feather="battery-charging" class="w-32 h-32 text-blue-500"></i>
                         </div>
@@ -52,7 +52,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$1,499</span>
                                 </div>
-                                <button onclick="openModal('modal1')" class="btn-full">
+                                <button onclick="openProductModal('powerModulePCB')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -60,7 +60,7 @@
                     </div>
 
                     <!-- COSMIIC PG4 Module -->
-                    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-card">
                         <div class="product-card-image">
                             <i data-feather="activity" class="w-32 h-32 text-blue-500"></i>
                         </div>
@@ -74,7 +74,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$999</span>
                                 </div>
-                                <button onclick="openModal('modal2')" class="btn-full">
+                                <button onclick="openProductModal('pg4ModulePCB')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -82,7 +82,7 @@
                     </div>
                     
                     <!-- COSMIIC BP2 Module -->
-                    <div class="product-card opacity-95" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-card opacity-95">
                         <div class="product-card-image">
                             <i data-feather="cpu" class="w-32 h-32 text-blue-500"></i>
                         </div>
@@ -96,7 +96,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$999</span>
                                 </div>
-                                <button onclick="openModal('modal3')" class="btn-full">
+                                <button onclick="openProductModal('bp2ModulePCB')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -106,14 +106,14 @@
             </div>
 
             <!-- Category: COSMIIC Implantables -->
-            <div id="implantables" class="space-y-6">
-                <h2 class="section-title text-white">COSMIIC Implantables</h2>
+            <div id="implantables" class="space-y-6" >
+                <h2 class="section-title text-white" >COSMIIC Implantables</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     <!-- Power Module (Coming Soon) -->
                     <div class="product-card">
                         <div class="product-card-image relative">
-                            <img src="img/AI-PM.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
+                            <img src="product-img/AI-PM.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
                             <span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>
                         </div>
                         <div class="p-6">
@@ -126,7 +126,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="text-muted font-semibold text-lg">$15,000</span>
                                 </div>
-                                <button onclick="openModal('modal4')" class="btn-full">
+                                <button onclick="openProductModal('powerModuleImplant')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -149,7 +149,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="text-muted font-semibold text-lg">$11,600</span>
                                 </div>
-                                <button onclick="openModal('modal5')" class="btn-full">
+                                <button onclick="openProductModal('pg4ModuleImplant')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -172,7 +172,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$11,600</span>
                                 </div>
-                                <button onclick="openModal('modal6')" class="btn-full">
+                                <button onclick="openProductModal('bp2ModuleImplant')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -194,7 +194,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$1,455</span>
                                 </div>
-                                <button onclick="openModal('modal7')" class="btn-full">
+                                <button onclick="openProductModal('imStimElectrode')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -216,7 +216,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$1,499</span>
                                 </div>
-                                <button onclick="openModal('modal8')" class="btn-full">
+                                <button onclick="openProductModal('imRecordingElectrode')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -226,7 +226,7 @@
                     <!-- EPI Recording Electrodes -->
                     <div class="product-card">
                         <div class="product-card-image relative">
-                            <img src="img/AI-EPI.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
+                            <img src="product-img/AI-EPI.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
                         </div>
                         <div class="p-6">
                             <h3 class="product-card-title">Epimysial Recording Electrode</h3>
@@ -238,7 +238,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$2,199</span>
                                 </div>
-                                <button onclick="openModal('modal9')" class="btn-full">
+                                <button onclick="openProductModal('epiRecordingElectrode')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -248,7 +248,7 @@
                     <!-- Network Cables -->
                     <div class="product-card">
                         <div class="product-card-image relative">
-                            <img src="img/AI-NC.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
+                            <img src="product-img/AI-NC.png" alt="Neurotechnology Interface" class="rounded-lg w-full">
                         </div>
                         <div class="p-6">
                             <h3 class="product-card-title">Network Cable</h3>
@@ -260,7 +260,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="product-card-price">$2,350</span>
                                 </div>
-                                <button onclick="openModal('modal10')" class="btn-full">
+                                <button onclick="openProductModal('networkCable')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -271,7 +271,7 @@
             </div>
             <!-- Category: Other  -->
             <div id="other" class="space-y-6">
-                <h2 class="section-title text-white" data-aos="fade-up" data-aos-delay="100">Other</h2>
+                <h2 class="section-title text-white">Other</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
                      <!-- IM Electrode Insertion Kit -->
@@ -290,7 +290,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="text-muted font-semibold text-lg">TBD</span>
                                 </div>
-                                <button onclick="openModal('modal11')" class="btn-full">
+                                <button onclick="openProductModal('imInsertionKit')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -313,7 +313,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="text-muted font-semibold text-lg">$50</span>
                                 </div>
-                                <button onclick="openModal('modal12')" class="btn-full">
+                                <button onclick="openProductModal('touchproofWires')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -336,7 +336,7 @@
                                 <div class="flex items-center justify-between">
                                     <span class="text-muted font-semibold text-lg">Hourly or Project-Based</span>
                                 </div>
-                                <button onclick="openModal('modal13')" class="btn-full">
+                                <button onclick="openProductModal('consulting')" class="btn-full">
                                     Learn More
                                 </button>
                             </div>
@@ -395,475 +395,12 @@
         </div>
     </section>
 
-    <!-- Modals for each product -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Power Module - PCB</h2>
-                <button onclick="closeModal('modal1')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="battery-charging" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                The COSMIIC Power Module PCB is the central component of the COSMIIC System that manages power and communication delivery to the connected remote modules on the network, battery charging, wireless MedRadio communication, and embedded control functions. 
-            </p>
-            <h4 class="modal-subsection-title">Key Features:</h4>
-            <ul class="list-styled-spaced">
-                <li>Rigid PCB design</li>
-                <li>Houses rechargeable Li-ion batteries (3 cells in parallel)</li>
-                <li>Contains Wireless Link for communication and programming</li>
-                <li>Distributes power to all remote modules</li>
-                <li>32-bit ARM-7 microprocessor with RTOS for signal processing</li>
-                <li>Optional Add-On: Frame Board (+$215)</li>
-            <p class="text-body mb-6">
-                The optional Frame Board provides a standardized breakout interface for supplemental connections. It allows for easy connectivity among all COSMIIC circuit boards. 
-            </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal1')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">PG4 Module - PCB</h2>
-                <button onclick="closeModal('modal2')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="activity" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                The COSMIIC PG4 Module PCB can deliver stimulation to four independent monopolar electrodes, typically using the metal case of the implantable module as the common return electrode. The PG4 PCB gains power from the network, receives data from the network that is utilized to determine the stimulation parameters that should be delivered, and places data on the network regarding its status.
-            </p>
-            <h4 class="modal-subsection-title">Key Features:</h4>
-            <ul class="list-styled-spaced">
-                <li>Rigid PCB design</li>
-                <li>4-channel electrical stimulation interface</li>
-                <li>Networked architecture for multi-module systems</li>
-                <li>Built-in hardware and software stimulation safety limits</li>
-                <li>Onboard AVR-core processor (AT90CAN128)</li>
-                <li>Adaptable for custom electrode arrays</li>
-                <li>Optional Add-On: Frame Board (+$215)</li>
-            </ul>
-            <p class="text-body mb-6">
-                The optional Frame Board provides a standardized breakout interface for supplemental connections. It allows for easy connectivity among all COSMIIC circuit boards. Multiple PG4 boards can be connected through the network, allowing the system to scale in increments of four channels and provide as many monopolar stimulation outputs as the application requires.
-            </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal2')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal3" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">BP2 Module - PCB</h2>
-                <button onclick="closeModal('modal3')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="cpu" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                The COSMIIC BP2 Module PCB records myoelectric signals (MES) from two independent muscles using bipolar epimysial or intramuscular electrodes. The BP2 PCB gains power from the network, receives configuration data to set recording and processing parameters, and places two channels of processed MES data onto the network for use by other modules in the system.
-            </p>
-            <h4 class="modal-subsection-title">Key Features:</h4>
-            <ul class="list-styled-spaced">
-                <li>Rigid PCB design</li>
-                <li>2-channel biopotential recording</li>
-                <li>Networked architecture for multi-module systems</li>
-                <li>Onboard AVR-core processor (AT90CAN128)</li>
-                <li>Real-time signal conditioning and MES processing</li>
-                <li>Optional Add-On: Frame Board (+$215)</li>
-            </ul>
-            <p class="text-body mb-6">
-                The optional Frame Board provides a standardized breakout interface for supplemental connections and allows for easy benchtop integration with other COSMIIC circuit boards. Multiple BP2 boards can be connected through the network, enabling scalable multi-muscle recording and providing processed control signals to any module within the system.           
-             </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal3')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal4" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Implantable Power Module</h2>
-                <button onclick="closeModal('modal4')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="zap" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                The COSMIIC Power Module is the power and communication hub of the implanted system, housing the rechargeable Li-ion batteries, inductive recharge coil, and MedRadio wireless link within a durable titanium enclosure designed for torso implantation. It distributes power to all connected modules, provides system-level communication and programming, and includes an internal magnetic failsafe switch for immediate shutdown.
-             </p>
-             <p class="text-body">
-                An optional add-on service is available to sterilize the implantable device. We facilitate sending the devices to an FDA-registered contract sterilizer using a proven sterilization protocol to ensure safe handling for research applications.           
-              </p>
-              <p class="text-body">
-                This implantable device is not currently available for immediate purchase, but you may request a quote. Please note that production and fulfillment involve a long lead time.             
-             </p>
-             <p class="text-body">
-                <span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for <strong>research use only</strong>. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.
-              </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal4')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal5" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Implantable PG4 Module</h2>
-                <button onclick="closeModal('modal5')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                The four-channel pulse generator module (PG4) is a remote module utilized for electrical stimulation of nerve and muscle tissue. The PG4 can deliver stimulation to four independent monopolar electrodes, using the metal case of the PG4 as the common return electrode. The PG4 is small enough to be located in the extremities, including the upper arm and forearm, thus minimizing electrode lead length and simplifying surgical lead routing. It is connected to the COSMIIC network through a single network cable and has four total network connections, allowing a single PG4 to branch from a single network input to three network outputs.          
-             </p>
-             <p class="text-body">
-                An optional add-on service is available to sterilize the implantable device. We facilitate sending the devices to an FDA-registered contract sterilizer using a proven sterilization protocol to ensure safe handling for research applications.           
-              </p>
-              <p class="text-body">
-                This implantable device is not currently available for immediate purchase, but you may request a quote. Please note that production and fulfillment involve a long lead time.             
-             </p>
-             <p class="text-body">
-                <span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for <strong>research use only</strong>. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.
-              </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal5')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal6" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Implantable BP2 Module</h2>
-                <button onclick="closeModal('modal6')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                The two-channel biopotential recoridng module (BP2) can record MES from two different muscles and process the signals independently for different control needs. The recording electrodes can be either an epimysial or intramuscular design and consist of two metal contacts separated by 1cm for differential recording. The BP2 is sized small enough so that it can be located in the extremities, near the muscles to be recorded from. This has the advantage of reducing the lead length, improving the signal quality and minimizing the range of electrode lead lengths that need to be brought into surgery.            
-             </p>
-             <p class="text-body">
-                An optional add-on service is available to sterilize the implantable device. We facilitate sending the devices to an FDA-registered contract sterilizer using a proven sterilization protocol to ensure safe handling for research applications.           
-              </p>
-              <p class="text-body">
-                This implantable device is not currently available for immediate purchase, but you may request a quote. Please note that production and fulfillment involve a long lead time.             
-             </p>
-             <p class="text-body">
-                <span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for <strong>research use only</strong>. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.
-              </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal6')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal7" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Intramuscular Stimulus Electrode</h2>
-                <button onclick="closeModal('modal7')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                Electrical stimulation is delivered through metal electrodes placed near or in direct contact with neural tissue. Each electrode consists of the contact itself, a conducting lead, and a dual-contact connector to mate to the PG4 module. The intramuscular stimulating electrode is designed to be inserted into the belly of the target muscle. The intramuscular stimulating surface is 2mm long with an approximate surface area of 8 mm2. A 2-mm long polypropylene barbed anchor on the tip of the electrode maintains the position of the electrode in soft tissue. The electrode is inserted into the muscle using the IM Electrode Insertion Kit.    
-             </p>
-             <p class="text-body">
-                These electrodes are available in lengths from 15cm to 70cm, in 5cm increments to suit different implantation sites and lead routing needs.     
-             </p>
-             <p class="text-body">
-                An optional add-on service is available to sterilize the implantable device. We facilitate sending the devices to an FDA-registered contract sterilizer using a proven sterilization protocol to ensure safe handling for research applications.           
-              </p>
-             <p class="text-body">
-                <span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for <strong>research use only</strong>. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.
-              </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal7')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal8" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Intramuscular Recording Electrode</h2>
-                <button onclick="closeModal('modal8')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                Myoelectric signals (MES) are acquired through bipolar conductive contacts placed within the target muscle. The electrical signal transmitted out from the motor point of the muscle is picked up by each contact. Differential amplification is used to extract the muscle signal. Each recording electrode consists of two metal contacts, a two conductor lead, and a connector that mates with the BP2 module. The intramuscular recording electrode is designed to be inserted into the belly of the target muscle. A 2-mm long polypropylene barbed anchor on the tip of the electrode maintains the position of the electrode in soft tissue. The electrode is inserted into the muscle using the IM Electrode Insertion Kit.    
-             </p>
-             <p class="text-body">
-                These electrodes are available in lengths from 15cm to 70cm, in 5cm increments to suit different implantation sites and lead routing needs.     
-             </p>
-             <p class="text-body">
-                An optional add-on service is available to sterilize the implantable device. We facilitate sending the devices to an FDA-registered contract sterilizer using a proven sterilization protocol to ensure safe handling for research applications.           
-              </p>
-             <p class="text-body">
-                <span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for <strong>research use only</strong>. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.
-              </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal8')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal9" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Epimysial Recording Electrode</h2>
-                <button onclick="closeModal('modal9')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                Myoelectric signals (MES) are acquired through bipolar conductive contacts placed on the target muscle. The electrical signal transmitted out from the motor point of the muscle is picked up by each contact. Differential amplification is used to extract the muscle signal. Each recording electrode consists of two metal contacts, a two conductor lead, and a connector that mates with the BP2 module. The epimysial stimulating electrode is a platinum-iridium disk with a brim supported by polyester mesh reinforced silicone rubber. The exposed metal contact is a disc 3.3 mm in diameter with a surface area of 8.55 mm2. The brim is sandwiched between two layers of silicone elastomer, leaving the conducting surface exposed through a hole in the top layer. The electrode is sewn onto the muscle epimysium using sutures through the polyester mesh backing.    
-             </p>
-             <p class="text-body">
-                These electrodes are available in lengths from 15cm to 70cm, in 5cm increments to suit different implantation sites and lead routing needs.     
-             </p>
-             <p class="text-body">
-                An optional add-on service is available to sterilize the implantable device. We facilitate sending the devices to an FDA-registered contract sterilizer using a proven sterilization protocol to ensure safe handling for research applications.           
-              </p>
-             <p class="text-body">
-                <span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for <strong>research use only</strong>. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.
-              </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal9')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal10" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Network Cable</h2>
-                <button onclick="closeModal('modal10')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                The Network Cable is the conduit for conducting power and communications between implanted modules in the COSMIIC System. Power on the Network Cable is provided by connection to the Power Module's rechargeable battery. Network communication can be generated on the Network Cable by any module. The Network Cable is a critical component of the COSMIIC System because all remote modules depend on its proper functioning for power and communication. Every remote module must be connected to the COSMIIC System network through a Network Cable.           
-            </p>
-             <p class="text-body">
-                These electrodes are available in lengths from 15cm to 70cm, in 5cm increments to suit different implantation sites and lead routing needs.     
-             </p>
-             <p class="text-body">
-                An optional add-on service is available to sterilize the implantable device. We facilitate sending the devices to an FDA-registered contract sterilizer using a proven sterilization protocol to ensure safe handling for research applications.           
-              </p>
-             <p class="text-body">
-                <span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for <strong>research use only</strong>. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.
-              </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal10')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal11" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">IM Insertion Kit</h2>
-                <button onclick="closeModal('modal11')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                A surgeon-controlled electrical stimulation device is used to “map” the location of electrodes intraoperatively. Intramuscular electrode insertion requires specially-designed tools to allow insertion of electrodes with the COSMIIC-style connectors.          
-            </p>
-             <p class="text-body">
-                These tools can be autoclaved by the purchaser. We do not offer a sterilization service for this product.         
-              </p>
-            <p class="text-body">
-                These tools are not currently available for purchase.             
-             </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal11')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal12" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Touchproof Snap Lead Wires</h2>
-                <button onclick="closeModal('modal12')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="tool" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Product Details</h3>
-            <p class="text-body">
-                These Med-Dyne touchproof snap lead wires with DIN connectors provide secure, reliable connections for use with the BP2 development board. Compatible with snap hydrogel or other recording electrodes, they ensure accurate myoelectric signal transmission           
-            </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal12')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal13" class="modal">
-        <div class="modal-content">
-            <div class="flex justify-between items-start mb-6">
-                <h2 class="modal-title">Consulting Services</h2>
-                <button onclick="closeModal('modal13')" class="text-gray-500 hover:text-gray-700">
-                    <i data-feather="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-            <div class="product-card-image rounded-lg mb-6">
-                <i data-feather="users" class="w-32 h-32 text-blue-500"></i>
-            </div>
-            <h3 class="modal-section-title">Service Overview</h3>
-            <p class="text-body">
-                Our team brings decades of combined experience in neurotechnology research, medical device development, and regulatory affairs. We provide expert consulting to help you navigate the complex landscape of neural interface development and commercialization.
-            </p>
-            <h4 class="modal-subsection-title">Consulting Areas:</h4>
-            <ul class="list-styled-spaced">
-                <li>Neural interface technology assessment and selection</li>
-                <li>Study design and experimental protocol development</li>
-                <li>Regulatory strategy and FDA/CE compliance planning</li>
-                <li>Clinical trial design and execution</li>
-                <li>Quality management system (QMS) implementation</li>
-                <li>Risk management and ISO 14971 compliance</li>
-                <li>Intellectual property strategy</li>
-                <li>Technology transfer and manufacturing scale-up</li>
-            </ul>
-            <h4 class="modal-subsection-title">Who We Work With:</h4>
-            <ul class="list-styled-spaced">
-                <li>Academic research laboratories</li>
-                <li>Medical device startups</li>
-                <li>Clinical research organizations</li>
-                <li>Medical device manufacturers</li>
-            </ul>
-            <p class="text-body mb-6">
-                We offer flexible engagement models including hourly consulting, fixed-price projects, and retainer arrangements. Initial consultations are available to discuss your needs and develop a custom engagement plan.
-            </p>
-            <div class="flex gap-4">
-                <a href="/index.html#contact" class="flex-1 btn-full text-center">
-                    Request Quote
-                </a>
-                <button onclick="closeModal('modal13')" class="flex-1 btn-outline">
-                    Close
-                </button>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
     <div id="footer-placeholder"></div>
     <script src="/components/footer.js"></script>
     <script src="/components/scripts.js"></script>
+    <script src="product-data.js"></script>
+    <script src="product-modal.js"></script>
 
 </body>
 </html>
