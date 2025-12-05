@@ -72,7 +72,7 @@ function openProductModal(productKey) {
     // Add action buttons
     modalHTML += `
                 <div class="flex gap-4">
-                    <a href="/index.html#contact" class="flex-1 btn-full text-center">
+                    <a href="/#contact" class="flex-1 btn-full text-center">
                         Request Quote
                     </a>
                     <button onclick="closeDynamicModal()" class="flex-1 btn-outline">
