@@ -5,7 +5,7 @@ const productsData = {
         // Card Information
         name: "Power Module - PCB",
         shortDescription: "Central power and communication hub with rechargeable batteries, MedRadio wireless communication, and network coordination for the entire COSMIIC System.",
-        price: "1,499",
+        price: "1,450",
         imageType: "img",
         image: "product-img/pm-pcb.jpg",
         comingSoon: false,
@@ -27,7 +27,7 @@ const productsData = {
     pg4ModulePCB: {
         name: "PG4 Module - PCB",
         shortDescription: "Four-channel pulse generator module utilized for electrical stimulation of nerve and muscle tissue.",
-        price: "999",
+        price: "1,000",
         imageType: "img",
         image: "product-img/pg4-pcb-hori.jpg",
         comingSoon: false,
@@ -49,7 +49,7 @@ const productsData = {
     bp2ModulePCB: {
         name: "BP2 Module - PCB",
         shortDescription: "Two-channel biopotential recording module designed to record myoelectric signals and process them independently for different control needs.",
-        price: "999",
+        price: "1,000",
         imageType: "img",
         image: "product-img/bp2-pcb-hori.jpg",
         comingSoon: false,
@@ -123,7 +123,7 @@ const productsData = {
     imStimElectrode: {
         name: "Intramuscular Stimulus Electrode",
         shortDescription: "An implanted lead connected to the PG4 Module placed in a muscle that delivers electrical pulses to activate the nerves controlling that muscle. For research use only.",
-        price: "1,455",
+        price: "1,450",
         imageType: "img",
         image: "product-img/Stim-IM.jpg",
         comingSoon: false,
@@ -140,7 +140,7 @@ const productsData = {
     imRecordingElectrode: {
         name: "Intramuscular Recording Electrode",
         shortDescription: "An implanted lead connected to the BP2 Module placed in a muscle that records MES signals. For research use only.",
-        price: "1,499",
+        price: "1,450",
         imageType: "img",
         image: "product-img/Recording-IM.jpg",
         comingSoon: false,
@@ -157,7 +157,7 @@ const productsData = {
     epiRecordingElectrode: {
         name: "Epimysial Recording Electrode",
         shortDescription: "An implanted lead connected to the BP2 Module placed on a muscle that records MES signals. For research use only.",
-        price: "2,199",
+        price: "2,200",
         imageType: "img",
         image: "product-img/epi-macro.png",
         comingSoon: false,
@@ -187,7 +187,7 @@ const productsData = {
         ],
         warning: '<span style="color: red; font-weight: bold;">WARNING:</span> This device is intended for research use only. Open NeuroTech is not the manufacturer and acts solely as a distributor of this device. While the device has been manufactured to high-quality standards and is approved under an FDA IDE for a specific early-feasibility study, it is not certified for general implantation or use in humans. Researchers must obtain their own regulatory approvals to use this device in human studies. Your personal decision to purchase and ultimately the safe use of these devices is strictly your responsibility and at your own risk.'
     },
-    
+    /* Commenting out for now since this product is not currently available for purchase. We can add it back in when we are ready to sell it.
     imInsertionKit: {
         name: "IM Electrode Insertion Kit",
         shortDescription: "For implanting the COSMIIC intramuscular electrodes.",
@@ -205,6 +205,7 @@ const productsData = {
         ],
         warning: null
     },
+    */
     
     touchproofWires: {
         name: "Touchproof Snap Lead Wires",
