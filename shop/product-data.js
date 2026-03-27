@@ -70,7 +70,7 @@ const productsData = {
     powerModuleImplant: {
         name: "Power Module",
         shortDescription: "Assembled and enclosed COSMIIC System Power Module. For research use only.",
-        price: "15,000",
+        price: "20,350",
         priceClass: "text-muted",
         imageType: "img",
         image: "product-img/pm-enclosed.png",
@@ -88,7 +88,7 @@ const productsData = {
     pg4ModuleImplant: {
         name: "PG4 Module",
         shortDescription: "Assembled and enclosed COSMIIC System PG4 Module. For research use only.",
-        price: "11,600",
+        price: "18,850",
         priceClass: "text-muted",
         imageType: "img",
         image: "product-img/branded-stim-module.jpg",
@@ -106,7 +106,7 @@ const productsData = {
     bp2ModuleImplant: {
         name: "BP2 Module",
         shortDescription: "Assembled and enclosed COSMIIC System BP2 Module. For research use only.",
-        price: "11,600",
+        price: "18,850",
         imageType: "img",
         image: "product-img/bp2-connected.jpg",
         comingSoon: true,
@@ -123,7 +123,7 @@ const productsData = {
     imStimElectrode: {
         name: "Intramuscular Stimulus Electrode",
         shortDescription: "An implanted lead connected to the PG4 Module placed in a muscle that delivers electrical pulses to activate the nerves controlling that muscle. For research use only.",
-        price: "1,450",
+        price: "1,485",
         imageType: "img",
         image: "product-img/Stim-IM.jpg",
         comingSoon: false,
@@ -140,7 +140,7 @@ const productsData = {
     imRecordingElectrode: {
         name: "Intramuscular Recording Electrode",
         shortDescription: "An implanted lead connected to the BP2 Module placed in a muscle that records MES signals. For research use only.",
-        price: "1,450",
+        price: "1,850",
         imageType: "img",
         image: "product-img/Recording-IM.jpg",
         comingSoon: false,
@@ -157,7 +157,7 @@ const productsData = {
     epiRecordingElectrode: {
         name: "Epimysial Recording Electrode",
         shortDescription: "An implanted lead connected to the BP2 Module placed on a muscle that records MES signals. For research use only.",
-        price: "2,200",
+        price: "2,450",
         imageType: "img",
         image: "product-img/epi-macro.png",
         comingSoon: false,
@@ -174,7 +174,7 @@ const productsData = {
     networkCable: {
         name: "Network Cable",
         shortDescription: "An implanted lead that connects all implanted COSMIIC modules. For research use only.",
-        price: "2,350",
+        price: "2,450",
         imageType: "img",
         image: "product-img/nc-macro.png",
         comingSoon: false,
