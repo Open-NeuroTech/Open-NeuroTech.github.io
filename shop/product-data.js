@@ -70,7 +70,7 @@ const productsData = {
     powerModuleImplant: {
         name: "Power Module",
         shortDescription: "Assembled and enclosed COSMIIC System Power Module. For research use only.",
-        price: "20,350",
+        price: " Contact for Quote",
         priceClass: "text-muted",
         imageType: "img",
         image: "product-img/pm-enclosed.png",
@@ -88,7 +88,7 @@ const productsData = {
     pg4ModuleImplant: {
         name: "PG4 Module",
         shortDescription: "Assembled and enclosed COSMIIC System PG4 Module. For research use only.",
-        price: "18,850",
+        price: " Contact for Quote",
         priceClass: "text-muted",
         imageType: "img",
         image: "product-img/branded-stim-module.jpg",
@@ -106,7 +106,7 @@ const productsData = {
     bp2ModuleImplant: {
         name: "BP2 Module",
         shortDescription: "Assembled and enclosed COSMIIC System BP2 Module. For research use only.",
-        price: "18,850",
+        price: " Contact for Quote",
         imageType: "img",
         image: "product-img/bp2-connected.jpg",
         comingSoon: true,
