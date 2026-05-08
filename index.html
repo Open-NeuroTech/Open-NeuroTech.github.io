@@ -16,139 +16,504 @@
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
 </head>
 <body class="font-sans antialiased text-gray-800">
-    
-    <!-- Navigation bar -->
+
+    <!-- Navigation -->
     <div id="navbar-placeholder"></div>
     <script src="/components/navbar.js"></script>
-    
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
     <div id="vanta-bg" class="min-h-screen flex flex-col justify-center relative overflow-hidden">
         <div class="hero-overlay"></div>
 
-        <!-- Main intro text -->
-        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 py-20 pt-32">
-            <h1 class="hero-title" data-aos="fade-up">
-                Pioneering Access in <span class="text-blue-accent">Neurotechnology</span>
+        <div class="relative z-10 text-center px-6 py-24 pt-40 max-w-4xl mx-auto w-full">
+
+            <h1 class="hero-title mb-6" data-aos="fade-up" data-aos-delay="80">
+                Accelerating the <br><span class="text-blue-accent">next generation</span> of medicine
             </h1>
-            <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
-                Serving open source hardware solutions for wearable and implantable devices used in research and development
+
+            <p class="hero-subtitle max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="160">
+                The fastest, most cost-effective path from therapy idea to first-in-human study. Built for the researchers and startups who can't afford to wait years to prove their science.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="/#services" class="btn-white-hover-dark">
-                    Learn More
-                </a>
-                <a href="/#contact" class="btn-secondary">
-                    Contact Us
-                </a>
+
+            <!-- Key stats bar -->
+            <div class="inline-grid grid-cols-2 sm:grid-cols-4 gap-px bg-white bg-opacity-10 rounded-2xl overflow-hidden border border-white border-opacity-10 mb-12" data-aos="fade-up" data-aos-delay="240">
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">10</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Humans Implanted</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">3</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">FDA IDEs</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">16</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Active Pilots</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">30+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Years of Experience</div>
+                </div>
             </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="320">
+                <a href="#solution" class="btn-white-hover-dark">Explore the Platform</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 opacity-40" data-aos="fade-in" data-aos-delay="700">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="animation: slow-pulse 2s ease-in-out infinite;">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
         </div>
     </div>
 
-    <!-- Product Showcase -->
-    <section id="services" class="section-padding bg-gray-50">
+    <!-- ═══════════════════════════════════════
+         ACT 1 — THE SCALE
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#111827;">
         <div class="container-wide">
-            <div class="flex flex-col md:flex-row items-center gap-12">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <h2 class="section-title">Open Source Hardware and Services</h2>
+
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <div class="chapter-label" style="justify-content:center;">New hope for difficult conditions</div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" style="letter-spacing:-0.02em;line-height:1.1;">
+                    3 billion people live with<br>
+                    <span class="text-blue-accent">neurological conditions</span>
+                </h2>
+                <p class="text-xl text-gray-400 leading-relaxed">
+                    Paralysis. Chronic pain. Spasticity. Autonomic dysfunction. Neuromodulation — delivering targeted electrical signals via implanted devices — acts precisely on specific neural circuits, offering a direct path to treatment where drugs fall short.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-16" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(59,130,246,0.15);">
+                        <i data-feather="activity" style="width:22px;height:22px;stroke:#60a5fa;stroke-width:1.8;"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">50+ Treatable Conditions</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">From paralysis and chronic pain to bladder dysfunction and autonomic disorders — neuromodulation addresses conditions where systemic drugs can't reach.</p>
+                </div>
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(59,130,246,0.15);">
+                        <i data-feather="zap" style="width:22px;height:22px;stroke:#60a5fa;stroke-width:1.8;"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Targeted & Reversible</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Unlike drugs, electrical stimulation acts precisely on specific neural circuits — restoring movement, relieving pain, and regulating autonomic function without systemic side effects.</p>
+                </div>
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(59,130,246,0.15);">
+                        <i data-feather="users" style="width:22px;height:22px;stroke:#60a5fa;stroke-width:1.8;"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">15,000 Active Researchers</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A global community of biomedical engineers and clinical investigators working to translate neuromodulation science into therapies that reach patients.</p>
+                </div>
+            </div>
+
+            <!-- Pivot to the problem -->
+            <div class="max-w-3xl mx-auto text-center pt-12 border-t border-gray-700" data-aos="fade-up">
+                <p class="text-2xl md:text-3xl font-bold text-white mb-4" style="line-height:1.25;">
+                    Every neuromodulation idea needs hardware to prove it.
+                </p>
+                <p class="text-xl text-gray-400">
+                    And that's where most promising therapies die — not from failed science, but from the cost and complexity of getting implantable hardware.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ACT 2 — THE BOTTLENECK
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#0d1526;">
+        <div class="container-wide">
+
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <div class="chapter-label" style="justify-content:center;">The hardware problem</div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6" style="letter-spacing:-0.02em;line-height:1.1;">
+                    Building custom hardware takes<br>
+                    <span style="color:#f87171;">4–8 years and up to $5.5M</span>
+                </h2>
+                <p class="text-xl text-gray-400 leading-relaxed">
+                    Existing options are expensive, IP-locked, and force every researcher to solve the same problems from scratch. More promising therapies die here than from failed science.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="rounded-2xl p-8 border border-red-900 border-opacity-50" style="background:rgba(127,29,29,0.15);">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(127,29,29,0.3);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Prohibitively Expensive</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">A human-grade implant built in-house runs $900K–$5.5M before a single participant is enrolled. CDMOs charge $2M–$7.5M for the same outcome. Most labs never get there.</p>
+                </div>
+                <div class="rounded-2xl p-8 border border-red-900 border-opacity-50" style="background:rgba(127,29,29,0.15);">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(127,29,29,0.3);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">IP-Locked</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Existing platforms require expensive licensing. IP constraints limit customization and create long-term dependency on commercial vendors at every stage — from benchtop to first-in-human.</p>
+                </div>
+                <div class="rounded-2xl p-8 border border-red-900 border-opacity-50" style="background:rgba(127,29,29,0.15);">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(127,29,29,0.3);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Regulatory Dead Ends</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Without an established FDA pathway, every new platform starts from zero. Each step — IDE application, device modifications, multi-site expansion — requires years of documentation and fresh approvals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         ACT 3 — THE SOLUTION
+    ═══════════════════════════════════════ -->
+    <section id="solution" class="section-padding bg-white">
+        <div class="container-wide">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+
+                <div data-aos="fade-right">
+                    <div class="chapter-label">The COSMIIC System</div>
+                    <h2 class="section-title mb-4" style="font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1;">
+                        The world's first open-source,<br>
+                        <span class="text-blue-accent">fully implantable</span><br>
+                        neuromodulation platform
+                    </h2>
                     <p class="text-body-large">
-                        The modular technologies we build enable researchers and developers to integrate customized solutions for their specific needs
+                        COSMIIC is the fastest, most cost-effective path from therapy idea to first-in-human study. It's the same platform already proven in FDA-approved human studies — available to any lab or startup from day one.
                     </p>
-                    <ul class="list-checkmarks">
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-secondary">COSMIIC Implantable Modules</span>
+                    <ul class="space-y-5 mt-8">
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3b82f6" stroke-width="2.2"><polyline points="2 7 5 10 12 3"/></svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-900">Open source — no licensing required</span>
+                                <p class="text-gray-500 text-sm mt-0.5">PCB designs, firmware, and regulatory documentation freely available to build on</p>
+                            </div>
                         </li>
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-secondary">COSMIIC Benchtop Development Kit</span>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3b82f6" stroke-width="2.2"><polyline points="2 7 5 10 12 3"/></svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-900">Established FDA regulatory foundation</span>
+                                <p class="text-gray-500 text-sm mt-0.5">3 IDE approvals provide a reference path for new studies</p>
+                            </div>
                         </li>
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-secondary">Consulting Services</span>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3b82f6" stroke-width="2.2"><polyline points="2 7 5 10 12 3"/></svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-900">Modular and customizable</span>
+                                <p class="text-gray-500 text-sm mt-0.5">Power, stimulation, and recording modules adapt to your therapy. Same hardware from benchtop to first-in-human</p>
+                            </div>
                         </li>
-                        <li class="flex items-start">
-                            <i data-feather="check-circle" class="text-green-500 mr-3 mt-1"></i>
-                            <span class="text-secondary">Other Medical-Related Open Hardware</span>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#3b82f6" stroke-width="2.2"><polyline points="2 7 5 10 12 3"/></svg>
+                            </div>
+                            <div>
+                                <span class="font-semibold text-gray-900">Saves 3–7+ years and up to $10M</span>
+                                <p class="text-gray-500 text-sm mt-0.5">Compared to building in-house or hiring a contract device manufacturer</p>
+                            </div>
                         </li>
                     </ul>
                 </div>
-                <div class="md:w-1/2" data-aos="fade-left">
-                    <div class="bg-white rounded-xl shadow-xl">
-                        <img src="img/branded-stim-module.jpg" alt="Neurotechnology Interface" class="rounded-lg w-full">
+
+                <div data-aos="fade-left">
+                    <div class="bg-gray-50 rounded-3xl p-8 shadow-xl border border-gray-100">
+                        <img src="/img/branded-stim-module.jpg" alt="COSMIIC Stimulation Module" class="rounded-2xl w-full shadow-md mb-8">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
+    <!-- ═══════════════════════════════════════
+         COMPARISON TABLE
+    ═══════════════════════════════════════ -->
+    <!--
+    <section class="section-padding bg-gray-50">
+        <div class="container-wide">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="chapter-label" style="justify-content:center;">From idea to implant</div>
+                <h2 class="section-title mb-4" style="font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1;">
+                    Orders of magnitude<br>faster and cheaper
+                </h2>
+                <p class="text-intro">
+                    Compare the time and cost of getting hardware the traditional way versus using the COSMIIC platform.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-2xl shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                <table class="w-full border-collapse bg-white cmp-table">
+                    <thead>
+                        <tr>
+                            <th class="text-left text-gray-500 bg-gray-50">Development Stage</th>
+                            <th class="text-left text-gray-400 bg-gray-50">Build In-House</th>
+                            <th class="text-left text-gray-400 bg-gray-50">Hire a CDMO</th>
+                            <th class="text-left text-blue-600 cmp-highlight">Open NeuroTech</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-gray-700 font-medium">PCB Design + Firmware</td>
+                            <td class="text-gray-400">1–2 yrs · $100K–500K</td>
+                            <td class="text-gray-400">1–2 yrs · $500K–1.5M</td>
+                            <td class="text-blue-600 font-semibold cmp-highlight">5 days · $5K</td>
+                        </tr>
+                        <tr>
+                            <td class="text-gray-700 font-medium">Animal-Grade Implant</td>
+                            <td class="text-gray-400">2–4 yrs · $400K–2.5M</td>
+                            <td class="text-gray-400">2–4 yrs · $1M–3.5M</td>
+                            <td class="text-blue-600 font-semibold cmp-highlight">2 weeks · $15–20K</td>
+                        </tr>
+                        <tr>
+                            <td class="text-gray-700 font-medium">Human-Grade Implant</td>
+                            <td class="text-gray-400">4–8+ yrs · $900K–5.5M</td>
+                            <td class="text-gray-400">3–6+ yrs · $2M–7.5M</td>
+                            <td class="text-blue-600 font-semibold cmp-highlight">12–18 months · $100K</td>
+                        </tr>
+                        <tr class="cmp-savings">
+                            <td class="text-blue-700">Time &amp; Cost Saved</td>
+                            <td class="text-gray-300">—</td>
+                            <td class="text-gray-300">—</td>
+                            <td class="text-blue-700 cmp-highlight" style="background:rgba(59,130,246,0.12);">3–7+ years · $800K–7.4M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- ═══════════════════════════════════════
+         PRODUCTS
+    ═══════════════════════════════════════ -->
+    <section id="products" class="section-padding bg-gray-50">
+        <div class="container-wide">
+            <div class="text-center mb-12" data-aos="fade-up">
+                <div class="chapter-label" style="justify-content:center;">The platform</div>
+                <h2 class="section-title mb-4" style="font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1;">
+                    One platform<br>
+                    <span class="text-blue-accent">across stages of development.</span>
+                </h2>
+                <p class="text-intro">
+                    Start with a benchtop kit. Advance to an animal-grade implant. Graduate to a human-grade system for first-in-human trials — the same platform the entire way.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+
+                <div class="product-tier-card bg-gray-50 rounded-2xl p-7 border border-gray-200">
+                    <div class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center mb-5">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Development Kits</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5">Benchtop system with SDK for developing and testing stimulation algorithms. The fastest entry point to the COSMIIC platform.</p>
+                    <a href="/shop/" class="text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors">Starting at $5K →</a>
+                </div>
+
+                <div class="product-tier-card bg-gray-50 rounded-2xl p-7 border border-gray-200">
+                    <div class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center mb-5">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Animal Grade Systems</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5">Low-cost fully implantable version for preclinical animal studies. Validate your therapy before advancing to human trials.</p>
+                    <a href="/shop/" class="text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors">Starting at $15–20K →</a>
+                </div>
+
+                <div class="product-tier-card bg-blue-600 rounded-2xl p-7 border border-blue-600" style="background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%);">
+                    <div class="w-11 h-11 rounded-xl bg-blue-500 flex items-center justify-center mb-5">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">Human Grade Systems</h3>
+                    <p class="text-blue-100 text-sm leading-relaxed mb-5">Fully implantable system for FDA IDE first-in-human studies. The same platform already proven in 10 human participants.</p>
+                    <a href="/shop/" class="text-white text-sm font-semibold hover:text-blue-200 transition-colors">Starting at $100K →</a>
+                </div>
+
+                <div class="product-tier-card bg-gray-50 rounded-2xl p-7 border border-gray-200">
+                    <div class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center mb-5">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Services</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed mb-5">Technical integration and regulatory support from the engineers who built the platform — from IDE submission strategy to device customization.</p>
+                    <a href="mailto:contact@openneuro.tech" class="text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors">Contact us →</a>
+                </div>
+            </div>
+
+            <div class="text-center mt-10" data-aos="fade-up">
+                <a href="/shop/" class="btn-primary inline-block">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         PROOF / TRACTION
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#111827;">
+        <div class="container-wide">
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="chapter-label" style="justify-content:center;">Real traction</div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4" style="letter-spacing:-0.02em;line-height:1.1;">
+                    This isn't hypothetical.<br>
+                    <span class="text-blue-accent">It's already working.</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    Deployed across research groups in the US and Europe, with an established FDA regulatory foundation and a growing pipeline of labs and startups.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-14 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="80">
+                <div class="bg-gray-800 rounded-2xl p-5 text-center border border-gray-700">
+                    <div class="text-3xl font-bold text-blue-400 font-display mb-1">10</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider leading-snug">Humans Implanted</div>
+                </div>
+                <div class="bg-gray-800 rounded-2xl p-5 text-center border border-gray-700">
+                    <div class="text-3xl font-bold text-blue-400 font-display mb-1">3</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider leading-snug">FDA IDE Approvals</div>
+                </div>
+                <div class="bg-gray-800 rounded-2xl p-5 text-center border border-gray-700">
+                    <div class="text-3xl font-bold text-blue-400 font-display mb-1">16</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider leading-snug">Active Pilots</div>
+                </div>
+            </div>
+
+            <div class="max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="160">
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                    <h3 class="font-bold text-white text-lg mb-6">Active Research Areas</h3>
+                    <div class="space-y-5">
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                            <div>
+                                <span class="font-semibold text-white text-sm">Bladder Control</span>
+                                <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">Pudendal nerve stimulation for incontinence · Q2–Q3 2026 large-animal studies in sheep &amp; pigs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                            <div>
+                                <span class="font-semibold text-white text-sm">Pain &amp; Spasticity</span>
+                                <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">Modulation research across multiple US and European sites</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                            <div>
+                                <span class="font-semibold text-white text-sm">Movement Restoration</span>
+                                <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">Functional electrical stimulation for post-paralysis rehabilitation</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                            <div>
+                                <span class="font-semibold text-white text-sm">Autonomic Control</span>
+                                <p class="text-gray-400 text-xs mt-0.5 leading-relaxed">Closed-loop vagus nerve stimulation using custom nerve cuffs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         STORY / TEAM
+    ═══════════════════════════════════════ -->
     <section id="about" class="section-padding bg-white">
         <div class="container-wide">
-            <div class="text-center section-spacing" data-aos="fade-up">
-                <h2 class="section-title">About Open NeuroTech LLC</h2>
+
+            <div class="text-center mb-16" data-aos="fade-up">
+                <div class="chapter-label" style="justify-content:center;">Built on 30+ years of research</div>
+                <h2 class="section-title mb-4" style="font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1;">
+                    From NIH-funded research<br>
+                    <span class="text-blue-accent">to open-source platform</span>
+                </h2>
                 <p class="text-intro">
-                    We are a team of engineers committed to democratizing neurotechnology and strengthening the research community
+                    COSMIIC was built to solve a real problem through a $14.7M NIH program at Case Western Reserve University and MetroHealth. We made it open and now we're scaling it.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <img src="img/ont-logo.svg" alt="Team working on neurotechnology" class="rounded-xl shadow-lg w-full">
+            <!-- Story timeline -->
+            <div class="max-w-2xl mx-auto mb-20 story-timeline pl-8" data-aos="fade-up" data-aos-delay="80">
+                <div class="relative mb-12">
+                    <div class="absolute -left-8 top-0.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-2 border-white shadow-md" style="box-shadow:0 0 0 4px rgba(59,130,246,0.15);"></div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-2 block">Past — 30+ Years</span>
+                    <h3 class="font-bold text-gray-900 text-xl mb-2">Pioneering implantable FES at CWRU &amp; MetroHealth</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Cleveland-based teams developed and deployed implantable functional electrical stimulation systems over three decades. 300+ individuals implanted with legacy neuroprosthetic systems. The regulatory, clinical, and manufacturing foundation was built here.</p>
                 </div>
-                <div data-aos="fade-left">
-                    <h3 class="modal-section-title">Our Mission</h3>
-                    <p class="text-body">
-                        Open NeuroTech was founded with the vision of making advanced neurotechnology treatments accessible to everyone. We believe that getting accessible technology in the hands of researchers and startups will accelerate innovation in bioelectronic medicine.
-                    </p>
-                    <h3 class="modal-section-title">Personnel</h3>
-                    <p class="text-body">Co-Founders: <a href="mailto:crexroth@openneuro.tech">Chris Rexroth</a> and <a href="mailto:dromano@openneuro.tech">Dan Romano</a></p>
+                <div class="relative mb-12">
+                    <div class="absolute -left-8 top-0.5 w-3.5 h-3.5 rounded-full bg-blue-500 border-2 border-white shadow-md" style="box-shadow:0 0 0 4px rgba(59,130,246,0.15);"></div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-2 block">Present — $14.7M NIH Program</span>
+                    <h3 class="font-bold text-gray-900 text-xl mb-2">COSMIIC: the world's first open-source implantable</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">A multi-institutional NIH program transformed CWRU's NNP device into the open-source COSMIIC System. Three FDA IDEs approved, 10 participants implanted, and 16 active pilots across the US and Europe. The platform that once required an institution is now accessible to anyone.</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute -left-8 top-0.5 w-3.5 h-3.5 rounded-full bg-blue-400 border-2 border-white" style="box-shadow:0 0 0 6px rgba(96,165,250,0.2);"></div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-2 block">Future — Open NeuroTech</span>
+                    <h3 class="font-bold text-gray-900 text-xl mb-2">Scaling the platform to every lab and startup that needs it</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Open NeuroTech scales the distribution and support for COSMIIC — making implantable neuromodulation technology accessible to any research group or startup, without the years of development overhead that used to stand in the way.</p>
+                </div>
+            </div>
+
+            <!-- Founders -->
+            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="120">
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-xl font-display mb-5">CR</div>
+                    <h3 class="font-bold text-gray-900 text-xl mb-1">Chris Rexroth</h3>
+                    <p class="text-blue-600 text-xs font-semibold uppercase tracking-widest mb-4">Co-Founder</p>
+                    <a href="mailto:crexroth@openneuro.tech" class="text-blue-600 text-sm mt-4 inline-block hover:text-blue-800 transition-colors" style="border-bottom:1px solid #bfdbfe;">crexroth@openneuro.tech</a>
+                </div>
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <div class="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-xl font-display mb-5">DR</div>
+                    <h3 class="font-bold text-gray-900 text-xl mb-1">Dan Romano</h3>
+                    <p class="text-blue-600 text-xs font-semibold uppercase tracking-widest mb-4">Co-Founder</p>
+                    <a href="mailto:dromano@openneuro.tech" class="text-blue-600 text-sm mt-4 inline-block hover:text-blue-800 transition-colors" style="border-bottom:1px solid #bfdbfe;">dromano@openneuro.tech</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-padding bg-gray-50">
-        <div class="container-narrow">
-            <div class="text-center section-spacing" data-aos="fade-up">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="text-intro">
-                    Whether you're a researcher, developer, or just curious about neurotechnology, we'd love to hear from you
-                </p>
+    <!-- ═══════════════════════════════════════
+         CTA
+    ═══════════════════════════════════════ -->
+    <section id="contact" class="section-padding" style="background:#0d1526;">
+        <div class="max-w-2xl mx-auto text-center px-6" data-aos="fade-up">
+            <div class="chapter-label" style="justify-content:center;">Get started</div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-5" style="letter-spacing:-0.02em;line-height:1.1;">
+                Ready to accelerate<br>
+                <span class="text-blue-accent">your program?</span>
+            </h2>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mb-14">
+                <a href="/shop/" class="btn-white-hover-dark">Explore Products</a>
+                <a href="mailto:contact@openneuro.tech" class="btn-secondary">Contact Us</a>
             </div>
 
-            <div data-aos="fade-up">
-                <div class="bg-white p-8 rounded-xl shadow-lg h-full">
-                    <h3 class="modal-section-title mb-6">Contact Information</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-start">
-                            <i data-feather="mail" class="text-blue-500 mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="modal-subsection-title">Email</h4>
-                                <p class="text-secondary"><a href="mailto:contact@openneuro.tech">contact@openneuro.tech</a></p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i data-feather="github" class="text-gray-800 mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="modal-subsection-title">GitHub</h4>
-                                <p class="text-secondary"><a href="https://github.com/Open-NeuroTech">github.com/Open-NeuroTech</a></p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i data-feather="linkedin" class="text-blue-600 mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="modal-subsection-title">LinkedIn</h4>
-                                <p class="text-secondary"><a href="https://www.linkedin.com/company/open-neurotech">linkedin.com/company/open-neurotech</a></p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                            <i data-feather="map-pin" class="text-red-500 mr-4 mt-1"></i>
-                            <div>
-                                <h4 class="modal-subsection-title">Location</h4>
-                                <p class="text-secondary">Cleveland, OH, USA</p>
-                            </div>
-                        </div>
+            <div class="grid grid-cols-3 gap-4 text-left max-w-xl mx-auto">
+                <div class="bg-gray-800 rounded-xl p-5 border border-gray-700">
+                    <div class="text-blue-400 mb-3">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     </div>
+                    <p class="text-white font-semibold text-sm mb-1">Email</p>
+                    <a href="mailto:contact@openneuro.tech" class="text-gray-400 text-xs hover:text-blue-400 transition-colors break-all">contact@openneuro.tech</a>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-5 border border-gray-700">
+                    <div class="text-blue-400 mb-3">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    </div>
+                    <p class="text-white font-semibold text-sm mb-1">GitHub</p>
+                    <a href="https://github.com/Open-NeuroTech" class="text-gray-400 text-xs hover:text-blue-400 transition-colors">github.com/Open-NeuroTech</a>
+                </div>
+                <div class="bg-gray-800 rounded-xl p-5 border border-gray-700">
+                    <div class="text-blue-400 mb-3">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                    </div>
+                    <p class="text-white font-semibold text-sm mb-1">LinkedIn</p>
+                    <a href="https://www.linkedin.com/company/open-neurotech" class="text-gray-400 text-xs hover:text-blue-400 transition-colors">Open NeuroTech</a>
                 </div>
             </div>
         </div>

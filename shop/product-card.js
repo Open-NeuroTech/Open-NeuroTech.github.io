@@ -18,7 +18,7 @@
         const priceText = product.priceText || (product.price ? `$${product.price}` : 'TBD');
         const comingSoonBadge = product.comingSoon ? `<span class="absolute top-3 right-3 bg-yellow-400 text-gray-900 text-xs font-semibold px-2 py-1 rounded">Coming Soon</span>` : '';
         return `
-            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+            <div class="product-card bg-white rounded-xl shadow-lg overflow-hidden">
                 <div class="h-64 bg-gray-200 flex items-center justify-center relative product-card-image">
                     ${renderImage(product)}
                     ${comingSoonBadge}
