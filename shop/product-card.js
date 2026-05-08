@@ -28,9 +28,9 @@
                     <p class="product-card-description text-gray-600 mb-4">${escapeHtml(product.shortDescription || product.description || '')}</p>
 
                     <div class="actions mt-auto">
-                        <div class="flex items-center justify-between mb-3">
+                        <!-- <div class="flex items-center justify-between mb-3">
                             <span class="product-card-price text-blue-600 font-semibold text-lg">${escapeHtml(priceText)}</span>
-                        </div>
+                        </div> -->
                         <button onclick="openProductModal('${key}')" class="btn-full w-full inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-700 text-white font-semibold rounded-full">
                             Learn More
                         </button>
