@@ -1,160 +1,165 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purchasing Process - Open NeuroTech</title>
     <link rel="icon" type="image/x-icon" href="/img/ont-icon-blue.svg">
     <link rel="stylesheet" href="/styles.css">
     <script src="/components/scripts.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="font-sans antialiased text-gray-800 bg-gradient-to-b from-[#111827] to-[#60a5fa] min-h-screen bg-no-repeat bg-cover bg-fixed flex flex-col">
+<body class="antialiased text-gray-800">
 
-    <!-- Navigation bar -->
+    <!-- Navigation -->
     <div id="navbar-placeholder"></div>
     <script src="/components/navbar.js"></script>
 
-    <!-- Hero -->
-    <header class="max-w-6xl mx-auto px-4 mt-24" data-aos="fade-up">
-        <div class="rounded-2xl p-8 md:p-12 bg-white/5 backdrop-blur-sm border border-white/8">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="md:flex-1">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white leading-tight">Purchasing — simple, transparent, research‑first</h1>
-                    <p class="mt-4 text-blue-100 max-w-2xl">
-                        View product listings on our shop, request a quote, and we'll help you assemble items, prepare invoices, and complete fulfillment — tailored for research institutions and early startups.
-                    </p>
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#111827; padding-top:10rem;">
+        <div class="container-wide text-center mb-16">
+            <div class="chapter-label" style="justify-content:center;">Simple, transparent, research-first</div>
+            <h1 class="hero-title mb-6">Purchasing Process</h1>
+            <p class="hero-subtitle mb-10">
+                View product listings, request a quote, and we'll help you assemble items, prepare invoices, and complete fulfillment — tailored for research institutions and early startups.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="/contact/" class="btn-white-hover-dark">Request a Quote</a>
+                <a href="/shop/" class="btn-secondary">Browse Products</a>
+            </div>
+        </div>
+    </section>
 
-                    <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                        <a href="/#contact" class="inline-block px-6 py-3 btn-gradient text-white font-semibold rounded-full">Request a Quote</a>
-                        <a href="/shop/index.html" class="inline-block px-6 py-3 border border-white/20 text-white/90 rounded-full hover:bg-white/5">Browse Products</a>
+    <!-- ═══════════════════════════════════════
+         OVERVIEW STEPS
+    ═══════════════════════════════════════ -->
+    <section class="section-padding bg-gray-50">
+        <div class="container-wide">
+
+            <div class="text-center mb-12">
+                <div class="chapter-label" style="justify-content:center;">How it works</div>
+                <h2 class="section-title mb-4" style="font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1;">Three steps to your order</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+                <div class="bg-white rounded-2xl p-7 border border-gray-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-feather="mail" style="width:18px;height:18px;stroke:#3b82f6;stroke-width:1.8;"></i>
                     </div>
+                    <h3 class="font-bold text-gray-900 mb-2">1. Request a quote</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Use "Learn More" on any product or email us directly. Include billing contact and PO info if available.</p>
                 </div>
 
-                <div class="mt-6 md:mt-0 md:ml-8">
-                    <div class="w-56 h-40 bg-white/6 rounded-lg flex items-center justify-center">
-                        <!-- decorative / illustrative area -->
-                        <svg width="140" height="100" viewBox="0 0 140 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                            <rect x="2" y="6" width="136" height="76" rx="10" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="rgba(255,255,255,0.02)"/>
-                            <circle cx="40" cy="46" r="14" fill="#60a5fa" />
-                            <rect x="68" y="30" width="58" height="32" rx="4" fill="#3b82f6"/>
-                        </svg>
+                <div class="bg-white rounded-2xl p-7 border border-gray-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-feather="sliders" style="width:18px;height:18px;stroke:#3b82f6;stroke-width:1.8;"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">2. We configure &amp; quote</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We check compatibility and include any necessary accessories or optional services such as sterilization and support contracts.</p>
+                </div>
+
+                <div class="bg-white rounded-2xl p-7 border border-gray-200">
+                    <div class="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                        <i data-feather="credit-card" style="width:18px;height:18px;stroke:#3b82f6;stroke-width:1.8;"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 mb-2">3. Invoice &amp; payment</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">We issue an invoice and online payment portal to you and your institution's accounts payable. We follow up until payment clears.</p>
+                </div>
+            </div>
+
+            <!-- Decision flow -->
+            <div class="bg-white rounded-2xl p-8 border border-gray-200 max-w-4xl mx-auto">
+                <h3 class="font-bold text-gray-900 mb-6">Common scenarios</h3>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                        <p class="font-semibold text-gray-800 text-sm mb-2">Institutional purchase</p>
+                        <p class="text-gray-500 text-xs leading-relaxed">Provide your A/P contact and PO info — we'll assist with supplier onboarding and issue a formal quote for approval.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                        <p class="font-semibold text-gray-800 text-sm mb-2">Sterilization required</p>
+                        <p class="text-gray-500 text-xs leading-relaxed">Let us know upfront — we'll add lead time and confirm the sterilization process before quoting.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-5 border border-gray-100">
+                        <p class="font-semibold text-gray-800 text-sm mb-2">Grant budgeting</p>
+                        <p class="text-gray-500 text-xs leading-relaxed">We provide a quote PDF formatted for grant budget submissions, and keep up with you as you move toward funding.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <main class="max-w-6xl mx-auto px-4 mt-8">
+    <!-- ═══════════════════════════════════════
+         FAQ
+    ═══════════════════════════════════════ -->
+    <section class="section-padding bg-white">
+        <div class="container-wide max-w-3xl">
 
-        <!-- Quick overview cards -->
-        <section class="grid md:grid-cols-3 gap-6 mb-10" data-aos="fade-up" data-aos-delay="50">
-            <div class="bg-white/95 rounded-xl p-6 shadow">
-                <div class="flex items-start gap-4">
-                    <div class="p-3 rounded-lg bg-gradient-to-br from-[#3b82f6] to-[#60a5fa] text-white">
-                        <i data-feather="mail" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-display font-semibold">Start: Request a quote</h3>
-                        <p class="text-gray-600 mt-1">Use "Learn More" on any product or email us — include billing contact and PO info if available.</p>
-                    </div>
-                </div>
+            <div class="text-center mb-12">
+                <div class="chapter-label" style="justify-content:center;">FAQ</div>
+                <h2 class="section-title" style="font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1;">Common questions</h2>
             </div>
 
-            <div class="bg-white/95 rounded-xl p-6 shadow">
-                <div class="flex items-start gap-4">
-                    <div class="p-3 rounded-lg bg-gradient-to-br from-[#06b6d4] to-[#3b82f6] text-white">
-                        <i data-feather="sliders" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-display font-semibold">We configure & quote</h3>
-                        <p class="text-gray-600 mt-1">We check compatibility, include accessories and optional services (sterilization, contracts).</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white/95 rounded-xl p-6 shadow">
-                <div class="flex items-start gap-4">
-                    <div class="p-3 rounded-lg bg-gradient-to-br from-[#10b981] to-[#06b6d4] text-white">
-                        <i data-feather="credit-card" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h3 class="font-display font-semibold">Invoice & payment</h3>
-                        <p class="text-gray-600 mt-1">We will issue an invoice document + online payment portal through email to you (and your institutions accounts payable). We will follow up until payment clears.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Flowchart / process visual (placeholder) -->
-        <section class="mb-10">
-            <div class="bg-white/95 rounded-xl p-6 shadow">
-                <h2 class="text-xl font-display mb-4">Decision flow (quick)</h2>
-                <div class="grid md:grid-cols-3 gap-4 items-center">
-                    <div class="text-center p-4 border rounded-lg">
-                        <div class="text-sm font-semibold text-gray-700">Is purchase institutional?</div>
-                        <div class="mt-3 text-xs text-gray-500">If yes → supplier setup & quote</div>
-                    </div>
-                    <div class="text-center p-4 border rounded-lg">
-                        <div class="text-sm font-semibold text-gray-700">Need sterilization?</div>
-                        <div class="mt-3 text-xs text-gray-500">If yes → add lead time and confirm process</div>
-                    </div>
-                    <div class="text-center p-4 border rounded-lg">
-                        <div class="text-sm font-semibold text-gray-700">Grant budgeting?</div>
-                        <div class="mt-3 text-xs text-gray-500">We provide quote PDF formatted for budgets</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ + disclaimer -->
-        <section class="bg-white/95 rounded-xl p-8 shadow mb-10">
-            <h2 class="text-xl font-display mb-4">FAQ</h2>
-
-            <div class="space-y-4">
-                <details class="bg-white rounded-md p-4 border">
-                    <summary class="font-semibold">How do I get a quote?</summary>
-                    <div class="mt-2 text-gray-600">Click "Learn More" on a product card and select "Request Quote", or email us with the product SKU and billing details.</div>
+            <div class="space-y-3">
+                <details class="bg-gray-50 rounded-2xl border border-gray-200 p-6 group">
+                    <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                        How do I get a quote?
+                        <i data-feather="chevron-down" style="width:16px;height:16px;stroke:#6b7280;flex-shrink:0;"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Click "Learn More" on any product card and select "Request Quote", or email us directly with the product SKU and your billing details.</p>
                 </details>
 
-                <details class="bg-white rounded-md p-4 border">
-                    <summary class="font-semibold">Can you bill my university?</summary>
-                    <div class="mt-2 text-gray-600">Yes. Provide A/P contact and PO information; we'll assist with supplier onboarding if required.</div>
+                <details class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+                    <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                        Can you bill my university?
+                        <i data-feather="chevron-down" style="width:16px;height:16px;stroke:#6b7280;flex-shrink:0;"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Yes. Provide your A/P contact and PO information and we'll assist with supplier onboarding if required by your institution.</p>
                 </details>
 
-                <details class="bg-white rounded-md p-4 border">
-                    <summary class="font-semibold">What payment methods do you accept?</summary>
-                    <div class="mt-2 text-gray-600">Institutional invoicing (A/P) and credit card payments are supported. Custom payment arrangements may be possible for large orders.</div>
+                <details class="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+                    <summary class="font-semibold text-gray-900 cursor-pointer list-none flex justify-between items-center">
+                        What payment methods do you accept?
+                        <i data-feather="chevron-down" style="width:16px;height:16px;stroke:#6b7280;flex-shrink:0;"></i>
+                    </summary>
+                    <p class="mt-3 text-gray-500 text-sm leading-relaxed">Institutional invoicing (A/P) and credit card are both supported. Custom arrangements may be possible for large orders.</p>
                 </details>
             </div>
-        </section>
+        </div>
+    </section>
 
-                <!-- Terms of Service -->
-        <section class="bg-white/95 rounded-xl p-8 shadow mb-10">
-            <h2 class="text-xl font-display mb-4">Terms of Service</h2>
+    <!-- ═══════════════════════════════════════
+         TERMS / DISCLAIMER
+    ═══════════════════════════════════════ -->
+    <section class="section-padding bg-gray-50">
+        <div class="container-wide max-w-3xl">
 
-            <div class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-300 rounded">
-                <strong class="block text-sm">Research use disclaimer</strong>
-                <p class="mt-2 text-sm text-gray-700">
-                    Products are intended for research use only. They are not cleared or approved as medical devices by any regulatory body for your use. Users are responsible for ensuring appropriate approvals and consent are present for any human use under the guidance of their institution, institutional review board, and local, regional, and national regulatory bodies.
-                </p>
-                <p class="mt-2 text-sm text-red-600 font-semibold">Open NeuroTech LLC is a stricly condemns any use of devices . Use in humans is not the responsibility of Open NeuroTech LLC without required approvals is strictly at the purchaser's risk. Purchasers should only use </p>
+            <div class="text-center mb-12">
+                <div class="chapter-label" style="justify-content:center;">Legal</div>
+                <h2 class="section-title" style="font-size:clamp(1.75rem,3.5vw,2.75rem);line-height:1.1;">Terms of Service</h2>
             </div>
-        </section>
-    </main>
 
+            <div class="bg-white rounded-2xl border border-gray-200 p-8">
+                <div class="flex gap-4 items-start p-5 bg-yellow-50 rounded-xl border border-yellow-200 mb-6">
+                    <i data-feather="alert-triangle" style="width:18px;height:18px;stroke:#d97706;flex-shrink:0;margin-top:2px;"></i>
+                    <div>
+                        <p class="font-semibold text-yellow-800 text-sm mb-1">Research use only</p>
+                        <p class="text-yellow-700 text-sm leading-relaxed">Products are intended for research use only. They are not cleared or approved as medical devices by any regulatory body. Users are responsible for ensuring appropriate approvals and consent are in place for any human use, under the guidance of their institution, IRB, and applicable local, regional, and national regulatory bodies. Any use in humans without required approvals is strictly at the purchaser's risk.</p>
+                    </div>
+                </div>
+
+                <p class="text-gray-500 text-sm leading-relaxed">By purchasing from Open NeuroTech LLC, you agree to use all products in compliance with applicable laws and regulations, and only for their intended research purposes. Open NeuroTech LLC is not liable for misuse or use outside of approved regulatory frameworks.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
     <div id="footer-placeholder"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (window.AOS && typeof AOS.init === 'function') AOS.init({ duration: 700, once: true });
-            if (window.feather && typeof feather.replace === 'function') feather.replace();
-        });
-    </script>
-
     <script src="/components/footer.js"></script>
+
 </body>
 </html>

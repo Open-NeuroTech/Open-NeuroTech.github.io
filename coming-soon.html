@@ -8,29 +8,30 @@
     <link rel="stylesheet" href="/styles.css">
     <script src="/components/scripts.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
 </head>
-<body class="font-sans antialiased text-white bg-gradient-to-b from-[#111827] to-[#60a5fa] min-h-screen bg-no-repeat bg-[length:100%_100%] flex flex-col">
+<body class="antialiased" style="background:#111827; min-height:100vh; display:flex; flex-direction:column;">
 
-    <!-- Navigation bar -->
+    <!-- Navigation -->
     <div id="navbar-placeholder"></div>
     <script src="/components/navbar.js"></script>
 
-    <!-- Centered content: grows to fill available space so footer sits at bottom -->
-    <div class="flex-1 flex items-center justify-center" style="padding-top: 6rem; padding-bottom: 2rem;">
-        <div class="flex flex-col items-center justify-center text-center max-w-xl w-full">
-            <h1 class="hero-title text-5xl font-bold">Coming Soon</h1>
-            <p class="hero-subtitle text-lg">
-                This page is under construction.<br>
-                Check back soon for updates from Open NeuroTech!
+    <!-- Content -->
+    <div class="flex-1 flex items-center justify-center text-center px-6" style="padding-top:8rem; padding-bottom:4rem;">
+        <div class="max-w-lg w-full">
+            <div class="chapter-label" style="justify-content:center;">Work in progress</div>
+            <h1 class="hero-title mb-5">Coming Soon</h1>
+            <p class="hero-subtitle mb-10">
+                This page is under construction.<br>Check back soon for updates.
             </p>
-            <a href="/index.html" class="btn-primary btn-large inline-block px-6 py-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white">
-                Back to Home
-            </a>
+            <a href="/" class="btn-white-hover-dark inline-block">Back to Home</a>
         </div>
     </div>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>
     <script src="/components/footer.js"></script>
+
 </body>
 </html>
