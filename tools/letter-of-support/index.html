@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter of Support Generator - Open NeuroTech</title>
+    <link rel="icon" type="image/x-icon" href="/img/ont-icon-blue.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/components/scripts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        #letter-preview {
+            width: 816px;
+            height: 1056px;
+            background: white;
+            padding: 96px;
+            font-family: Georgia, 'Times New Roman', serif;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #111827;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+        .letter-body { flex: 1; }
+        .letter-field {
+            border-bottom: 1.5px dashed #93c5fd;
+            color: #1d4ed8;
+            min-width: 60px;
+            display: inline;
+        }
+        .letter-field.empty { color: #93c5fd; }
+        #preview-wrapper {
+            transform-origin: top left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- Navigation -->
+    <div id="navbar-placeholder"></div>
+    <script src="/components/navbar.js"></script>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#111827; padding-top:10rem; padding-bottom:4rem;">
+        <div class="container-wide text-center">
+            <div class="chapter-label" style="justify-content:center;">Tools</div>
+            <h1 class="hero-title mb-5">Letter of Support Generator</h1>
+            <p class="hero-subtitle mb-0">
+                Fill in the fields below to generate a branded ONT Letter of Support — download as a print-ready PDF in one click.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         FORM + PREVIEW
+    ═══════════════════════════════════════ -->
+    <section class="section-padding bg-gray-50">
+        <div class="container-wide">
+            <div class="grid lg:grid-cols-2 gap-10 items-start">
+
+                <!-- Form -->
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 sticky top-8">
+                    <h2 class="text-xl font-bold text-gray-900 mb-6">Letter details</h2>
+
+                    <div class="space-y-5">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Date</label>
+                            <input id="f-date" type="text" placeholder="e.g. 11 May 2026" maxlength="40"
+                                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">To — Program Office</label>
+                            <input id="f-to" type="text" placeholder="e.g. NIH NINDS Program Office" maxlength="120"
+                                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">From — Signing Co-Founder</label>
+                            <select id="f-signer"
+                                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                                <option value="Chris Rexroth">Chris Rexroth</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Investigator Name</label>
+                            <input id="f-investigator" type="text" placeholder="e.g. Dr. Jane Smith" maxlength="100"
+                                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Project Title</label>
+                            <input id="f-title" type="text" placeholder="e.g. Closed-Loop Spinal Cord Stimulation for..." maxlength="127"
+                                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Funding Agency</label>
+                            <input id="f-agency" type="text" placeholder="e.g. NIH" maxlength="100"
+                                class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
+                        </div>
+                    </div>
+
+                    <p id="validation-msg" class="mt-4 text-xs text-red-500 hidden">Please fill in all fields before downloading.</p>
+
+                    <button id="btn-download"
+                        class="mt-4 w-full btn-primary text-center cursor-pointer">
+                        Download PDF
+                    </button>
+                </div>
+
+                <!-- Preview -->
+                <div>
+                    <p class="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">Live preview</p>
+                    <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-lg bg-white">
+                        <div id="preview-scale-container" style="width:100%;">
+                            <div id="preview-wrapper">
+                                <!-- ═══ LETTER (this div is what gets exported) ═══ -->
+                                <div id="letter-preview">
+
+                                    <!-- Letterhead: inline SVG avoids any image-load race during PDF export -->
+                                    <div style="padding-bottom:24px; margin-bottom:32px; border-bottom:2px solid #e5e7eb; text-align:center;">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 90" height="100" style="display:inline-block; width:auto;">
+                                            <rect width="480" height="90" fill="#ffffff"/>
+                                            <g transform="translate(20,19) scale(0.3376)">
+                                                <path fill="#111827" d="M130.09,55.83c0-4.04-3.28-7.32-7.32-7.32-3.28,0-6.06,2.16-6.99,5.13h0s0,0,0,0c-.16.5-.26,1.02-.3,1.56-1.61,7.27-5.46,11.14-9.58,18.42-2.95,5.64-4.84,9.56-6.05,12.24-7.49-14.23-13.58-16.91-22.35-25.19h0c0-3.17-2.57-5.73-5.73-5.73s-5.73,2.57-5.73,5.73c0,1.19.36,2.29.98,3.21.7,11.36-14.83,30.48-23.46,31.46,0,0,0,0,.01.01-5.4.85-9.54,5.51-9.54,11.14,0,6.24,5.06,11.29,11.29,11.29s11.29-5.06,11.29-11.29c0-1-.14-1.96-.38-2.88,0,0,0,0,0,0,.34-9.2,12.47-32.81,18-37.78.19-.09.37-.19.55-.3,7.53.19,16.36,12.45,18.65,18.43,5.75,14.61-.38,11.2-1.95,17.73,0,0,0,0,0,.01-.23.8-.36,1.64-.36,2.52,0,5,4.06,9.06,9.06,9.06s9.06-4.06,9.06-9.06c0-2.21-.79-4.23-2.1-5.8h0c-6-10,.03-19.05,2.1-23.89,4.29-8.33,10.55-10.01,15.18-11.59.57-.13,1.11-.33,1.62-.58,0,0,.01,0,.02,0h0c2.39-1.21,4.03-3.68,4.03-6.53z"/>
+                                                <path fill="#111827" d="M159.85,89.37c-1.43-1.81-3.65-2.62-5.78-2.33-4.44-2.48-7.99-4.11-11-5.18.25-.68.35-1.43.22-2.2-.4-2.35-2.63-3.94-4.98-3.54-1.95.33-3.35,1.92-3.56,3.8-3.44-.37-6.64-.27-10.81-.64-1.36-1.72-3.85-2.02-5.57-.66-1.72,1.36-2.02,3.85-.66,5.57,1.36,1.72,3.85,2.02,5.57.66.6-.47,1.01-1.08,1.25-1.74,2.39-1.8,6.71-1.62,10.69-.71.19.35.4.69.67.97,1.95,8.36-7.19,24.53-13.48,26.35,0,0,0,0,0,0-3.91,1.31-6.4,5.3-5.69,9.49.79,4.64,5.18,7.76,9.82,6.97s7.76-5.18,6.97-9.82c-.13-.74-.35-1.44-.65-2.09,0,0,0,0,0,0-.87-6.66,4.75-24.73,8.27-29.88.53.25,1.01.49,1.42.73,9.38,5.48,4.59,6.25,6.53,10.48,0,0,0,0,0,0,.22.53.51,1.05.88,1.53,2.14,2.72,6.09,3.19,8.81,1.05,2.72-2.14,3.19-6.09,1.05-8.81z"/>
+                                                <circle fill="#111827" cx="75.56" cy="30.41" r="7.1"/>
+                                                <circle fill="#111827" cx="80.64" cy="117.79" r="6.5"/>
+                                                <circle fill="#111827" cx="103.72" cy="35.15" r="12.35"/>
+                                                <path fill="#111827" d="M54.4,65.25c-.31-2.41-1.15-4.62-2.37-6.54h.01c-.71-1.32-.71-1.73-.67-2.46h-.02c.15-.64.2-1.31.11-2-.4-3.13-3.27-5.33-6.39-4.93-.58.07-1.11.26-1.61.49-1.51.99-2.15,1.13-4.45,1.33v.02c-.91-.04-1.83-.02-2.76.1-8.87,1.15-15.13,9.27-13.99,18.14,1.15,8.87,9.27,15.13,18.14,13.99s15.13-9.27,13.99-18.14zM38.33,77.34c-5.63,0-10.19-4.56-10.19-10.19s4.56-10.19,10.19-10.19,10.19,4.56,10.19,10.19-4.56,10.19-10.19,10.19z"/>
+                                            </g>
+                                            <rect x="99" y="29" width="1" height="32" fill="#5E7A96"/>
+                                            <text x="117" y="48" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-weight="700" font-size="22" fill="#111827" letter-spacing="0.01em">Open NeuroTech</text>
+                                            <text x="117" y="62" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-weight="300" font-size="8.5" fill="#5E7A96" letter-spacing="0.13em">ACCELERATING THE NEXT GENERATION OF MEDICINE</text>
+                                        </svg>
+                                    </div>
+
+                                    <!-- Body -->
+                                    <div class="letter-body">
+                                        <p style="margin-bottom:12px;">Date: <span id="p-date" class="letter-field empty">[Date]</span></p>
+                                        <p style="margin-bottom:12px;">To: <span id="p-to" class="letter-field empty">[Program Office]</span></p>
+                                        <p style="margin-bottom:32px;">From: <span id="p-signer-from" class="letter-field">Chris Rexroth</span></p>
+
+                                        <p style="margin-bottom:40px;">If the proposal submitted by <span id="p-investigator" class="letter-field empty">[Investigator]</span> entitled &#8220;<span id="p-title" class="letter-field empty">[Project Title]</span>&#8221; is selected for funding by <span id="p-agency" class="letter-field empty">[Agency]</span>, it is my intent to collaborate and/or commit resources as detailed in the Project Description or the Facilities, Equipment and Other Resources section of the proposal.</p>
+
+                                        <p style="margin-bottom:64px;">Sincerely,</p>
+
+                                        <p style="margin-bottom:4px;"><span id="p-signer-name" style="font-weight:600;">Chris Rexroth</span></p>
+                                        <p style="margin-bottom:2px;">Co-Founder</p>
+                                        <p>Open NeuroTech LLC</p>
+                                    </div>
+
+                                    <!-- Footer pinned to bottom via flex -->
+                                    <div style="padding-top:24px; text-align:center; border-top:1px solid #e5e7eb;">
+                                        <img src="/img/Icon Only - Blue/ont-icon-blue.png" style="height:38px; width:auto; display:block; margin:0 auto 6px;">
+                                        <p style="font-size:11px; color:#6b7280;">Web: openneuro.tech &nbsp;|&nbsp; Email: contact@openneuro.tech</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="/components/footer.js"></script>
+
+    <script>
+        // ── Field → preview mapping ──────────────────────────────────────
+        const fields = [
+            { input: 'f-date',         preview: 'p-date',        placeholder: '[Date]' },
+            { input: 'f-to',           preview: 'p-to',          placeholder: '[Program Office]' },
+            { input: 'f-investigator', preview: 'p-investigator', placeholder: '[Investigator]' },
+            { input: 'f-title',        preview: 'p-title',       placeholder: '[Project Title]' },
+            { input: 'f-agency',       preview: 'p-agency',      placeholder: '[Agency]' },
+        ];
+
+        fields.forEach(({ input, preview, placeholder }) => {
+            const el  = document.getElementById(input);
+            const pEl = document.getElementById(preview);
+            el.addEventListener('input', () => {
+                const val = el.value.trim();
+                pEl.textContent = val || placeholder;
+                pEl.classList.toggle('empty', !val);
+            });
+        });
+
+        // Signer updates two preview elements
+        const signerSelect = document.getElementById('f-signer');
+        signerSelect.addEventListener('change', () => {
+            const name = signerSelect.value;
+            document.getElementById('p-signer-from').textContent = name;
+            document.getElementById('p-signer-name').textContent = name;
+        });
+
+        // ── Scale preview to fit container ───────────────────────────────
+        function scalePreview() {
+            const container = document.getElementById('preview-scale-container');
+            const wrapper   = document.getElementById('preview-wrapper');
+            const scale = Math.min(1, container.offsetWidth / 816);
+            wrapper.style.transform = `scale(${scale})`;
+            wrapper.style.width     = '816px';
+            container.style.height  = `${1056 * scale}px`;
+        }
+        window.addEventListener('resize', scalePreview);
+        scalePreview();
+
+        // ── Validation helpers ───────────────────────────────────────────
+        const requiredFields = ['f-date', 'f-to', 'f-investigator', 'f-title', 'f-agency'];
+
+        function validateFields() {
+            let valid = true;
+            requiredFields.forEach(id => {
+                const el = document.getElementById(id);
+                const empty = !el.value.trim();
+                el.classList.toggle('border-red-400', empty);
+                el.classList.toggle('ring-1',          empty);
+                el.classList.toggle('ring-red-400',    empty);
+                if (empty) valid = false;
+            });
+            document.getElementById('validation-msg').classList.toggle('hidden', valid);
+            return valid;
+        }
+
+        // Clear error state on any field input
+        requiredFields.forEach(id => {
+            document.getElementById(id).addEventListener('input', () => {
+                const el = document.getElementById(id);
+                if (el.value.trim()) {
+                    el.classList.remove('border-red-400', 'ring-1', 'ring-red-400');
+                }
+                // Hide message once all fields are filled
+                if (requiredFields.every(i => document.getElementById(i).value.trim())) {
+                    document.getElementById('validation-msg').classList.add('hidden');
+                }
+            });
+        });
+
+        // ── PDF download ─────────────────────────────────────────────────
+        document.getElementById('btn-download').addEventListener('click', async () => {
+            if (!validateFields()) return;
+
+            const source = document.getElementById('letter-preview');
+
+            // Strip preview-only styling so the clone inherits clean text
+            source.querySelectorAll('.letter-field').forEach(s => {
+                s.style.borderBottom = 'none';
+                s.style.color        = '#111827';
+            });
+
+            // Clone the letter and anchor it at document (0,0) so html2canvas
+            // captures it from the page top with no blank-space offset.
+            const clone = source.cloneNode(true);
+            clone.style.cssText += ';position:absolute;top:0;left:0;z-index:9999;transform:none;';
+            document.body.appendChild(clone);
+
+            // Let the DOM paint before capture
+            await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+            try {
+                const canvas = await html2canvas(clone, {
+                    scale: 2,
+                    useCORS: true,
+                    allowTaint: true,
+                    x: 0,
+                    y: 0,
+                    width: 816,
+                    height: 1056,
+                    scrollX: 0,
+                    scrollY: 0,
+                });
+
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({ unit: 'pt', format: 'letter', orientation: 'portrait' });
+                const pw = pdf.internal.pageSize.getWidth();
+                const ph = pdf.internal.pageSize.getHeight();
+                pdf.addImage(canvas.toDataURL('image/jpeg', 0.98), 'JPEG', 0, 0, pw, ph);
+                pdf.save(`ONT-Letter-of-Support.pdf`);
+            } finally {
+                document.body.removeChild(clone);
+                source.querySelectorAll('.letter-field').forEach(s => {
+                    s.style.borderBottom = '';
+                    s.style.color        = '';
+                });
+            }
+        });
+
+    </script>
+
+</body>
+</html>
