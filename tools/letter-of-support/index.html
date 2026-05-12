@@ -71,7 +71,7 @@
                     <div class="space-y-5">
                         <div>
                             <label class="block text-xs font-semibold text-gray-500 uppercase tracking-widest mb-1.5">Date</label>
-                            <input id="f-date" type="text" placeholder="e.g. 11 May 2026" maxlength="40"
+                            <input id="f-date" type="date"
                                 class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
                         </div>
                         <div>
@@ -179,9 +179,30 @@
     <script src="/components/footer.js"></script>
 
     <script>
+        // ── Date default & formatting ────────────────────────────────────
+        const dateInput = document.getElementById('f-date');
+        const datePreview = document.getElementById('p-date');
+
+        function formatDate(isoStr) {
+            if (!isoStr) return null;
+            const [y, m, d] = isoStr.split('-').map(Number);
+            return new Date(y, m - 1, d).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+        }
+
+        // Set default to today
+        const today = new Date();
+        dateInput.value = today.toISOString().slice(0, 10);
+        datePreview.textContent = formatDate(dateInput.value);
+        datePreview.classList.remove('empty');
+
+        dateInput.addEventListener('input', () => {
+            const formatted = formatDate(dateInput.value);
+            datePreview.textContent = formatted || '[Date]';
+            datePreview.classList.toggle('empty', !formatted);
+        });
+
         // ── Field → preview mapping ──────────────────────────────────────
         const fields = [
-            { input: 'f-date',         preview: 'p-date',        placeholder: '[Date]' },
             { input: 'f-to',           preview: 'p-to',          placeholder: '[Program Office]' },
             { input: 'f-investigator', preview: 'p-investigator', placeholder: '[Investigator]' },
             { input: 'f-title',        preview: 'p-title',       placeholder: '[Project Title]' },
