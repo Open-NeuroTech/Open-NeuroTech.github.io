@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investors - Open NeuroTech</title>
+    <link rel="icon" type="image/x-icon" href="/img/ont-icon-blue.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/components/scripts.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        .doc-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .doc-card:hover {
+            background: rgba(255,255,255,0.07);
+            border-color: rgba(96,165,250,0.35);
+            transform: translateY(-2px);
+        }
+        .doc-card-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            background: rgba(59,130,246,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .doc-card-icon svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: #60a5fa;
+            stroke: #60a5fa;
+        }
+        .file-badge {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            background: rgba(96,165,250,0.12);
+            color: #93c5fd;
+            display: inline-block;
+        }
+        .category-divider {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #60a5fa;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.25rem;
+        }
+        .category-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(96,165,250,0.2);
+        }
+        .thesis-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.75rem;
+            padding: 1.75rem;
+        }
+        .thesis-card-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 0.75rem;
+            background: rgba(59,130,246,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .thesis-card-icon svg {
+            width: 1.4rem;
+            height: 1.4rem;
+            stroke: #60a5fa;
+        }
+        .milestone-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .milestone-row:last-child { border-bottom: none; }
+        .milestone-dot {
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 50%;
+            background: #3b82f6;
+            flex-shrink: 0;
+            margin-top: 0.4rem;
+        }
+        .locked-overlay {
+            position: relative;
+        }
+        .locked-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            background: rgba(107,114,128,0.2);
+            color: #9ca3af;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+        .locked-badge svg {
+            width: 0.75rem;
+            height: 0.75rem;
+            stroke: #9ca3af;
+        }
+        .view-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #60a5fa;
+            transition: color 0.2s ease;
+        }
+        .view-btn:hover { color: #93c5fd; }
+        .view-btn svg {
+            width: 0.9rem;
+            height: 0.9rem;
+            stroke: currentColor;
+        }
+    </style>
+</head>
+<body class="antialiased text-gray-800">
+
+    <!-- Navigation -->
+    <div id="navbar-placeholder"></div>
+    <script src="/components/navbar.js"></script>
+
+    <!-- ═══════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════ -->
+    <div id="vanta-bg" class="min-h-screen flex flex-col justify-center relative overflow-hidden">
+        <div class="hero-overlay"></div>
+
+        <div class="relative z-10 text-center px-6 py-24 pt-40 max-w-4xl mx-auto w-full">
+            <div class="chapter-label" style="justify-content:center;" data-aos="fade-up">Investor Overview</div>
+
+            <h1 class="hero-title mb-6" data-aos="fade-up" data-aos-delay="80">
+                Building the <br><span class="text-blue-accent">infrastructure layer</span> for neurotech
+            </h1>
+
+            <p class="hero-subtitle max-w-2xl mx-auto mb-12" data-aos="fade-up" data-aos-delay="160">
+                Open NeuroTech is the fastest, most cost-effective path from therapy concept to first-in-human study — a full-stack CRO purpose-built for neuromodulation.
+            </p>
+
+            <!-- Key stats bar -->
+            <div class="inline-grid grid-cols-2 sm:grid-cols-4 gap-px bg-white bg-opacity-10 rounded-2xl overflow-hidden border border-white border-opacity-10 mb-12" data-aos="fade-up" data-aos-delay="220">
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">10</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Humans Implanted</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">3</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">FDA IDEs</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">16</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Active Pilots</div>
+                </div>
+                <div class="bg-gray-900 bg-opacity-60 px-5 py-5 text-center">
+                    <div class="stat-hero">30+</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-wider mt-1">Years Experience</div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="300">
+                <a href="#data-room" class="btn-white-hover-dark">View Data Room</a>
+                <a href="/contact/" class="btn-secondary">Schedule a Call</a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 opacity-40">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" style="animation: slow-pulse 2s ease-in-out infinite;">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════
+         INVESTMENT THESIS
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#111827;">
+        <div class="container-wide">
+            <div class="max-w-3xl mx-auto text-center mb-14">
+                <div class="chapter-label" style="justify-content:center;" data-aos="fade-up">Why Open NeuroTech</div>
+                <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up" data-aos-delay="80">The infrastructure layer neurotech has been missing</h2>
+                <p class="text-gray-400 text-lg" data-aos="fade-up" data-aos-delay="140">
+                    Every promising neuromodulation therapy faces the same wall: years of preclinical work, opaque regulatory paths, and a device ecosystem that wasn't built for their application. We remove that wall.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="thesis-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="thesis-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">Compressing timelines</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Where traditional paths to first-in-human take 5–10 years, our integrated platform — preclinical models, COSMIIC devices, regulatory support — cuts that to 18–36 months.</p>
+                </div>
+
+                <div class="thesis-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="thesis-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke-linecap="round" stroke-linejoin="round"/><path d="M2 12h20M12 2a15.3 15.3 0 010 20M12 2a15.3 15.3 0 000 20" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">Massive addressable market</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Over 3.8 billion people live with neurological conditions. Hundreds of academic labs and startups are pursuing neuromodulation therapies with no clear commercialization pathway. We are that pathway.</p>
+                </div>
+
+                <div class="thesis-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="thesis-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">Defensible platform</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Proprietary open-source hardware (COSMIIC), FDA IDE experience across multiple indications, and deep institutional relationships create a moat that takes years to replicate.</p>
+                </div>
+
+                <div class="thesis-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="thesis-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">Multiple revenue streams</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Services revenue (CRO contracts) funds operations today. Device licensing, pilot fees, and a growing product portfolio create durable, diversified ARR as the platform scales.</p>
+                </div>
+
+                <div class="thesis-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="thesis-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">World-class team</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">30+ years of combined neurotech experience spanning device engineering, clinical operations, FDA regulatory strategy, and academic research translation.</p>
+                </div>
+
+                <div class="thesis-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="thesis-card-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </div>
+                    <h3 class="text-white font-semibold text-lg">De-risked by real traction</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">10 humans implanted, 3 active FDA IDEs, 16 paying pilot clients. This is not a pre-revenue concept — we have demonstrated the market, the product, and the execution capability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         TRACTION & MILESTONES
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#f9fafb;">
+        <div class="container-wide">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+
+                <!-- Milestones -->
+                <div data-aos="fade-right">
+                    <div class="chapter-label">Milestones</div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Proven execution, step by step</h2>
+
+                    <div>
+                        <div class="milestone-row">
+                            <div class="milestone-dot" style="background:#10b981;"></div>
+                            <div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-green-600 mb-0.5">Achieved</div>
+                                <p class="font-semibold text-gray-900">First-in-human implant completed</p>
+                                <p class="text-sm text-gray-500 mt-0.5">10 patients implanted across multiple indications using the COSMIIC platform.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-row">
+                            <div class="milestone-dot" style="background:#10b981;"></div>
+                            <div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-green-600 mb-0.5">Achieved</div>
+                                <p class="font-semibold text-gray-900">3 FDA IDEs granted</p>
+                                <p class="text-sm text-gray-500 mt-0.5">Regulatory clearance obtained for investigational device use across three programs.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-row">
+                            <div class="milestone-dot" style="background:#10b981;"></div>
+                            <div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-green-600 mb-0.5">Achieved</div>
+                                <p class="font-semibold text-gray-900">16 active pilot clients</p>
+                                <p class="text-sm text-gray-500 mt-0.5">Paying customers across academic labs and early-stage neurotech companies.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-row">
+                            <div class="milestone-dot" style="background:#3b82f6;"></div>
+                            <div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-blue-500 mb-0.5">In Progress</div>
+                                <p class="font-semibold text-gray-900">COSMIIC v2 platform release</p>
+                                <p class="text-sm text-gray-500 mt-0.5">Next-generation hardware with expanded therapeutic and recording capabilities.</p>
+                            </div>
+                        </div>
+                        <div class="milestone-row">
+                            <div class="milestone-dot" style="background:#6b7280;"></div>
+                            <div>
+                                <div class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-0.5">Upcoming</div>
+                                <p class="font-semibold text-gray-900">Seed round close</p>
+                                <p class="text-sm text-gray-500 mt-0.5">Fundraise to accelerate platform development, BD hires, and clinical pipeline expansion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Use of Proceeds -->
+                <div data-aos="fade-left">
+                    <div class="chapter-label">Use of Proceeds</div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-8">Where the capital goes</h2>
+
+                    <div class="space-y-5">
+                        <div>
+                            <div class="flex justify-between items-center mb-1.5">
+                                <span class="text-sm font-semibold text-gray-700">Platform R&D (COSMIIC v2)</span>
+                                <span class="text-sm font-bold text-blue-600">35%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width:35%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1.5">
+                                <span class="text-sm font-semibold text-gray-700">Clinical Operations & Regulatory</span>
+                                <span class="text-sm font-bold text-blue-600">25%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width:25%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1.5">
+                                <span class="text-sm font-semibold text-gray-700">Business Development & Sales</span>
+                                <span class="text-sm font-bold text-blue-600">20%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width:20%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1.5">
+                                <span class="text-sm font-semibold text-gray-700">Team & Operations</span>
+                                <span class="text-sm font-bold text-blue-600">15%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width:15%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center mb-1.5">
+                                <span class="text-sm font-semibold text-gray-700">Reserve / Working Capital</span>
+                                <span class="text-sm font-bold text-blue-600">5%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width:5%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-400 mt-6 leading-relaxed">
+                        Detailed financial projections, cap table, and use of proceeds breakdown are available in the data room below.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         DATA ROOM
+    ═══════════════════════════════════════ -->
+    <section id="data-room" class="section-padding" style="background:#0f172a;">
+        <div class="container-wide">
+            <div class="max-w-3xl mx-auto text-center mb-14">
+                <div class="chapter-label" style="justify-content:center;" data-aos="fade-up">Data Room</div>
+                <h2 class="text-3xl font-bold text-white mb-4" data-aos="fade-up" data-aos-delay="80">Due diligence materials</h2>
+                <p class="text-gray-400 text-lg" data-aos="fade-up" data-aos-delay="140">
+                    Core documents are publicly accessible via Google Drive. Documents marked
+                    <span class="locked-badge" style="display:inline-flex;"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg> NDA Required</span>
+                    are available upon request after a signed NDA.
+                    <a href="/contact/" class="text-blue-400 hover:text-blue-300 transition-colors">Contact us</a> to request access.
+                </p>
+            </div>
+
+            <!-- ── Pitch Materials ── -->
+            <div class="mb-12" data-aos="fade-up">
+                <div class="category-divider text-blue-400">Pitch Materials</div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Investor Pitch Deck</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Full narrative deck covering problem, solution, market, traction, team, and ask.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Executive Summary</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Two-page overview of the company, market opportunity, traction, and investment terms.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Company Overview</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Detailed description of the platform, business model, and competitive positioning.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Financials ── -->
+            <div class="mb-12" data-aos="fade-up">
+                <div class="category-divider text-blue-400">Financials</div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">XLSX</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Financial Model</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">5-year revenue projections, P&L, cash flow, and key operating assumptions.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Use of Proceeds</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Detailed breakdown of how raised capital will be deployed by category and timeline.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">XLSX</span>
+                                    <span class="locked-badge">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                        NDA Required
+                                    </span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Cap Table</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Full capitalization table including founder equity, prior investment, and option pool.</p>
+                        <a href="/contact/" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Request Access
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Product & Technology ── -->
+            <div class="mb-12" data-aos="fade-up">
+                <div class="category-divider text-blue-400">Product &amp; Technology</div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">COSMIIC Platform Overview</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Technical overview of the COSMIIC implantable device platform — architecture, capabilities, and clinical applications.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Technical Whitepaper</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Deep-dive on platform architecture, signal processing approach, and differentiation from existing neuromodulation devices.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                    <span class="locked-badge">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                        NDA Required
+                                    </span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">IP Summary</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Overview of patent applications, trade secrets, and open-source licensing strategy.</p>
+                        <a href="/contact/" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Request Access
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Clinical & Regulatory ── -->
+            <div class="mb-12" data-aos="fade-up">
+                <div class="category-divider text-blue-400">Clinical &amp; Regulatory</div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Clinical Pipeline</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Active and planned clinical programs, indications, stage, and expected timelines to key milestones.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Regulatory Strategy</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">FDA IDE pathway, De Novo strategy, and long-term PMA roadmap for the COSMIIC platform.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                    <span class="locked-badge">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                        NDA Required
+                                    </span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Clinical Data Summary</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">De-identified outcomes data from completed and ongoing first-in-human programs.</p>
+                        <a href="/contact/" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Request Access
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── Legal & Corporate ── -->
+            <div data-aos="fade-up">
+                <div class="category-divider text-blue-400">Legal &amp; Corporate</div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Certificate of Incorporation</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Delaware LLC formation documents and articles of organization.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                    <span class="locked-badge">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                                        NDA Required
+                                    </span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Operating Agreement</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Current operating agreement including equity structure and governance provisions.</p>
+                        <a href="/contact/" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Request Access
+                        </a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div class="flex items-start gap-3">
+                            <div class="doc-card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" xmlns="http://www.w3.org/2000/svg"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                            </div>
+                            <div class="flex-1">
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="file-badge">PDF</span>
+                                </div>
+                                <h4 class="text-white font-semibold text-sm">Team Bios</h4>
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-xs leading-relaxed">Full bios and LinkedIn profiles for founders and key team members.</p>
+                        <!-- REPLACE href with your Google Drive public link: https://drive.google.com/file/d/YOUR_FILE_ID/view -->
+                        <a href="#" target="_blank" rel="noopener" class="view-btn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            View on Drive
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+         CTA
+    ═══════════════════════════════════════ -->
+    <section class="section-padding" style="background:#111827;">
+        <div class="max-w-2xl mx-auto text-center px-6">
+            <div class="chapter-label" style="justify-content:center;" data-aos="fade-up">Next Steps</div>
+            <h2 class="text-3xl font-bold text-white mb-5" data-aos="fade-up" data-aos-delay="80">Ready to learn more?</h2>
+            <p class="text-gray-400 text-lg mb-10" data-aos="fade-up" data-aos-delay="140">
+                We welcome conversations with aligned investors. Reach out to schedule a call, request NDA-gated materials, or ask any questions about the round.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="/contact/" class="btn-white-hover-dark">Schedule a Call</a>
+                <a href="mailto:crexroth@openneuro.tech" class="btn-secondary">Email the Team</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="/components/footer.js"></script>
+
+    <script>
+        AOS.init({ duration: 600, once: true, offset: 60 });
+
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x2563eb,
+            backgroundColor: 0x111827,
+            points: 10.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+    </script>
+
+</body>
+</html>
