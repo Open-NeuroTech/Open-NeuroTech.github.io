@@ -41,7 +41,7 @@ h1 { line-height: 1.02; letter-spacing: -0.02em; }
 
 /* Optional utilities */
 .text-gradient {
-    background: linear-gradient(90deg, #3b82f6 0%, #111827 100%);
+    background: linear-gradient(90deg, #2563eb 0%, #111827 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -80,7 +80,7 @@ h1 { line-height: 1.02; letter-spacing: -0.02em; }
    ============================================ */
 .btn-primary {
     padding: 0.75rem 2rem;
-    background-color: #3b82f6;
+    background-color: #2563eb;
     color: white;
     font-weight: 600;
     border-radius: 9999px;
@@ -104,7 +104,7 @@ h1 { line-height: 1.02; letter-spacing: -0.02em; }
 
 .btn-secondary:hover {
     background-color: white;
-    color: #3b82f6;
+    color: #2563eb;
 }
 
 .btn-large {
@@ -352,7 +352,7 @@ h1 { line-height: 1.02; letter-spacing: -0.02em; }
     width: 8rem;
     height: 8rem;
     font-size: 2rem;
-    color: #3b82f6; /* text-blue-500 */
+    color: #2563eb; /* text-blue-600 */
     display: block;
 }
 
@@ -481,7 +481,7 @@ body.modal-open {
             width: 0.75rem;
             height: 0.75rem;
             border-radius: 9999px;
-            background: linear-gradient(90deg,#3b82f6,#60a5fa);
+            background: linear-gradient(90deg,#2563eb,#60a5fa);
             box-shadow: 0 0 0 4px rgba(59,130,246,0.08);
         }
 
@@ -731,7 +731,7 @@ body.modal-open {
     top: 8px;
     bottom: 8px;
     width: 2px;
-    background: linear-gradient(to bottom, #3b82f6 0%, rgba(59, 130, 246, 0.15) 100%);
+    background: linear-gradient(to bottom, #2563eb 0%, rgba(59, 130, 246, 0.15) 100%);
 }
 
 .stat-hero {

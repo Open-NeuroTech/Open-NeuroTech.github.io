@@ -57,7 +57,7 @@ function initVantaBackground() {
             minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
-            color: 0x3b82f6,
+            color: 0x2563eb,
             backgroundColor: 0x111827,
             points: 12.00,
             maxDistance: 22.00,

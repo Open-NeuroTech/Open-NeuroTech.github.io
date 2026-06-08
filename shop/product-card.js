@@ -7,7 +7,7 @@
         }
         // fallback to feather icon name stored in product.image
         const icon = product.image || 'box';
-        return `<i data-feather="${icon}" class="w-32 h-32 text-blue-500"></i>`;
+        return `<i data-feather="${icon}" class="w-32 h-32 text-blue-600"></i>`;
     }
 
     function escapeHtml(str = '') {
@@ -31,7 +31,7 @@
                         <!-- <div class="flex items-center justify-between mb-3">
                             <span class="product-card-price text-blue-600 font-semibold text-lg">${escapeHtml(priceText)}</span>
                         </div> -->
-                        <button onclick="openProductModal('${key}')" class="btn-full w-full inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-700 text-white font-semibold rounded-full">
+                        <button onclick="openProductModal('${key}')" class="btn-full w-full inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold rounded-full">
                             Learn More
                         </button>
                     </div>

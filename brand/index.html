@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Style Guide — Open NeuroTech</title>
+    <link rel="icon" type="image/x-icon" href="/img/ont-icon-blue.svg">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Guide-specific overrides */
+        .swatch { width: 100%; height: 80px; border-radius: 10px; }
+        .swatch-sm { width: 100%; height: 48px; border-radius: 8px; }
+        .code-tag { font-family: 'Courier New', monospace; font-size: 0.75rem; color: #6b7280; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; }
+        .guide-section { border-top: 2px solid #f3f4f6; padding-top: 3rem; margin-top: 3rem; }
+        .guide-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #9ca3af; margin-bottom: 0.5rem; }
+        .token-row { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #f3f4f6; }
+        .token-row:last-child { border-bottom: none; }
+        pre { background: #111827; color: #60a5fa; padding: 1.25rem; border-radius: 0.75rem; font-size: 0.78rem; overflow-x: auto; line-height: 1.6; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Header -->
+    <div style="background:#111827;" class="px-8 py-10">
+        <div class="container-wide">
+            <div class="chapter-label" style="color:#60a5fa;">Open NeuroTech</div>
+            <h1 class="text-4xl font-bold text-white mt-2 mb-2" style="letter-spacing:-0.02em;">Brand Style Guide</h1>
+            <p class="text-gray-400 text-lg">Visual design for openneuro.tech</p>
+        </div>
+    </div>
+
+    <div class="container-wide px-6 py-16">
+
+        <!-- ─── LOGO ───────────────────────────────────────── -->
+        <section>
+            <div class="guide-label">Identity</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Logo & Wordmark</h2>
+
+            <!-- Full logos v2 -->
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Full Logo</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-10">
+                <div class="bg-white rounded-2xl p-10 border border-gray-200 flex flex-col items-center justify-center gap-4">
+                    <img src="/img/ONT_logo_light_v2.svg" alt="Open NeuroTech logo — light" class="h-14 w-auto max-w-xs">
+                    <p class="guide-label text-center">Full Logo — Light background</p>
+                </div>
+                <div class="rounded-2xl p-10 border border-gray-700 flex flex-col items-center justify-center gap-4" style="background:#111827;">
+                    <img src="/img/ONT_logo_dark_v2.svg" alt="Open NeuroTech logo — dark" class="h-14 w-auto max-w-xs">
+                    <p class="guide-label text-center" style="color:#4b5563;">Full Logo — Dark background</p>
+                </div>
+            </div>
+
+            <!-- Icon + manual wordmark -->
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Icon Only</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-10 border border-gray-200 flex flex-col items-center justify-center gap-4">
+                    <img src="/img/ont-icon-blue.svg" alt="ONT icon" class="h-16 w-auto">
+                    <p class="guide-label text-center">Icon — Light background</p>
+                </div>
+                <div class="rounded-2xl p-10 border border-gray-700 flex flex-col items-center justify-center gap-4" style="background:#111827;">
+                    <img src="/img/ont-icon-white.svg" alt="ONT icon" class="h-16 w-auto">
+                    <p class="guide-label text-center" style="color:#4b5563;">Icon — Dark background</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── COLORS ─────────────────────────────────────── -->
+        <section class="guide-section">
+            <div class="guide-label">Color System</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Colors</h2>
+
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Primary Palette</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 mb-10">
+                <div>
+                    <div class="swatch mb-2" style="background:#111827;border:1px solid #e5e7eb;"></div>
+                    <div class="font-semibold text-sm text-gray-900">Gray 900</div>
+                    <div class="code-tag">#111827</div>
+                    <div class="text-xs text-gray-400 mt-1">Backgrounds · footer · headings</div>
+                </div>
+                <div>
+                    <div class="swatch mb-2" style="background:#2563eb;"></div>
+                    <div class="font-semibold text-sm text-gray-900">Blue 600</div>
+                    <div class="code-tag">#2563eb</div>
+                    <div class="text-xs text-gray-400 mt-1">Links · featured card · hover</div>
+                </div>
+                <div>
+                    <div class="swatch mb-2" style="background:#60a5fa;"></div>
+                    <div class="font-semibold text-sm text-gray-900">Blue 400</div>
+                    <div class="code-tag">#60a5fa</div>
+                    <div class="text-xs text-gray-400 mt-1">Chapter labels · stat numbers · dark-bg accent</div>
+                </div>
+                <div>
+                    <div class="swatch mb-2" style="background:#bfdbfe;"></div>
+                    <div class="font-semibold text-sm text-gray-900">Blue 200</div>
+                    <div class="code-tag">#bfdbfe</div>
+                    <div class="text-xs text-gray-400 mt-1">Hero subtitle text on dark</div>
+                </div>
+                <div>
+                    <div class="swatch mb-2" style="background:#ffffff;border:1px solid #e5e7eb;"></div>
+                    <div class="font-semibold text-sm text-gray-900">White</div>
+                    <div class="code-tag">#ffffff</div>
+                    <div class="text-xs text-gray-400 mt-1">Page background · text on dark</div>
+                </div>
+            </div>
+
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Neutral Scale</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 mb-10">
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#1f2937;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Gray 800</div>
+                    <div class="code-tag">#1f2937</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#374151;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Gray 700</div>
+                    <div class="code-tag">#374151</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#4b5563;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Gray 600</div>
+                    <div class="code-tag">#4b5563</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#6b7280;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Gray 500</div>
+                    <div class="code-tag">#6b7280</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#9ca3af;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Gray 400</div>
+                    <div class="code-tag">#9ca3af</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#e5e7eb;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Gray 200</div>
+                    <div class="code-tag">#e5e7eb</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#f9fafb;border:1px solid #e5e7eb;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Gray 50</div>
+                    <div class="code-tag">#f9fafb</div>
+                </div>
+            </div>
+
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Semantic / Alert Colors</h3>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div>
+                    <div class="swatch-sm mb-2" style="background:#f87171;"></div>
+                    <div class="font-semibold text-xs text-gray-900">Red 400</div>
+                    <div class="code-tag">#f87171</div>
+                    <div class="text-xs text-gray-400 mt-1">Problem / bottleneck callouts</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:rgba(127,29,29,0.15);border:1px solid rgba(127,29,29,0.5);"></div>
+                    <div class="font-semibold text-xs text-gray-900">Red tint bg</div>
+                    <div class="code-tag">rgba(127,29,29,.15)</div>
+                    <div class="text-xs text-gray-400 mt-1">Problem card backgrounds</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:rgba(59,130,246,0.08);"></div>
+                    <div class="font-semibold text-xs text-gray-900">Blue tint bg</div>
+                    <div class="code-tag">rgba(59,130,246,.08)</div>
+                    <div class="text-xs text-gray-400 mt-1">Table highlight rows</div>
+                </div>
+                <div>
+                    <div class="swatch-sm mb-2" style="background:rgba(59,130,246,0.15);"></div>
+                    <div class="font-semibold text-xs text-gray-900">Blue icon bg</div>
+                    <div class="code-tag">rgba(59,130,246,.15)</div>
+                    <div class="text-xs text-gray-400 mt-1">Icon container on dark</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── GRADIENTS ──────────────────────────────────── -->
+        <section class="guide-section">
+            <div class="guide-label">Color System</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Gradients</h2>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div>
+                    <div class="swatch mb-3" style="background:linear-gradient(90deg,#60a5fa 0%,#111827 100%);"></div>
+                    <div class="font-semibold text-sm text-gray-900 mb-1">Button Gradient</div>
+                    <div class="code-tag">linear-gradient(90deg, #60a5fa → #111827)</div>
+                    <div class="text-xs text-gray-400 mt-1">Gradient CTA buttons</div>
+                </div>
+                <div>
+                    <div class="swatch mb-3" style="background:linear-gradient(180deg,#111827 0%,#1f2937 100%);"></div>
+                    <div class="font-semibold text-sm text-gray-900 mb-1">Dark Panel Gradient</div>
+                    <div class="code-tag">linear-gradient(180deg, #111827 → #1f2937)</div>
+                    <div class="text-xs text-gray-400 mt-1">Mobile menu · dark overlays</div>
+                </div>
+                <div>
+                    <div class="swatch mb-3" style="background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%);"></div>
+                    <div class="font-semibold text-sm text-gray-900 mb-1">Featured Card Gradient</div>
+                    <div class="code-tag">linear-gradient(135deg, #2563eb → #1d4ed8)</div>
+                    <div class="text-xs text-gray-400 mt-1">Highlighted product tier card</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── TYPOGRAPHY ─────────────────────────────────── -->
+        <section class="guide-section">
+            <div class="guide-label">Typography</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Type System</h2>
+
+            <div class="grid md:grid-cols-2 gap-8 mb-10">
+                <div class="bg-white rounded-2xl p-8 border border-gray-200">
+                    <div class="guide-label">Display & Heading Font</div>
+                    <div style="font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;letter-spacing:-0.02em;line-height:1.1;color:#111827;">Space Grotesk</div>
+                    <div class="text-gray-400 text-sm mt-2">AaBbCcDdEeFfGg 0123456789</div>
+                    <div class="mt-4 space-y-1 text-sm text-gray-600">
+                        <div>Weights: <span class="code-tag">500</span> <span class="code-tag">600</span> <span class="code-tag">700</span></div>
+                        <div>Letter-spacing: <span class="code-tag">-0.01em</span> to <span class="code-tag">-0.03em</span></div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 border border-gray-200">
+                    <div class="guide-label">Body Font</div>
+                    <div style="font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:400;color:#4b5563;line-height:1.6;">Space Grotesk is used for body text as well, keeping the type palette unified. Inter and Poppins are loaded as fallback options.</div>
+                    <div class="mt-4 space-y-1 text-sm text-gray-600">
+                        <div>Weights: <span class="code-tag">400</span> <span class="code-tag">500</span> <span class="code-tag">600</span></div>
+                        <div>Color: <span class="code-tag">#4b5563</span> on white · <span class="code-tag">#9ca3af</span> on dark</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-6">Type Scale</h3>
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Hero Title</div>
+                    <div style="font-family:'Space Grotesk',sans-serif;font-size:2.5rem;font-weight:700;letter-spacing:-0.02em;line-height:1.02;color:#111827;">The future of neuro</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">2.25rem → 3.75rem · weight 700<br>letter-spacing -0.02em · line-height 1.02</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Section Title</div>
+                    <div style="font-family:'Space Grotesk',sans-serif;font-size:1.875rem;font-weight:700;color:#111827;">Section heading</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">1.875rem → 2.25rem · weight 700</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Stat Hero</div>
+                    <div style="font-family:'Space Grotesk',sans-serif;font-size:2rem;font-weight:700;letter-spacing:-0.03em;color:#60a5fa;line-height:1;">10</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">2rem → 2.5rem · weight 700<br>letter-spacing -0.03em · color #60a5fa</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Card Title</div>
+                    <div style="font-family:'Space Grotesk',sans-serif;font-size:1.125rem;font-weight:700;color:#111827;">Card heading</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">1.125rem · weight 700</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Body Large</div>
+                    <div style="font-size:1.25rem;color:#4b5563;">Intro paragraph text</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">1.25rem · color #4b5563</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Body</div>
+                    <div style="font-size:1rem;color:#4b5563;">Standard body copy for paragraphs.</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">1rem · color #4b5563</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Small</div>
+                    <div style="font-size:0.875rem;color:#6b7280;">Secondary / supplemental text</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">0.875rem · color #6b7280</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-28 flex-shrink-0 guide-label">Caption / Label</div>
+                    <div class="chapter-label" style="margin-bottom:0;">Chapter label</div>
+                    <div class="ml-auto text-right text-xs text-gray-400">0.7rem · weight 700 · uppercase<br>letter-spacing 0.14em · color #60a5fa<br>preceded by 24px × 2px blue rule</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── BUTTONS ────────────────────────────────────── -->
+        <section class="guide-section">
+            <div class="guide-label">Components</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Buttons</h2>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col items-start gap-3">
+                    <a href="#" class="btn-primary" onclick="return false;">Primary</a>
+                    <div class="guide-label">btn-primary</div>
+                    <div class="text-xs text-gray-500">bg <span class="code-tag">#2563eb</span> → hover <span class="code-tag">#2563eb</span><br>white text · pill shape · weight 600<br>padding 0.75rem 2rem</div>
+                </div>
+                <div class="bg-gray-900 rounded-2xl p-6 border border-gray-700 flex flex-col items-start gap-3">
+                    <a href="#" class="btn-secondary" onclick="return false;">Secondary</a>
+                    <div class="guide-label" style="color:#4b5563;">btn-secondary</div>
+                    <div class="text-xs text-gray-500">border 2px white · white text<br>hover: bg white · color <span class="code-tag">#2563eb</span></div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col items-start gap-3">
+                    <a href="#" class="btn-outline" onclick="return false;">Outline</a>
+                    <div class="guide-label">btn-outline</div>
+                    <div class="text-xs text-gray-500">border 2px <span class="code-tag">#d1d5db</span><br>color <span class="code-tag">#374151</span> · hover bg <span class="code-tag">#f9fafb</span></div>
+                </div>
+                <div class="bg-gray-900 rounded-2xl p-6 border border-gray-700 flex flex-col items-start gap-3">
+                    <a href="#" class="btn-white-hover-dark" onclick="return false;">White / Hover Dark</a>
+                    <div class="guide-label" style="color:#4b5563;">btn-white-hover-dark</div>
+                    <div class="text-xs text-gray-500">bg white · color <span class="code-tag">#2563eb</span><br>hover: bg <span class="code-tag">#111827</span> · white text</div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col items-start gap-3">
+                    <a href="#" class="btn-gradient text-white btn-primary" style="background:linear-gradient(90deg,#60a5fa 0%,#111827 100%);" onclick="return false;">Gradient</a>
+                    <div class="guide-label">btn-gradient</div>
+                    <div class="text-xs text-gray-500">gradient reverses on hover<br><span class="code-tag">#60a5fa → #111827</span></div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex flex-col items-start gap-3">
+                    <a href="#" class="text-blue-600 text-sm font-semibold hover:text-blue-800 transition-colors" onclick="return false;">Inline link →</a>
+                    <div class="guide-label">Inline text link</div>
+                    <div class="text-xs text-gray-500">color <span class="code-tag">#2563eb</span> · weight 600<br>hover <span class="code-tag">#1d4ed8</span></div>
+                </div>
+            </div>
+
+            <div class="mt-6 bg-white rounded-2xl p-6 border border-gray-200">
+                <div class="guide-label mb-2">Shared button properties</div>
+                <div class="text-sm text-gray-600 space-y-1">
+                    <div>Border radius: <span class="code-tag">9999px</span> (full pill)</div>
+                    <div>Font weight: <span class="code-tag">600</span></div>
+                    <div>Transition: <span class="code-tag">all 0.3s ease</span></div>
+                    <div>Padding standard: <span class="code-tag">0.75rem 2rem</span> · Large: <span class="code-tag">1rem 2rem</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── CARDS ──────────────────────────────────────── -->
+        <section class="guide-section">
+            <div class="guide-label">Components</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Cards</h2>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <!-- Standard product card -->
+                <div class="product-card">
+                    <div class="p-6">
+                        <div class="product-card-image" style="background:#f3f4f6;height:120px;">
+                            <span class="text-gray-400 text-sm">Product image</span>
+                        </div>
+                        <h3 class="product-card-title">Product Card</h3>
+                        <p class="product-card-description">Standard white card with drop shadow. Lifts 5px on hover.</p>
+                        <div class="product-card-price">$5,000</div>
+                        <div class="actions mt-4">
+                            <a href="#" class="btn-full" onclick="return false;">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dark feature card -->
+                <div class="bg-gray-800 rounded-2xl p-8 border border-gray-700">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(59,130,246,0.15);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Dark Feature Card</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Used in dark background sections. bg-gray-800 with gray-700 border and blue icon container.</p>
+                </div>
+
+                <!-- Problem card -->
+                <div class="rounded-2xl p-8 border border-red-900 border-opacity-50" style="background:rgba(127,29,29,0.15);">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style="background:rgba(127,29,29,0.3);">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-3">Problem Card</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">Red tint background with red-900 border. Used for bottleneck / problem callouts on dark sections.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- Tier card default -->
+                <div class="product-tier-card bg-gray-50 rounded-2xl p-7 border border-gray-200">
+                    <div class="guide-label mb-1">Tier Card — Default</div>
+                    <div class="w-11 h-11 rounded-xl bg-blue-100 flex items-center justify-center mb-4">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/></svg>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Gray 50 tier card</h3>
+                    <p class="text-gray-500 text-sm">Lifts 3px on hover with border transitioning to <span class="code-tag">#93c5fd</span></p>
+                </div>
+                <!-- Tier card featured -->
+                <div class="product-tier-card rounded-2xl p-7 border border-blue-600" style="background:linear-gradient(135deg,#2563eb 0%,#1d4ed8 100%);">
+                    <div class="guide-label mb-1" style="color:rgba(255,255,255,0.5);">Tier Card — Featured</div>
+                    <div class="w-11 h-11 rounded-xl bg-blue-600 flex items-center justify-center mb-4">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="font-bold text-white text-lg mb-2">Highlighted tier</h3>
+                    <p class="text-blue-100 text-sm">Blue gradient background with white icon. Used for the recommended/featured product option.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ─── SECTION PATTERNS ───────────────────────────── -->
+        <section class="guide-section">
+            <div class="guide-label">Layout</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Section Patterns</h2>
+
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                    <div class="bg-white p-8">
+                        <div class="chapter-label" style="justify-content:flex-start;">Chapter label</div>
+                        <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-3" style="letter-spacing:-0.02em;">Light section heading</h2>
+                        <p class="text-gray-500 text-lg max-w-xl">Subtitle copy explaining the section in one or two sentences. Centered on full-width layouts.</p>
+                    </div>
+                    <div class="px-8 pb-4 pt-0 border-t border-gray-100 bg-gray-50 text-xs text-gray-500 flex gap-6">
+                        <span>bg: <span class="code-tag">#ffffff</span></span>
+                        <span>padding: <span class="code-tag">section-padding</span> (5rem 1–2rem)</span>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden">
+                    <div class="p-8" style="background:#111827;">
+                        <div class="chapter-label" style="justify-content:flex-start;">Chapter label</div>
+                        <h2 class="text-3xl font-bold text-white mt-2 mb-3" style="letter-spacing:-0.02em;line-height:1.1;">Dark section heading with <span class="text-blue-accent">blue accent</span></h2>
+                        <p class="text-gray-400 text-lg max-w-xl">Body copy on dark backgrounds uses gray-400 (#9ca3af). Blue accent spans use #60a5fa.</p>
+                    </div>
+                    <div class="px-8 py-3 border-t border-gray-800 text-xs text-gray-500 flex gap-6" style="background:#111827;">
+                        <span>bg: <span class="code-tag">#111827</span></span>
+                        <span>heading: white</span>
+                        <span>body: <span class="code-tag">#9ca3af</span></span>
+                        <span>accent: <span class="code-tag">#60a5fa</span></span>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl overflow-hidden">
+                    <div class="p-8 bg-gray-50">
+                        <div class="chapter-label">Chapter label</div>
+                        <h2 class="text-3xl font-bold text-gray-900 mt-2 mb-3" style="letter-spacing:-0.02em;">Gray 50 section</h2>
+                        <p class="text-gray-500 text-lg max-w-xl">Used as an alternating section background to create rhythm between white sections.</p>
+                    </div>
+                    <div class="px-8 py-3 border-t border-gray-200 bg-gray-100 text-xs text-gray-500 flex gap-6">
+                        <span>bg: <span class="code-tag">#f9fafb</span></span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-3">Section structure pattern</div>
+                    <div class="space-y-2">
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">1</div>
+                            <div class="text-sm text-gray-600">Chapter label (0.7rem uppercase)</div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">2</div>
+                            <div class="text-sm text-gray-600">Bold headline — often with blue accent span</div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">3</div>
+                            <div class="text-sm text-gray-600">1–2 sentence subtitle (gray-400 or gray-500)</div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600">4</div>
+                            <div class="text-sm text-gray-600">Supporting cards / list / table</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </section>
+
+        <!-- ─── BRAND VOICE & COPY ────────────────────────── -->
+        <section class="guide-section">
+            <div class="guide-label">Brand Voice</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Voice, Tone & Copy</h2>
+
+            <!-- Brand Essence -->
+            <div class="grid md:grid-cols-3 gap-6 mb-10">
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-2">Mission</div>
+                    <p class="text-gray-900 font-semibold text-base leading-snug">Accelerating the next generation of medicine.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-2">One-line value proposition</div>
+                    <p class="text-gray-900 font-semibold text-base leading-snug">The fastest, most cost-effective path from therapy idea to first-in-human study.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-2">Positioning statement</div>
+                    <p class="text-gray-700 text-sm leading-relaxed">Open NeuroTech LLC is scaling the open-source COSMIIC platform to meet the demand of researchers and early-stage startups who need implantable technology.</p>
+                </div>
+            </div>
+
+            <!-- Brand Personality -->
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Brand Personality</h3>
+            <div class="grid md:grid-cols-2 gap-4 mb-10">
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex gap-4">
+                    <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                        <div class="font-semibold text-gray-900 text-sm mb-1">Authoritative but accessible</div>
+                        <p class="text-gray-500 text-sm leading-relaxed">30+ years of credible CWRU/MetroHealth lineage and growing community, written so an early-stage founder feels invited in, not gatekept.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex gap-4">
+                    <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                        <div class="font-semibold text-gray-900 text-sm mb-1">Concrete over abstract</div>
+                        <p class="text-gray-500 text-sm leading-relaxed">Lead with proof points: 10 humans implanted, 3 FDA IDEs, 16 active pilots, $14.7M NIH program.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex gap-4">
+                    <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                        <div class="font-semibold text-gray-900 text-sm mb-1">Open and collaborative</div>
+                        <p class="text-gray-500 text-sm leading-relaxed">The word "open" is operative. The brand actively rejects IP-locked, opaque, vendor-dependent norms in implantable medical devices.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200 flex gap-4">
+                    <div class="w-2 h-2 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+                    <div>
+                        <div class="font-semibold text-gray-900 text-sm mb-1">Quietly urgent</div>
+                        <p class="text-gray-500 text-sm leading-relaxed">"This is where most promising therapies die" lands harder than hype because the rest of the copy is calm and specific.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Principles -->
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-3">Voice Principles</h3>
+            <p class="text-gray-500 text-sm mb-6 max-w-3xl">Open NeuroTech's voice is a senior engineer explaining a hard problem to a smart peer — direct, technically literate, comfortable with specifics, allergic to hype. The reader should feel respected, not sold to.</p>
+            <div class="bg-white rounded-2xl border border-gray-200 overflow-hidden mb-10">
+                <div class="token-row px-6">
+                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600 flex-shrink-0">1</div>
+                    <div class="text-sm text-gray-700"><span class="font-semibold">Lead with the burden, then the solution.</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600 flex-shrink-0">2</div>
+                    <div class="text-sm text-gray-700"><span class="font-semibold">Quantify everything quantifiable.</span> "3–7+ years and $10M+ saved" is the entire brand promise in one phrase.</div>
+                </div>
+                <div class="token-row px-6">
+                    <div class="w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-xs font-bold text-blue-600 flex-shrink-0">3</div>
+                    <div class="text-sm text-gray-700"><span class="font-semibold">Use plain English for the science.</span> "Replace drugs with targeted electrical stimulation." Not "leverage bioelectronic modulation paradigms."</div>
+                </div>
+            </div>
+
+            <!-- Vocabulary -->
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Vocabulary</h3>
+            <div class="grid md:grid-cols-2 gap-6 mb-10">
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="#3b82f6" stroke-width="2.5"><polyline points="2 7 5 10 12 3"/></svg>
+                        </div>
+                        <div class="font-semibold text-gray-900 text-sm">Use regularly</div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">open-source</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">platform</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">implantable</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">modular</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">neuromodulation</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">large animal / preclinical</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">first-in-human</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">translational</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">Investigational Device Exemption (IDE)</span>
+                        <span class="text-xs bg-blue-50 text-blue-700 font-medium px-3 py-1 rounded-full">research use only</span>
+
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+                            <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="#ef4444" stroke-width="2.5"><line x1="2" y1="2" x2="12" y2="12"/><line x1="12" y1="2" x2="2" y2="12"/></svg>
+                        </div>
+                        <div class="font-semibold text-gray-900 text-sm">Avoid</div>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs bg-red-50 text-red-600 font-medium px-3 py-1 rounded-full line-through">FDA approved</span>
+                        <span class="text-xs bg-red-50 text-red-600 font-medium px-3 py-1 rounded-full line-through">FDA cleared</span>
+                        <span class="text-xs bg-red-50 text-red-600 font-medium px-3 py-1 rounded-full line-through">medical device</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Approved phrases -->
+            <h3 class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Approved Key Phrases</h3>
+            <p class="text-gray-500 text-sm mb-6">Use these verbatim when possible — they form the narrative spine of the site and deck.</p>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-3">Mission & tagline</div>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Accelerating therapies that restore function and independence.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Accelerating the next generation of medicine.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-3">Value propositions</div>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">The fastest, most cost-effective path from therapy idea to first-in-human study.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">The world's first open-source, fully implantable neuromodulation platform.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">One platform across stages of development.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Don't recreate the wheel. Use the COSMIIC System.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-3">Proof points — use as written</div>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">10 humans implanted · 3 FDA IDEs · 16 active pilots</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Built on 30+ years of implantable device development at CWRU and MetroHealth.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Led the world's first open-source implantable device through a $14.7M NIH program.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Saves 3–7+ years and up to $10M compared to building in-house or hiring a contract device manufacturer.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-200">
+                    <div class="guide-label mb-3">Problem framing</div>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Every neuromodulation idea needs hardware to prove it.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">This is where most promising therapies die. Not from failed science, but from the cost and complexity of getting implantable hardware.</li>
+                        <li class="text-sm text-gray-800 font-medium leading-snug border-l-2 border-blue-400 pl-3">Researchers need human-grade implantable tech to conduct first-in-human studies, but have minimal access and developing their own is resource-intensive and complex.</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="site-footer mt-16">
+        <div class="container-wide text-center">
+            <p class="text-gray-500 text-sm">Open NeuroTech Brand Style Guide · Internal reference</p>
+        </div>
+    </div>
+
+</body>
+</html>

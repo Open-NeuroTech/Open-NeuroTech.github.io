@@ -4,7 +4,7 @@ function renderProductImage(product, addClasses = '') {
     if (product.imageType === 'img') {
         return `<img src="${product.image}" alt="${product.name}" class="rounded-lg w-full ${addClasses}">`;
     } else {
-        return `<i data-feather="${product.image}" class="w-32 h-32 text-blue-500 ${addClasses}"></i>`;
+        return `<i data-feather="${product.image}" class="w-32 h-32 text-blue-600 ${addClasses}"></i>`;
     }
 }
 

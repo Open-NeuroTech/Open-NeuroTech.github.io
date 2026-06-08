@@ -6,19 +6,57 @@ Remote repository at [`github.com/open-neurotech/Open-Neurotech.github.io`](http
 ## 📄 Page Structure
 
 ### Main Pages
-- **index.html** - Homepage with hero, services, about, and contact sections
+
+- **index.html** - Homepage: story-driven pitch narrative (problem → platform → traction → CTA with scrolling partner logo strip)
 - **shop/index.html** - Product catalog with dynamic cards and modals
+- **shop/purchase-process.html** - Purchasing workflow, common scenarios, FAQ, and Terms of Service
+- **contact/index.html** - Founder contact cards and organization links (GitHub, LinkedIn, email)
 - **coming-soon.html** - Placeholder for pages under construction
-- **shop/purchase-process.html** - Hidden page with detailed purchasing workflow and Terms of Service
+- **investors/index.html** - Investor pitch page: problem, platform overview, traction timeline, use of funds, and due diligence materials
+
+### Internal
+
+- **brand/index.html** - Brand style guide: color palette, typography scale, buttons, cards, section patterns, spacing, and motion tokens
+
+### Tools
+
+- **tools/letter-of-support/index.html** - Client-side Letter of Support PDF generator with live preview
 
 ### Components
+
 - **components/navbar.html** & **navbar.js** - Responsive navigation bar with mobile menu
 - **components/footer.html** & **footer.js** - Site footer with links
-- **components/scripts.js** - Global JavaScript initialization (AOS, Feather, Vanta.js)
+- **components/scripts.js** - Global JavaScript initialization (Feather icons, Vanta.js)
+
+## 🛠️ Tools
+
+### Letter of Support Generator (`/tools/letter-of-support/`)
+
+Generates a branded ONT Letter of Support PDF entirely client-side (no backend required).
+
+**How it works:**
+
+- User fills in: Date, To (Program Office), Signing Co-Founder, Investigator Name, Project Title, Funding Agency
+- A live scaled preview updates in real time with blue dashed placeholders for unfilled fields
+- Clicking **Download PDF** validates all fields, then clones the letter element, anchors it at document (0,0), captures it with `html2canvas`, and outputs a US Letter PDF via `jsPDF`
+
+**Field limits:** Program Office 120 · Investigator 100 · Project Title 127 · Agency 100
+
+**Date field:** Native calendar picker (`<input type="date">`) defaulting to today; formats as "12 May 2026" in the letter preview and PDF.
+
+**Libraries used:**
+
+- [`html2canvas 1.4.1`](https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js) — DOM-to-canvas rendering
+- [`jsPDF 2.5.1`](https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js) — PDF generation
+
+**PDF output notes:**
+
+- All letter graphics (header logo, footer icon) are inline SVG or same-origin PNG to ensure html2canvas renders them without CORS issues
+- jsPDF is configured with `unit: 'pt', format: 'letter'` and the image is placed using `pdf.internal.pageSize.getWidth/Height()` to fill the page without clipping
 
 ## 🛍️ Shop Page Architecture
 
-The shop page uses javascript to dynamically display product information to eliminate code duplication and simplify maintenance.
+The shop page uses JavaScript to dynamically display product information to eliminate code duplication and simplify maintenance.
 
 ### How It Works
 
@@ -29,7 +67,7 @@ The shop page uses javascript to dynamically display product information to elim
    - Reads from `productsData` and generates product cards on page load
    - Handles image types (img vs feather icons)
    - Supports "Coming Soon" badges
-   - Initializes AOS animations and Feather icons after rendering
+   - Initializes Feather icons after rendering
 3. **Dynamic Modal Generation**: `/shop/product-modal.js`
    - Creates modals on-the-fly when "Learn More" is clicked
    - Pulls full product details from `productsData`
@@ -38,7 +76,7 @@ The shop page uses javascript to dynamically display product information to elim
 
 ### Adding a New Product
 
-To add a new product to the shop page, add the example text below to `/shop/product-data.js` inside of `const productsData = {...};` The card and modal will be automatically generated and styled.
+To add a new product to the shop page, add the example text below to `/shop/product-data.js` inside of `const productsData = {...};`. The card and modal will be automatically generated and styled.
 
 ```javascript
     yourProductKey: {
@@ -49,15 +87,15 @@ To add a new product to the shop page, add the example text below to `/shop/prod
         priceClass: "text-muted", // optional, for styling
         imageType: "img", // "img" or "icon"
         image: "product-img/photo.jpg", // path or feather icon name
-        comingSoon: false, //true adds coming soon badge to product card
-        
+        comingSoon: false, // true adds coming soon badge to product card
+
         // Modal Information
         fullDescription: "Detailed product description...",
         features: [
             "Feature 1",
             "Feature 2"
         ],
-        additionalInfo: "Extra details..." // can be string or array
+        additionalInfo: "Extra details...", // can be string or array
         warning: '<span style="color: red;">WARNING:</span> Safety info...'
     },
 ```
@@ -65,6 +103,7 @@ To add a new product to the shop page, add the example text below to `/shop/prod
 ### Product Data Properties
 
 #### Card Display (Required)
+
 - `name` - Product name
 - `shortDescription` - Brief description (1-2 sentences)
 - `price` - Price string (e.g., "1,499" or "TBD")
@@ -73,12 +112,15 @@ To add a new product to the shop page, add the example text below to `/shop/prod
 - `comingSoon` - Boolean for "Coming Soon" badge
 
 #### Card Display (Optional)
+
 - `priceClass` - CSS class for price styling (e.g., "text-muted")
 
 #### Modal Content (Required)
+
 - `fullDescription` - Detailed product description
 
 #### Modal Content (Optional)
+
 - `features` - Array of feature strings (rendered as bulleted list)
 - `subsections` - Array of objects with `title` and `items` properties
 - `additionalInfo` - String or array of additional details
@@ -86,19 +128,38 @@ To add a new product to the shop page, add the example text below to `/shop/prod
 
 ## 🎨 Design System
 
+For the full visual reference see [`/brand/`](brand/index.html).
+
 ### Colors
-- **Primary Blue**: `#3b82f6` - Buttons, accents, interactive elements
-- **Dark Background**: `#111827` - Navigation overlay, footer, gradients
-- **Light Blue**: `#bfdbfe` - Hover states, text accents
+
+- **Primary Blue**: `#2563eb` — buttons, accents, interactive elements
+- **Blue Accent**: `#60a5fa` — chapter labels, stat numbers, highlights on dark backgrounds
+- **Dark Background**: `#111827` — navigation, hero sections, footer
+- **Light Blue**: `#bfdbfe` — hero subtitle text on dark
 - **Gray Scale**: Tailwind's gray palette for text and backgrounds
 
+### Logo Assets
+
+| File | Use |
+| --- | --- |
+| `img/ONT_logo_light_v2.svg` | Full horizontal logo — for use on light backgrounds |
+| `img/ONT_logo_dark_v2.svg` | Full horizontal logo — for use on dark backgrounds |
+| `img/ont-icon-blue.svg` | Icon only — blue, for light backgrounds and favicons |
+| `img/Icon Only - White/` | Icon only — white variant for dark backgrounds |
+| `img/ont-icon-animated-white.gif` | Animated icon — used in the navbar |
+| `img/Full Logo/` | Print-ready versions (SVG, PNG, PDF, EPS) |
+
 ### Typography
-- **Font Family**: System font stack via Tailwind (`font-sans`)
-- **Headings**: Bold, large scale (text-4xl to text-6xl)
-- **Body**: text-xl for comfortable reading
+
+- **Font Family**: Space Grotesk (Google Fonts) — used for all headings and body text
+- **Import**: `https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700`
+- **CSS Variables**: `--font-display` and `--font-body` both set to Space Grotesk in `styles.css`
+- **Note**: Do not add `font-sans` to `<body>` tags — Tailwind's `font-sans` overrides the Space Grotesk variable
 
 ### Modifying Styles
+
 All custom styles are in `/styles.css`. The file is organized into sections:
+
 - Transitions & Animations
 - Gradients
 - Buttons
@@ -108,34 +169,39 @@ All custom styles are in `/styles.css`. The file is organized into sections:
 - Footer
 - Typography
 - Spacing & Layout
+- Homepage Story Sections (chapter labels, stat heroes, CTA rows, comparison table)
+- Logo Marquee (scrolling partner strip with edge fades)
 
 ## 🚀 Deployment
 
 ### GitHub Pages
+
 In the settings of this remote repository [`github.com/open-neurotech/open-neurotech.github.io`](https://github.com/Open-NeuroTech/Open-NeuroTech.github.io), settings should exist as the following:
 
 - Go to Settings → Pages
 - Source → `Deploy from a branch`
 - Branch → `main` and `/(root)`
 - Custom domain → `openneuro.tech`
-    - Repository should have a corresponding CNAME file holding the text `openneuro.tech` in the root directory
-    - DNS records hold the A records for GitHub Pages redirect
+  - Repository should have a corresponding CNAME file holding the text `openneuro.tech` in the root directory
+  - DNS records hold the A records for GitHub Pages redirect
 - Select Enforce HTTPS
 
 The most current commit to `main` branch will display live at [openneuro.tech](https://openneuro.tech) by redirect from [open-neurotech.github.io](https://open-neurotech.github.io)
 
 ### Local Development
-To view the local version of the website, enter into command terminal `python -m http server 8000` then navigate to `http://localhost:8000` in your browser.
+
+To view the local version of the website, enter into command terminal `python -m http.server 8000` then navigate to `http://localhost:8000` in your browser.
 
 ## 📱 Device Formatting Design
 
 Using Tailwind's default breakpoints:
+
 - **Mobile**: < 640px (sm)
-- **Tablet**: 640px - 768px (md)
-- **Desktop**: 768px+ (lg, xl)
+- **Tablet**: 640px - 1024px (md/lg)
+- **Desktop**: 1024px+ (lg, xl)
 - Navigation: Hidden on mobile, hamburger menu appears
 - Grid layouts: 1 column → 2 columns (md) → 3 columns (lg)
-- Text sizes: Responsive with `text-xl md:text-2xl` pattern
+- Text sizes: Responsive with `clamp()` for fluid scaling on hero and section titles
 
 ## 🛠️ Technologies Used
 
@@ -143,35 +209,45 @@ Using Tailwind's default breakpoints:
 - **CSS3** - Custom styles with flexbox and grid
 - **JavaScript (ES6+)** - Interactive functionality
 - **Tailwind CSS** (CDN) - Utility-first CSS framework
-- **AOS (Animate On Scroll)** - Scroll animations
-- **Feather Icons** - Clean, consistent iconography
+- **Feather Icons** (CDN) - Clean, consistent iconography
 - **Three.js** - 3D rendering library (for Vanta.js)
-- **Vanta.js** - Animated background effects (index.html only)
+- **Vanta.js** - Animated background on homepage hero only
+- **html2canvas 1.4.1** (CDN) - DOM-to-canvas for PDF export
+- **jsPDF 2.5.1** (CDN) - Client-side PDF generation
 
 ## 📝 Version History
 
+### v0.2.0 (May 2026)
+
+- Redesigned homepage as a story-driven narrative
+- Switched site-wide font to Space Grotesk
+- Replaced emoji icons with Feather icons throughout
+- Removed AOS (Animate On Scroll) animations site-wide
+- Created standalone `/contact/` page with founder and org cards
+- Restyled shop, purchase-process, and coming-soon pages to match design system
+- Added `/tools/letter-of-support/` — client-side PDF generator with live preview, field validation, and character limits
+- Updated navbar: removed About link, replaced static logo with animated GIF
+- Added scrolling partner logo strip to homepage CTA section (`img/partners/`: cwru, metrohealth, michigan, wisconsin, santanna, trailblazer)
+
 ### v0.1.0 (November 2025)
+
 - Added purchasing flow section to shop page
 - Implemented dynamic product display system
-- Created hidden purchase-process.html page with detailed Terms of Service
+- Created purchase-process.html page with detailed Terms of Service
 - Fixed photo cropping issues in modal views
-- Known Issues: 
-    - Mobile: On coming-soon page, the nav menu works but is not visible
-    - Mobile: “Full purchasing policies” partially overlapped with Request a Quote button
-    - May be formatting issues for iPad views
-    - Fade-in components are not accessibility-friendly
 
 ### Beta (October 2025)
+
 - Initial release with homepage, shop, and coming-soon pages
 - Vanta.js animated homepage background
 - Basic product cards with static modals
 
 ## 📝 License
 
-© 2025 Open NeuroTech LLC. All rights reserved.
+© 2026 Open NeuroTech LLC. All rights reserved.
 
 ---
 
-**Last Updated**: November 2025  
-**Version**: v0.1.0  
+**Last Updated**: May 2026
+**Version**: v0.2.0
 **Maintained By**: Open NeuroTech LLC
